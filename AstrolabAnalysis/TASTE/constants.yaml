@@ -1,0 +1,70 @@
+main : {
+  target : "GJ3470_20220328",
+  multipler_inner_radius : 3.55,
+  avoid_input : 1
+}
+
+bias : {
+  start_column : 300,
+  end_column : 350
+}
+
+flat : {
+  windows_size : 50,
+  limit_x_1 : 40,
+  limit_x_2 : 45,
+  limit_y_1 : 250,
+  limit_y_2 : 255,
+  bins : 20
+}
+
+science : {
+  read_pkl : 1,
+  jd_plot_1 : 2460000,
+  jd_plot_2 : 2460365.25,
+  step_jd : 0.1
+}
+
+centroid0 : {
+  img_number : 0,
+  division : 8,
+  area_min : 45,
+  area_max : 150,
+  order : 1,
+  index_tar : 4,
+  index_ref1 : 3,
+  index_ref2 : 0,
+  radius_plot_3d : 15,
+  azim_3d : 40,
+  elev_3d : 30,
+  maximum_number_of_iterations : 30
+}
+
+centroidskip : {
+  img_number : 300,
+  division : 8,
+  area_min : 45,
+  area_max : 150,
+  order : 1,
+  index_tar : 6,
+  index_ref1 : 5,
+  index_ref2 : 0,
+  radius_plot_3d : 15,
+  azim_3d : 40,
+  elev_3d : 30,
+  maximum_number_of_iterations : 30
+}
+
+aperture : {
+  aperture : 10,
+  ylim1_aperture_ref1 : 0.183,
+  ylim2_aperture_ref1 : 0.192,
+  ylim1_aperture_ref2 : 0.90,
+  ylim2_aperture_ref2 : 0.94,
+  ylim1_aperture_sum : 0.154,
+  ylim2_aperture_sum : 0.158,
+  xlim1_aperture_zoom : 2459667.3,
+  xlim2_aperture_zoom : 2459667.42,
+  normalization_index : 200,
+  time_offset : 2.459667e6,
+}

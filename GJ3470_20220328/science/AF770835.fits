@@ -1,0 +1,263 @@
+SIMPLE  =                    T / file does conform to FITS standard             BITPIX  =                   16 / number of bits per data pixel                  NAXIS   =                    2 / number of data axes                            NAXIS1  =                  521 / length of data axis 1                          NAXIS2  =                   64 / length of data axis 2                          EXTEND  =                    T / FITS dataset may contain extensions            COMMENT   FITS (Flexible Image Transport System) format is defined in 'AstronomyCOMMENT   and Astrophysics', volume 376, page 359; bibcode: 2001A&A...376..359H BZERO   =                32768 / offset data range to that of unsigned short    BSCALE  =                    1 / default scaling factor                         DATE    = '2022-03-28T18:35:59' / file creation date (YYYY-MM-DDThh:mm:ss UT)   FILENAME= 'AF770835.fits'      / Original file name                             TIMESYS = 'UTC     '                                                            DATE-OBS= '2022-03-28T18:35:53.0' / UTC date at start of exposure               JD      =       2459667.274920 / JD at start                                    MJD     =         59666.774920 / MJD at start                                   EXPTIME =                 5.00 / [s] Exposure time                              CCD-TEMP=                -95.5 / CCD temperature (Celsius) at start of exposure SET-TEMP=                -95.0 / CCD setpoint temperature (Celsius)             IMAGETYP= 'Object  '                                                            OBJECT  = 'gj3470  '                                                            OBSERVER= 'Nascimbeni'                                                          PROGRAM = 'Nascimbeni'         / Program name                                   FILTER  = 'g-Sloan '           / Filter Wheel position 5                        GRAT_TYP= 'NONE    '           / Grism Wheel position 1                         SLIT    = 'NONE    '           / Aperture Wheel position 1                      LAMP    = 'NO      '                                                            CAMERA  =                51912 / Actual Camera focus position                   FOCUSOFF=                  380 / Filter focus offset                            ROTANGLE=                -50.0 / [deg] Telescope flange rotation angle          LTM1_1  =                0.250                                                  LTM2_2  =                0.250                                                  LTV1    =                   -1                                                  LTV2    =                 -767                                                  X-START =                    2 / physical windowing X start pixel               Y-START =                  768 / physical windowing Y start pixel               X-STOP  =                 2085 / physical windowing X stop pixel                Y-STOP  =                 1023 / physical windowing Y stop pixel                APPOS   =                    0 / Aperture wheel position                        FLPOS   =               160000 / Filter wheel position                          GRPOS   =                    0 / Grism wheel position                           ORIGIN  = 'Asiago Astronomical Observatory'                                     TELESCOP= '1.82m Reflector'                                                     INSTRUME= 'AFOSC + Andor iKon-L DZ936N-BEX2-DD-9HF'                             DETECTOR= 'E2V CCD42-40 DD'                                                     BINX    =                    4 / Horizontal Binning factor used                 BINY    =                    4 / Vertical Binning factor used                   GAIN    =                 1.91 / [e/ADU] CCD Camera gain                        RDNOISE =                 7.10 / [e] CCD Camera readout noise                   CCDSCALE=                 0.25 / [arcsec/px] unbinned CCD camera scale          SITETYPE= 'GEODETIC'                                                            SITESYS = 'WGS84   '                                                            SITELAT =           45.8485832 / [deg] Telescope latitude, N45:50:54.894        SITELONG=           11.5689993 / [deg] Telescope longitude, E11:34:08.397       SITEELEV=               1376.2 / [m] Telescope height above sea level           HSSPEED =                    2 / 1 MHz CCD sensor horizontal shift speed        OUTMODE =                    0 / High Sensitivity CCD sensor output mode        PREAMP  =                    1 / x2 CCD sensor preamplifier gain                HJD     =       2459667.277096 / Heliocentric Julian Date at middle of exposure EQUINOX =                2000.                                                  RADESYS = 'FK5     '                                                            LST     = '07:46:46.5'         / Local sideral time at start                    HA      = '-00:13:37'          / Telescope HA at start                          RA      = '07:59:09.38'        / Telescope RA (J2000.0)                         DEC     = '+15:25:20'          / Telescope DEC (J2000.0)                        ALTITUDE=             59.38765 / [deg] Telescope altitude at start              AZIMUTH =            353.53812 / [deg] Telescope azimuth at start               AIRMASS =                1.162 / Telescope airmass at start                     PARANGLE=               -4.663 / [deg] Telescope parallactic angle at start     URA     =            120.15740 / [deg] Telescope raw RA reading                 UDEC    =             15.35826 / [deg] Telescope raw Dec reading                OBJCTNAM= 'gj3470  '           / Object name from Telescope Control             OBJCTRA = '07:59:05.56'        / Object RA (J2000.0)                            OBJCTDEC= '+15:23:27'          / Object DEC (J2000.0)                           M2-Z    =                7.100 / [mm] M2 Z (focus) position                     TEMP-M1E=                  9.9 / Main mirror est side temperature at start (CelsTEMP-M1W=                  9.8 / Main mirror west side temperature at start (CelTEMP-M2 =                 10.9 / M2 mirror temperature at start (Celsius)       TEMP-TOP=                  9.9 / Telescope Top Ring temperature at start (CelsiuTEMP-INT=                  7.1 / Dome temperature at start (Celsius)            TEMP-EXT=                  5.5 / External temperature at start (Celsius)        HUM-INT =                   45 / [%] Dome relative humidity at start            HUM-EXT =                   57 / [%] External relative humidity at start        TEMP-AF =                 10.9 / AFOSC temperature at start (Celsius)           TEMP-FL =                  9.1 / Dome floor temperature at start (Celsius)      TEMP-CEL=                 10.1 / Telescope Main mirror cell temperature at startATMPRESS=                868.2 / [hPa] Atmospheric Pressure at start            WIND-DIR=                  290 / [deg] Wind Direction at start                  WIND-VEL=                  0.8 / [m/s] Wind Velocity at start                   END                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             …©…§…°…­‡Œ°ŒÝ7ŒýŒãŒ®ŒÃŒàŒ¬ŒýŒåŒë	ŒêŒúŒë-ŒéŒòŒêŒøŒîŒÀ,"2)ŒÓŒõŒæŒÎŒøŒíŒïŒðŒòŒÍŒ¿Œñ6%ŒÒŒÞ<ŒÞŒÖŒè-ŒÝŒ÷3ŒãŒúŒî ŒÂŒÿ ŒþŒÎŒôŒîŒþŒæ=ŒþP	Œò,:!24ŒåŒÉ!7"(ŒËpŒõ	;XO3Œû%.Œö&)(Œã ŒôEN20-	I)ŒêUH2(=Œÿ"4!5(@??ŒýHEvB@ŒÖg(
+2i0P<{*3‘Œå(?!,!G9:+-.AK=S:Œð57S%Œþ
+,LP7>AA)=1:=H%Š0n:/[c^r*nB+H2'XL 0AS>%_=`C9!@Pu<4+FUŒÔ$&:1)5ŒïŒð|&Jg]ŒüA? 8>33"ˆ-C^ErLŒþE7E0Œï"L#ŒÿVŒÿgŒù&VUŒý8!)Œëz%6SŒñ$2"ŒõZ-C
+)1I%3 JŒôŒü-mŒíD"9+(ŒêD*UcGd OX1ŒÝŒõ"R;JŒ÷OŒÂŒê
+81WŒÜŒâ@5-&@Œý"ŒÛq;F&*'Œü&Œß@ŒïŒüŒÖŒô- ŒéŒç
+ŒÝŒÔŒäŒïŒÒŒÓŒùŒ²Œ«Œ®ŒßŒ©Œç, Œñ
+$ŒñŒâŒäŒôŒêŒßŒÇŒÏŒÞ‹…¹…«…¯…¯…­…¬…¦…´‡Œ©Œ²ŒÃŒòŒñŒÎ	ŒëŒÏŒßŒüŒçŒ°ŒÜŒèŒÅŒÑŒçŒèHŒöŒÀ ŒîŒûŒÖŒâ	ŒÿŒß'ŒñŒìŒãŒå"ŒÿŒà)ŒúŒñ#HŒí+ ŒÿŒîŒöŒþŒûŒòŒý<Œó#ŒÞŒâ/ŒØŒ÷ŒÁ5ŒöŒÃ
+!ŒßQŒ¶OŒíA0+%ŒØH-Œö>;3	Œû`QŒÿŒôŒ¿ŒòŒàŒÿJŒóŒý!#)ZB"*U>z.P
+$` 5DN"2Œ÷".IŒô!T"Œñ/@:`/?M):8E6>0#97w0P?9F9KC)iYs$c$=sf.[1@60=m.|_B4}!3xpW&Si9+17z0ŒþZ`Z]Œã	ICtNK.#8$kSi>W)^OWNbDH<*)0;:<\Œý;HWHK4d#6CGM/],$$h#VTTeIWM*XPŒë+ŒìcA+/3
+$!7Œä4e;X#1$ŒïŒõ21Œú#.+n&‰ŒÜU,Œø)5D5=;-ŒòŒÞŒúŒú/ŒôŒîLn3'ŒàŒìŒýŒœ2Œõ*lŒçŒó'
+G'ŒÖŒÑ 1ŒâŒÆŒïŒúŒÍŒäŒéŒúŒÕŒäŒÜŒ÷ŒâŒÃŒÙŒûŒòŒü*ŒûŒæŒçŒ¸ŒéŒß. $	ŒèŒÇ	ŒÈ ŒÂŒ÷Œ×‹,…¿…±…¬…±…ª…®…­…¥†öŒáŒÅŒÀ)Œ¬ŒóŒæŒ×ŒúŒþŒæŒêŒÐŒèŒÚŒêŒÛŒëŒ×@Œ¼ŒðŒüŒòŒòŒÞŒíŒÀŒñŒâ)2ŒöŒÿŒÅLŒüŒìŒñŒüŒñ ŒãŒØ	-ŒêŒô"@BŒöŒødHŒûŒþŒäŒ¿ŒïŒ½
+Œÿ*#RŒó ŒœŒë>(#ŒÑ*ŒùŒê
+ŒêŒí,Œü$	BO!@#!+U):k/!IWOa/"(<=Œø3h3B <_,
+C!Œî4w4h];Œå.B@ŒüŒö:#$*4BŒô@XS<.GDA)&-0?IkP1Z/i Qn\~8<NDawEN(Œô‘?dmc7ŒûIŒúyŒî?5g+3-_WgN9Q>@g};‡TVZ@i9Œÿ&,"4<X[Œì0VL$GU 46v)he9BFT
+P>I7%$bRz"D*GUQŒù&[Œþ"+I =1IS}=ŒðR%Œï!]3$!;RŒÿ-(;>Œè8F%Œö	FŒÞ?L$ +X9P&NŒàŒý;"EŒþSF5C8#24D^)'%#Œô1,ŒÿLŒðŒü '7DŒý8=,ŒÆ
+#ŒäŒü	0Œü
+	ŒÕ$+ŒïŒÓŒÖ$ŒþŒéŒëŒÝ+ŒòŒéŒÕŒñŒâŒÕŒÕŒðŒñŒâŒúŒØŒîŒôŒÐŒè(
+Œè‹!…Í…«…®…¯…©…«…°…«†íŒºŒñŒçŒÿŒÞŒÑŒÅŒõŒâŒÂŒØŒÖŒòŒçŒü$Œ±Œ×ŒÿŒó=ŒÄŒíŒðŒñŒä)ŒûŒõŒ÷ŒîŒôŒÓŒñŒé3ŒûŒ£ ŒÎ!ŒþŒ×Œç&Œ¾ŒþŒûŒéŒþŒ÷Œæ	.ŒñŒ÷=Œò$Œ×
+ŒôŒêŒéŒâ"Œü ŒûŒãŒÜoŒÏ-]ŒúŒæ6N9 Iq/ŒÝŒÿ)Œû0#ZM0,7%	H-k$+O>,
+.8Z71'8-,ZŒÿ!Xd?t:d3I_)FQjC/Œ¨8l8%YCWQ,:f	A;Œ÷ON$1/5SŒÛ`DpM@`(A' ,K?3I];9aXXB#
+kI'&5Eb3n0Œþ8k`N=Ah0e.q=9Pj'#ylŒçŒô%DE<Md<(Œý=Œ÷CŒû…6<6@Œðz6gSFW ŒúŠSH4Œç[83#SŒåŒõ!ŒÿŒývD;Z;Œò-/'hŒÑ+.+ B?ŒæŒïŒÞ)Œÿ,(E7c>Œè:c7+D*4ŒÙh7NJDC D[ŒþI'%PE819$'Œõ*Œÿ*Œö!*ŒèN3@CŒê	Œè"ŒüŒìEŒû& 5ŒÞŒñ!ŒäŒßjŒíŒè4BFŒÝBŒýŒüHŒúŒÞŒédŒñŒÃŒåŒÛŒÊŒôŒÍŒÕ?ŒÈŒýŒú"ŒÉŒöŒ•ŒÂŒñ>"ŒýŒÖ3Œ˜ŒÝŒû*ŒßŒìŒ¬ ŒíGŒõ‹F…É…«…®…±…ª…®…¯…«†÷ŒàŒÇŒæŒï ŒÍŒ÷ŒæŒÁŒåŒíŒõŒ·ŒÖŒŒùŒâŒñŒüŒÞŒ²ŒóŒäŒôŒÜŒþŒìŒöŒ·ŒöŒÜŒðŒïŒüŒÇŒ¶Œó0ŒßŒéFŒÍŒÿŒöŒøŒúŒëŒúŒéŒõŒ÷Œî'Œõ3(ŒñŒþY	8h_Œè"Œò4=;0#,	.:Œè(ŒøŒë$2ŒþE>wQ+MVŒû"]"%.C=L=ŒþŒøNŒÙ*@^K0Œÿ
+>Œó"B"R9$Œà2RJVG9#HŒß>b2=N4ŒóV:qL,.ŒýY<1\)+wEeJ90BŒý4F"BA[N)q2I8Q'2bA%NyEqNET>,LL<…c3\')=R^K^N7RK-6:E2Lg5Xb"BŒä2Œý-Œù/R'I$n:Ag?/I# L7%B.$'SMmCD4Jg'G]WY8E4ŒâŒõ278*^<,Œû
+/:5.,'"@>^/_6]ŒûŒæ&>:P;&FŒÿŒÔŒö\G}# ŒôŒÿŒñŒË%FŒÿŒôX?9#ŒúŒü* Œõ0!,5ŒÕS^TŒþ663E!Œõ%ŒïŒéŒè/+ŒéŒï63Œß3$	ŒüŒÞŒÐŒÐŒßŒ·ŒûŒöŒÐŒ±Œý-ŒÁ:ŒëŒÙ"ŒçŒÃŒÃ+$‹Z…Ã…­…ª…°…ª…ª…«…¬†ðŒ­ŒîŒÍ	ŒßŒÄŒ¾ŒÍŒòŒüŒÊŒåŒÉŒ½
+ŒÆŒØŒìŒàŒÑŒèŒîŒîŒâŒôŒýŒ½ŒÛŒíŒÈŒþŒìŒþŒàŒë ŒÒ	ŒôŒÕŒôŒó(Œð>ŒîŒñŒ¿ŒÖ +1WŒÉŒè71	ŒÑŒâ ŒüŒÅ"+Œâ0ŒàmI	ŒâŒæ+Œî4TŒÒ;6:1'&.)4,*7S	%m4;/i5/24<8	'=9)'FW9I-!S042IK5ZWDJ,;;';Œû3(L1b*)!*L,€.'r]3%=89aFkIk 5+,&7=S C;PMM%4ŒîC3#->$7Es=YEo—S'c<8-//[*xE'a].aGcH(>>3B0%ŒÆ`UP?A)6wP9Œ/f4!28S)1)!V<<Œâ3Œøt;D,š!\€OBŒýDŒíPF+!~-zAH+HFM)
+Œù-87@hJŒ÷ŒåjŒù8)Œù<)Œÿ2
+ŒøE0<8Z:"$ŒûŒ÷73B JJŒþ)TW-W>MŒ÷ŒüXŒù::#"#<PŒþŒâŒö54B@ŒõŒü:#*EXŒð9)	ŒæŒöŒú
+ŒÝML	ŒúŒð\ŒòŒñ!*ŒùNŒú+ŒéŒöŒëŒÔ!ŒóŒÌŒú"	Œ×(Œõ#ŒçŒÛŒÐŒúŒïŒñ:ŒüŒµ#‹G…Æ…¤…­…°…®…«…°…©†íŒ¶ŒÕŒ÷ŒŸŒöŒæ	Œ÷ŒåŒ÷ŒïŒÃŒø8ŒáŒóŒÒŒìŒßaŒûŒÛŒêŒëPŒïŒý
+ŒäŒû&!$%ŒóŒù
+ŒóFŒö"ŒÎ-C;GŒü!Œ¿Œô!Œú:ŒùŒÛ3ŒðŒéŒØŒÇ,ŒùŒÞŒþŒïŒýŒ×Œþ>ŒìxŒõ(ŒøŒÉŒÿ$,-LAŒï
+ŒÝ)@0/Y
+F0H
+Œü&C.:B;^/)#LAŒý8,E?@Œ÷@H:DlTV		EJŒò(žŒðo&.<BŒöUŒóBU+5*,BC:3v!Œï# ŒþNŒé='(QBoNCY>{HL&]6zLb)*EP^O)11(B_H	E*1v-duŒü5`IC\vP=;ZW&ClM0&;n",œgo>6}I7*G'52R?&5B,eK:NkUF"B7(Ž "*#R	lŒî-R!R/P[ L%6<V?_#\Œà7,G>9<%'1/B;Œõ?JŒÝ'<ŒöR-YŒô+Œß. )!4;-0,Œç (5N#'>'jB".di$ŒÎŒïŒó)"4)"ŒóXŒÿ,Œ¾Œÿ=ŒýŒß/'v AŒùŒÐŒúŒôN	ŒðŒþ	Œÿ/
+ŒïŒªŒüŒêŒàŒØ+ŒÈŒÚŒÜŒÌŒÞŒî‹…É…´…­…´…©…±…§…¬‡.(ŒõŒþŒîŒ¼ŒÄŒÍ Œ§Œï'ŒÔŒÐŒòŒèŒ±ŒèŒÆŒÕHŒâŒî4ŒßŒõ4ŒôŒç$ŒÿŒóŒÄŒ÷Œô1
+Œ÷ŒÜ>ŒýŒæ8@Œü.SŒÙŒã9%ŒîŒÜŒâŒìŒæŒùŒëŒÕ >ŒõŒïŒ÷ŒÙ*ŒìŒè,ŒÜ^&Œõ2*T(ŒíR0Œý?
+;=(?/Œó1Y"OŒû9)?5/,j$O&E8Cx72=@*3)/'+@V-"gL5;S4O(^$7Œ÷}6fAf41dE8!ŒùS ŒýA=I{1S $;]`?7?Œæ687/@d^<eAy-}PBX”-a_2>Q/M>JWa:inU5j\„(1?-@D=2Z<X. 2#ŒûA9S?r%Y;A/62U;9\]X;D!67+6SRmD5(8<)VU[>o)j4b?CGY.DK …h. SO+1ŒùŒê@ALŒÑN*Œû*Œþ	 4Œø
+;@JU MLqŒý!"ŒüŒé/C`T5ŒàOŒÑŒ÷9G=-/2Œö8%^2>ŒáŒÈ*P=Œà0#Œú;IŒüŒð0Œ÷DŒ÷50<" F>&
+ŒøFD$ŒÉŒüŒåŒõŒºŒÌŒÎŒõ0ŒàŒøŒêŒæŒôŒÿŒûŒË%.ŒÆ)Œñ+	KŒèŒû!&ŒøŒêŒóŒûŒÕŒÜŒð‹.…É…­…©…³…²…ª…¨…¨†ý,.ŒÕŒä ŒÛŒØŒÿŒÚŒäŒøŒî9ŒÙŒÕŒÛŒàŒåŒûŒ±ŒãŒÓ	ŒóŒÚŒþŒÌŒÛŒéŒæŒìŒÕŒüŒô	P*5&ŒöŒÌŒûŒðJŒÿŒí&ŒþŒöŒÿŒãO#9ŒÍ'Œ÷ŒíŒþ%JŒäŒØ
+6Œë/	Œ¸ŒÂ$ŒáŒå3ŒòŒÕŒï1ŒöIŒØ.G0Nm6UŒÕ7%%Q7($:Œæ62'/#F AU<L5"$0>BTŒè-K%!9ŒùŒàŒÏ 7scPŒû	2^;8B6D+,BK(;b<bJjŒî6 1MQd1\‚+O2ZC&ueBŒôU<
+!XgN2>[_Œÿ:\*AB:4HMC)E5\WWSRŒù>S
+MoF2'BO)G‹LBŒúCDUg[ŒüŒù4<7M;OQ#9H{O3:–(/TUE%$"-.)5+>%!0‰Aa3QR-VLHd Œøc
+52`>G+Œï8M*DP5<3U$IŒ÷'B 0$<=+1?GQ9Œþ.#(()E<Œö@	U#,M43, Œû$*7-*41ŒÎ K58^˜UUZŒü6ŒúF?2ŒüŒ×Œú4Œ¶CŒÐŒå.ŒÛŒäŒÃŒñŒýŒËŒÈŒåŒÜŒñ&ŒðMŒÌŒÑŒã"ŒúŒòŒÑŒçŒ¡‹-…Á…«…¨…®…¨…ª…­…¢‡)Œ÷GŒîŒ³ŒæŒùŒÖŒîŒêŒÙŒÝŒÑŒÿŒÿŒ£ ŒøŒÞŒù #ŒóŒæŒâŒØŒó
+ŒÑŒûŒÙŒèCŒÞŒôŒð*	ŒáŒÍŒöVŒüŒ÷ŒñŒç&ŒÖŒüŒûŒïŒÿ"Œ×ŒÜŒë;ŒÆŒÓŒðŒæ0,=LŒÂ.ŒÙŒçŒû]ŒÎŒø7&ŒÄŒô1FŒØ<!,//%Œö=73#'3Z;>?Œþ
+",8	#	B
+Œò:I0YM0IAX5=#8H71‡B:>0Œ÷, =ŒÕK}`ŒýD^DŒÿ1KPJ*DF(JŒ:3Œø<#1HrJg=>oOVŒõvZ(F$k5h[,lpe16
+^OQ7l>ŒöYO57&RIn(R(^6Y"VE(CL%[-AL^361\gr5,?H<So6"i*Œ÷L)0cQ2Œï,6J;?'ŒúYmhy7^%'HM" 5;;\[[ŒÿN%E6@PYsN,
+Dƒ,ŒüE<.BY G>SŒì#B'$I&(.;ŒöŒÛVR^71h.2T$ŒåŒò%Œ»,7y›·Ž	 ¨—k(ŒüŒ÷C"3Œì.ŒâŒçDŒÖŒÈŒðŒêŒÍŒî	ŒÖ!ŒïŒãŒÚ,ŒÊŒõŒå#Œ¢<ŒÆŒÂŒôŒß ŒØŒÌŒÎŒëŒ×ŒÎ‹%…Ç…­…¯…±…³…®…¬…¨‡&KBG$ŒîŒÚŒüŒÄŒ³Œ½Œú&ŒõŒÙŒéŒðŒžŒ×ŒôŒæŒÍŒ˜ŒõŒñ Œ›9ŒÈŒÎŒñŒàŒ®ŒûŒï0ŒúŒËŒÐ/ŒÉŒãŒÆ
+ŒÖ:+ŒêŒÿŒï)>?ŒçŒ¶0+ 97!*!ŒúŒùŒêyŒî/ŒöŒó)TŒÇ"+,ŒþB6ŒÿŒã6+/Œæ?O6%
+$D
+e9Œå0	H8.QŒþ,Œõ*LLPŒä F2,Œç•JJLD9` D8BŒòm
+%TEŒòŒëŒÐ(RE%Œí>l*CŒðK9 /@*_Gh7M}0-s$Ee=ŒìŒà31k=3 ++)YCZ' H-^qB3/'SwM8U/CH\!:B:M!#Q(p<(-C8aLyYAg]P$ \b*V=2A/)Jm2C6!I>;>6A'19?AWnR A@X/)@FinLU W7*V+?2b-LB
+A]8;&ŒéDZ1+A$.?6%#[%#-,!3	ŒþX I |6/AZv€N'
+"LF#SŒøŒð+Œÿ/LTŒ÷/"; <W7K);15t+<ZÓŽŽWŽ3ŽHŽDŽºI42ŒáŒ­?BF,ŒãŒÇŒæ,ŒïO ŒïŒ¹ŒÿŒëŒöŒóŒ¾ŒáŒÎŒüŒÐŒ¼ŒÕŒÃŒ“ ŒïŒùŒ¸Œî"
+ŒÁŒ÷ŒàŒüŒãŒòŒß‹ …É…¬…±…·…©…®…¦…±‡8PŒúŒÀŒÎŒÇŒûŒ¦ŒÀŒÕŒüŒâŒÿŒåŒäŒÕŒÒŒÍŒ÷ŒâŒõŒ¹ŒÖŒ¹ŒåLŒÀ?Œî3ŒûŒþŒè 8%ŒôŒò3;6.Œà(ŒðŒé
+ŒÄ-ŒóŒý"-ŒèŒê7ŒôŒð 8EŒÎ 4Œö6%ŒÌo+?Œñ;8
+ŒìŒËŒó*Œò8"ŒÌ]œ:0%Œá
+ 1AŒýNF6?0ŒÔ8-#
+zg\l->@)+(d[*Œô,V*'ŒéŒÝ!6R
+`DNO6!Œû<-7[HG,B/BBrX7]E-š8 hMe#%,FQ794Vp2YFB{%`!dM^Y!._,<,(X‘=B5
+Œë%#kV9:&MOŽ	V'_<[k+9Œü%4_LU-(4ŒÍBf+N+"II=UC/"%_‘631)]]*l@_!c[[6AN.I<M2B›!;1;6$F$Z('F/ŒßMŒï:YfŒýE'n5u82ŒøjH7fŒôP[U>&B"4BŒØ>%4ŒÀ11,Œë	Œû	FŒ½9.G1"E1Œç;*JN¯ŽŽwŽœŽIŽPŽNŽ9Ž
+p9!ŒòŒæ$ŒøŒö(ŒýŒ÷Œô<5ŒôŒîŒçŒöŒñŒ·Œ×"ŒÍŒé
+ ŒêŒµŒÊŒÞŒºŒà'ŒÔŒòŒòŒÐŒé‹(…Ë…¬…ª…°…°…«…­…«‡!+)MŒö@ŒÎŒåŒüŒæŒâŒè<ŒÄŒçŒÍŒºŒÄŒéŒðŒßŒ÷ŒýŒá" ŒùŒÎ"ŒÍ.(ŒóŒá*ŒÒŒÇŒêŒÙ
+ŒçFŒ¹ŒÂŒùŒåŒû)*Œº ŒßŒôŒÒ9B! ŒýŒøŒúŒÂŒ°ŒýŒïŒùŒç2 !ŒàOŒÛ((
+!1Œ×:2F$vG+wT/n)ŒÐ/ :"S3l9=H.UŒûŒù4#6"Œå]G.4Z=@Q]5&ŒÖKG?g9'/"$Œå$!5C	c1&f&Œî9>D/)Œé0NPT-"(Œò0OŒÑ
+MZ–(2bŒü8wV@@$G8kyJ*B@UW;82Haa0	Kg$8uTV )@qWA-]E?9k#uBgŒø(9#:3 /K|&N^0>FT*)IndeB3nX-/oM"41!>H<&%h1.‚X^Y.Kn4?5:gXRq9P4+--BYFŒôM5C)ŒÖ#"KSB8`@6&Œú/+ŒôO@H7-d J43Œú%Q<-YŒ÷2#%Œ»?8@B	\G,/ŒéiŒé.1p‘ŽFŽ·Ž¥ŽæŽŽbŽoŽ_ÊÏQ2M6ŒþŒñŒàJŒÇ
+ŒòŒ÷Œ¥EŒöŒÓ7ŒìŒà0ŒÓ
+Œå:ŒÎŒôŒûŒñŒüŒêŒÃŒÜŒÇŒýŒÇŒÈŒôŒØ‹…Ç…´…¬…­…´…¨…©…¬†ûCEŒüŒÖŒàŒðŒ³ ?ŒèŒî?ŒäŒûŒìŒ§ŒÔŒÙŒâŒ»ŒäŒõŒµŒà9ŒÛ#ŒåŒþŒá 	Œé$Œú'ŒþŒýŒñŒýŒ÷ŒôŒÞ$0
+ŒþŒÿŒ„:ŒñŒêŒðIU^ŒÝŒüŒðŒí/Œô#ŒüŒÁ:2Œ÷&ŒëŒçŒÈH#Œá1!(Œé?ŒýBŒ÷YUŒ÷ŒÖO"ŒüŒØ3Œþ,*+!* LŒú99%YŒú) 	Œù%=T1OUaFŒÿO#!RXDK(?,Œþ&@Qc:Œè52Œø'wA…hO? A&UzG;,&k[Fc+Œî6q63d(P9h>yO&* &vT=&aB?3=@UdGGMŒõb>PM^Z)_)U+$P‚:V/HyEA,M,Akj+RN/˜	hZK9b7CaŒþSgT.KXA68Z9y1?"n<802I‚c3GŒýk&R*-K$Œé1‚t1*Œï>	3!Œï/p> <1!`HŒÑ/!ŒÞCH-#C<Sm
+22!/N55/0Œþ.3"4Œÿ75.*Œ÷"ŒüŒì(/&P!/9*,2Œÿ
+*ŒîŒá>8!Œç4”ÆŽ]ŽÀŽïŽqŽFŽ@Ž8ŽVŽ6Œî\9ŒýŒå& ŒþŒèŒÏF"aŒ±*ŒöŒöŒÒ
+%&Œû%ŒùŒÕ</(ŒÜŒùŒÉŒÜŒõŒñŒ­Œô0
+Œ×ŒîŒÂŒ§ŒÙŒÒŒ×Œî‹[…Å…©…®…¯…­…®…¥…«‡!ŒæŒìŒûŒïŒÿŒÜŒ±ŒÿŒõŒíŒå+*	/ŒýŒ©ŒåŒáŒïŒïŒ÷%,ŒÚŒþŒìŒÿŒ¾Œç<:ŒáŒìŒçSŒªŒÝŒùŒðŒÌŒº'VŒë	%Œú!ŒÿŒõ-ŒòŒÞŒöŒòŒåŒçŒèŒã:$.Œú<Œû "Œê
+*@Ih)RŒúŒì2KCŒÒ%?X62M:9ŒøŒà7-:ŒðDŒá  ,PE%C:9}I?v'z0=C
+<19%7>5KJBŒí2ŒýBd.>1)E &;R=57F`I&7mŒõ
+H6)Y>.QSRR#6@š(IYnZ‹`:ŒýV,+],4
+a 59kIqIuJnbNp~N;Œòw/ ?3L}$kB@H@-2`H;9 HCBo0DP0H8%Œþ\ƒŒù8LLj;)“R>K&(C5./_UlUŒÿRS;#0LxY63|SLb5:*8Œ÷5ŒñŒä>%ŒëJ)/UŒú#L?'Z@TŒô1]Œû C0-)IK<m:_)‚NE=<(K$ŒýŒè&ŒÏ<!;TVŒùŒû362!=*
+
+NŒîCŒý<C•ëŽ3ŽÅŽ£Ž·Ž¤ŽjŽ9Ž6¨¡]ŒçŒó)>9!ŒÕŒãŒ´Œó@ŒîŒï>Œà,Œ×ŒäŒüŒéŒ©ŒûŒè	6Œ¸ŒèŒçŒ÷ŒüŒêŒÓŒÒŒÃŒé ‹O…Â…©…²…¨…¯…­…ª…«‡ )ŒßŒðŒÜŒåŒ¸ŒÆŒúŒîŒÿŒøŒ½Œ¦ŒÒŒñŒ±ŒæŒÀ(ŒúŒÓŒíŒïŒûŒÙ$Œê'ŒüŒâŒÿ%ŒþŒíŒð9ŒèŒñŒÔŒýŒÄVŒäŒõŒáŒÇŒþŒù:)ŒòŒ÷ŒéŒÊ/ŒöŒâŒÍRŒòŒÂŒï%+Œú8  
+ŒîŒøŒýŒãŒçŒèŒýŒüŒÁ2PŒû>0< Œò@)J9!\9	‹:O6+7ŒÿT2Zqv/< R\I/ENR91Y(:Vy! %19,367ŒñP)ŒûŒø:8ŒùŒøLŒþiO+:K>Œî/Œþ2ŒàB	FŒþjI`\"ea VpLE3#*92!_nD@BCYAJPI}O9VIZŒïiYO@;E9e>D]@8Œ÷z72;MG,[%P+5+93?VIFjDT$D3HAFM)FDi iTŒü>0kJ|(G%oŒþ;F7e/`Mr$G>[AXNeXef%L=w]3=GBŒÞ#ŒöŒÿ;Œþ,:0"@(Œý,=MŒý6>!Œú_AŒé)Œé5ŒõŒê&%0<4KRr(4#Œí
+!	9%6Œï<E6E78.!,#+p™ŽŽpŽ†Ž’ŽXŽ!Ž×¦5;*ŒûŒÜŒß !ŒùŒÐ+ Œù$ŒÙ#ŒêŒóŒÉŒÉŒ¤ŒÖŒéŒþ
+ŒîŒÇŒÇŒüŒÑŒ×+ŒúŒù CŒì‹E…Å…®…­…©…¯…¦…°…¬†ÿŒ¨0ŒãŒêŒëŒÎŒ­ŒãŒ÷ŒÓŒ³ŒùŒíŒú ŒÂŒûŒíŒÂŒÿŒæŒî+ŒÜ
+9ŒÑ+ŒåŒÖŒÒŒøŒêŒÔŒöŒòŒÝ
+Œõ,;ŒåŒê!Œþ@	ŒÕ	ŒäŒ»2Œã.Œ÷DŒÅŒÿ%
+Œþ$Œÿ+1#@1ŒÚŒù&""ŒÜŒöIŒæoEŒïŒÿ/ -ŒÍD(ŒóF
+#MKWPD08IaDŒíZ
+ŒýZ7IN3Œý*FP>hlE6a&S LŒý@,?XA"XgCVhŒý!M;\B2!2<@,)UL64Oc,B,)	G?<)i_P}aI#‚KAqL]0Q)q2VŒðGZF;K!+V>_os,,cZPWŒþ1SN~%j>?S[F2mMG{@m-#IQ=L6F4@l85FlDET):*CJ++L-=6@A@Q9\JoFvVƒgR•U8`('RKH9=6ŒúŒûEpŒîŒÿH8	^j/#ŒéQ66P@<H)!ŒëŒÃ;)Z7Œò(g.P h%Œä1c 8"E5/aT3#O #$)&Œç/80nP/	%Œô2?Œç&D,€ŽŽCŽ€Ž.Ž$¿½®m#SŒãYŒß&Œë Œæ#+ŒáŒÌ+)ŒöŒöŒþŒÛŒÓ!ŒœŒñŒõŒÚ-ŒÑŒÄŒßŒðŒ¥ŒíŒÑ ŒõŒç,Œ¹ŒãŒÔŒÎŒø‹-…Í…ª…³…±…±…¨…¬…®‡Œ²ŒøŒíŒéŒ½Œ½Œ£ŒðŒüŒìŒþŒïŒþ#ŒïŒàŒçŒî#ŒâŒýŒÎŒçŒþŒ²ŒÕ;ŒõŒçŒÌŒÈŒÔŒ‡7ŒÌŒñŒû !	ŒîOŒìA
+0C8ŒòŒÈŒ÷*Œö$ Œ÷<Œæ%Œá@!ŒèŒËŒë ŒüŒó)50 %(> \?SW+!(Œùg0ŒøEˆ-S)&Q8+‘<`c.%CŒþ/.OxS1X)&(@c/%T3=OD'ƒB ;?p
+ ]/0z, c%)5lPYX†YZV66
+dA93.Œó0b|R?27*AC6TR,œ)7ah;dx(ŒôrŒì_+ŒåK^H0<7f[s5^Lk[4)![DU5JMVc €e9'Mb5dGF5<ZyDLŒò_dJ2E?UA.$YŒè>/?DM!Wx_!4
+*%3aJŒõ2+3Œþ%D^b2I"f76w_3•3"<gS5fcF@@tT3!Gl8$0>>k4EB,OŒß'6Œý2I+V/\EŒ÷8JŒú@A,["qEM9;^0_#:?C!%!&6ŒÛ(ŒÄŒ«v9#YàŽ4Ž]ŽWÚÒ{¦NO
+aŒÌŒº9ŒãŒðŒàŒãŒ÷ŒÿŒï-ŒæŒÿŒæ7ŒðŒšŒìŒð%Œ÷ŒäŒçŒ÷ŒïŒÁŒÆŒêŒâ ŒÆŠî…Ì…²…­…¯…­…¤…«…«‡ ŒŒïŒ˜Œç	Œ¾ŒÃŒêŒðŒŽ
+ŒÄŒùŒ£ŒóŒìŒûŒ ŒâŒßŒÈ?Œ¼ŒìŒÉŒíŒò 8ŒìŒåŒð*ŒÜKŒîR.Œù'.ŒøŒÿJŒÔŒÒŒáŒé#ŒåŒ¼Œô4ŒþŒ÷Œ¥ŒóŒÍŒêŒóŒöC)
+Œý<(#2Œª;	m@+!>2^N[BŒþ=87*Œì6;ŒöŒ÷!3I(1D!)B)E;)^ GCFeF\<D=Ca|C*I6<Cv9JFŒùh97H)$6ŒïQ$v8LT7ŒþC32ŒæU:U;$TB,/['?HVwn.?rI#KAa^SWM6FZ6rKhLŒüi+Q4^œ@gIƒ9fAv>WC0 ISODG<#-#WK*?6@?;ƒnQAE@AyŒûAKpVZ$F4.bH"F4@
+ŒåLo$$9E†7_
+5+2s!<.=()@ABB%4*RF2#0+Œé!='$/YŒÃ t(Œû)%9Œúa2HaY2xG.9U]\Fa:8"6/ 4ŒúŒù@h,$9L<>" Œí_‹Ì×˜³é2‰0LŒý;#ŒçŒâ&+Œó!ŒòŒöŒò	ŒùŒþŒüŒøUŒçŒìŒÒŒÙŒÏŒ©ŒÙŒÿŒ¢ Œ¬ŒáŒÀŒËŒóŒãŒ×ŒåD#ŒÞŒ¾Œ£ŒÿŒìŒ‘Œú‹<…È…«…«…­…«…§…­…©‡Œ›ŒÑŒìŒÜŒµŒéŒòŒâŒàŒòŒéŒåŒùŒÉŒÅŒ©ŒåŒÏŒ÷Œ³$Œ©ŒÿŒß.ŒôŒÕŒ¿Œù	ŒþŒêŒÈŒýŒàŒú 
+ŒúŒêŒëŒý8Œæ3ŒöŒËŒòŒýN 	ŒüŒç ŒöŒþ*Œ×Œ¢ŒÏŒøŒøŒø2ŒÓ.Œú ŒäŒø-!
+ŒõCd>UŒñŒ÷V7BXŒòŒù5Œí Œû!&C @Œï  -EUE/$;E1Œü(Œê$t*]ŒûB>)<AX(eBDZ:6M?}F?%nb,)%=<I$'!09^^/'P%'.LEZ?)ŒéE=7"U<66>]P6 }CczA>QVRuA^S?1RaK2[ETEh:oFWciY4\4:O†/8!qI]KQN1Uw+e408,Gƒ/BD3H)I6MGP,*<˜'-'cr'AN  MK.#TG',d,D(G"9=*D5|@E639;Œô!$X$LŒô:*C1>F7DF"?3!/3ŒÚb;+E&48|&c7/H'_)Œõm=2-!+ <-5r@41Œ]8Œð QŒõMŒþILG+:xs<dŒÿRŒã2H Œ÷ NB%ŒÒLG2/'Œû	(	UŒÙŒóŒ× Œ÷ŒÛŒûŒþ&	.ŒàŒàŒõŒÙŒÓŒÇŒÖŒõ‹;…Ç…®…°…¯…®…®…£…«‡ŒÒŒáŒÌŒÙŒôŒëŒþŒäŒ·ŒùŒãŒâŒûŒíŒóŒßŒÑŒæŒ¿:ŒßŒîŒçŒðŒÇŒï!ŒþŒ÷ŒÿŒöŒÅŒï;ŒêŒÈŒòŒõŒûŒóŒáŒùaŒ÷%.GŒôŒ¦ŒÛŒï?(ŒõŒÏŒë6'G	Œû-ŒñŒ÷3Œá8ŒóŒýŒýŒ¯ŒÔ?MŒôŒìŒþ:KŒâŒß/:
+ŒÒ&Œû gMDa*c-L%Œí-LY+%T7	&M9lH<"{|69R3kL#VDV=B5L:@(*50N¡C$Œÿ_aA8t~\- ?
+0<6'VŒþT2=@l#aQ< N|?i9J,A-$E$05 )o`5k(LI[,g=;<$_06)-dŒþ6O;njKIxSgbbNqZ	e:44[b;B@SU2+L<T%#p|;[„3D~629u24WŒøkwM`n^Z
+f4J/F '%oI`WEW"]Oo@B(TsUNRJ0TL.,E6Œù6>>	5Œë:W]71O2V1iTCH3!2.@l<#m384‰&E5”X<FQŒ÷JH_CŒý6ŒíT' 662DPD&=1t>4*JX76rB-ZN"1Œú=Œ÷6F1ŒáŒàŒñ5/ŒÞŒ½ŒüŒþŒÚŒ¬ŒóŒÈŒ÷Œý?ŒôŒîŒÌŒòŒšŒÚŒùŒÏ(ŒõŒúŒ£ŒùŒãŒÑŒÙ‹@…Ñ…°…¢…±…¯…¡…­…«†ÝŒÈŒîŒÐŒòŒçŒ´ŒæŒãŒÅ	ŒóŒÏŒïŒÏŒ»ŒÚŒõŒÈŒÂŒîŒÙŒÁŒýŒèŒðŒâŒÆŒ÷ŒíŒ×%(ŒÝŒûŒíŒî`$##!S#ŒëŒèŒëŒýŒò&9ŒâŒò8ŒôŒáŒõ(Œê‚%bŒöŒëŒÉŒÈ0	.Œð?Œâ@Œ×$ŒùŒÙŒÿ
+),,Œñ13Œó(MD#2Au,4#3&7Œô'OI6!F,Œâ&)BŒç=Qq(HŒ÷c6~k?U-iŒõ;Œõa65OŒú:X,=N?16>'!&)@1@Pa5`-!3ŒûM65JVLPI:,/‹Q2.57?MCJkvy`9;^. ^") kE&1s	<?c|lj8n-?JDHgYI%zj(G,>g'7=F›b]AEF6AŒÌ5 !sSe^8,:VI'Ž&9 eN¡b{D]/5AfU[>Ss†R87k25.J4Ic=”H=L"01q0:?7!HODQUTL2\V"IŒùM,0@\ŒîHK0fJ R¢. 8%2Œû5I7 Q.Œõ8NŠ#/G7/'ŒÙaŒúQ6LŒùˆ	ŒüŒÖ6ŒÆŒì?L:Œã4Œê-*ŒÏ ŒÿŒñ$
+ŒåŒÃŒáŒú9Œò ŒÆŒé	ŒïŒþ(,
+ŒæŒÅ ‹%…¾…®…±…¯…ª…®…®…²‡ŒžŒíŒ¸
+ŒËŒÇŒêŒõŒ³Œ«Œ¿ŒÜŒÕŒ¹ŒçŒÛŒâŒæŒÍŒûŒ«ŒðŒíŒå'ŒÀŒûŒûŒñ ŒîŒØŒ÷ŒüŒËŒòŒýŒãŒØŒç#JHA1FŒã'4ŒêŒÈŒ÷*ŒàŒçŒé2ŒÝ2ŒÔŒá"Œñ6//_!& j'L,C-<ŒáaŒó"X&_!	).B@<$FŒÈ0+'Œ÷!j(WmnJ^N7OD‚„96v9B<7z2QV/V?W9)7(:V#E7_;h
+< )ŒÐ/Cw.8FI4!k
+30=	U<)Z,bEWT8R< P<q}@Y^:M?mYN&Kjr%B>6Mj'72MVDO(	)1uR-w]c #8UP?Œî5JM_Œø/Tn2)u*44^%_7@A]0WN?K<TAM(.>	U-'G/g-{4_0>[=|”h_>YXB,\kLŒï-73%%N1MV6$Urx!J7Z.ŒöŒß .U5ˆKfJHC:2q-/$=?Cˆ Œ÷(ŒöZN FŒÚ(ŒôA="Œâ<6 %6)ŒýKYŒ÷&O4!
+Œñ:/ŒèŒþŒàŒÓŒøŒôAŒÒŒñŒáŒæ1Œã&ŒñŒòŒåŒâŒÕŒæŒÕŒûŒÀŒÇŒõŒÒŒõŒõŒ÷Œô	Œú‹…Å…¬…¶…«…°…¨…±…±†óŒ†ŒËŒðŒóŒóŒ‹$Œ¥ŒôŒûŒÜŒÆŒýŒÎ ŒïŒÐŒÒŒýŒÔŒõŒßŒþ1ŒÏK3ŒéŒÙ-	Œä(ŒÜŒÃŒéEŒÛŒÈI1Œý
+Œ÷^$:Qr<+<:Œô\%MŒÜ@%ŒÿŒÒŒâŒÕŒùŒÓŒë  ŒýŒþ O+ŒÛ)FŒþŒÎŒÎ	_ŒØŒØYŒè:&dŒþB@PŒü.'EI;!:Q:10!ŠP]nj]Œû9ns+M\{|U&Fhqk)\<uP1X>`MŒÆ/7=(0>94'Œÿ+$81=	".SYfT59‰+Q~P90Œò5'NLKsA€_U4V%ƒND^:Fcjˆ\IUBB8b>sT[t4HS:ŒûZVJ_La$$>4}"o7CSBT7G`4X<	!"#[X,.POlCWH(:>”3/Ji0elWK9ULMQ!‡Em;K"LŒÚ<,kLŒÿ!-	G!
+5%VDy.3H27bH
+VŒÿ*DH]I>ŒüŒûŒü	R<X$P&A<\,o+.CRBHŒó&K:	0S%1ŒáDŒî*6:Œþ.,@ŒÜMŒÕBŒÝŒ÷IZ=%ŒûŒýJA'3&Œà6ŒùŒñ61(4Œô0+)ŒÔ$Œ£9Œè!ŒåŒáŒÙŒ¬BŒîŒåŒõŒãŒæŒÌŒ÷
+‹…Á…­…°…¨…±…¥…©…²‡Œ®ŒÖŒÉŒý
+ŒÄŒãŒÄŒÐŒßŒþŒñŒÐŒñŒÔŒÄŒøŒ÷!ŒõŒ¦ŒÙŒ×ŒñŒÍŒøŒèŒúŒÈ/ŒÎŒÝŒ÷ŒëŒ÷G
+Œ÷AiKY6›Ñå„³»UVŒýŒÎE
+ Œì		Œ·Œ÷JŒþ>ŒýŒòŒ®ŒÛ3ŒùŒ³ŒøŒòŒØ ŒãŒáO-ŒèŒÐL,Œù!&WD<5.	Œþ11Œû*ŒÑ4G+#v0TL;].DNkt;]S’}}cF d@W dQRŒü(>T<!Œó1BX?@E*#A1Pi@OO—QŒÞN/O-2L5R@8+ˆ h5jd¦)ez8PJ7LQv0V/u#GSCYŽ7`aq%Y#$;QTXq'lO%D.ŒõWI€l]=(Œð:&\MYd3QLŒóg9cwI":2WŒê:&=h9@ ;BC<DŒî]nbB >†3fpK^JRr@D5`4l>kw<Y){**G2%6ŒôA%lXn!G6R#'`BV,"%;B%rJT"'6bJ !2Œý'DŒú(TDT1| BEŒæŒè	#dŒìF^Œõy0?ŒÂ;ŒùDŒê-(ŒÒ&.0ŒêŒºŒéŒ÷Œ½(ŒÔŒèŒ¼ŒöŒÙŒ³ŒÊŒêŒáŒðŒæŒÿŒëŒé ŒýŒÌŒþŒöŒÍŒòŒåŒ¼Œú‹…Í…«…µ…¬…±…¤…ª…¬‡Œ½ŒÎŒÕŒõ	ŒðŒÀŒ“ŒÑŒëŒæŒ÷ŒÒ"ŒðŒòŒØŒ÷ŒæŒûŒµŒíŒËŒßŒ˜Œô/ŒôŒñŒðŒô%Œ˜ŒöŒâ 3OTrÍŽ4Ž“IŽ°ŽŽv
+Œå%ŒéŒô.7'ŒÈ6Œ¸ŒÏ%ŒîŒí(ŒÐŒúŒø:Œë0Œî.<<5
+Œð><8%7?nK=7*#*"ŒåŒ×!5T]ŒóbZ)DKB.LŒýQ6;jU;_`V=B]`H„%Dlo0B#BUGLZJ4(M*2i)T. SH;FX4>W`&_„(9(>@$FM@V-In|#5JSU>8=*-0-1/*f?¦}0(&C*yOwkO7Tz =F)8jG"<xcC)Y#J]3Hdea…SŒý8YKOWq	]R5X‡Œï=%IL=KH2o1D=l1:kkR^˜w[h‹pOQ\htA29G?b3V70]6‹F-6ŒêXWf:@;G	,
+#P6SP›d!	@v5h{8Le$*6lŒìBŒß8#Fb(!PBŒà?
+@4(!Œï>*ŒîŒÖ1"#!EŒ÷)ŒùŒûŒñ'a!ŒðŒÿ4ŒÆDŒãŒìŒä3ŒõŒðŒéŒñ&Œí,ŒæŒúŒþŒé
+Œù2ŒØŒîŒßŒýŒù‹…¿…²…³…³…¯…§…¯…§†íŒ¼ŒêŒêŒýŒß
+
+
+ŒçŒôŒÜ
+ŒñŒØŒåŒþŒçŒÓŒÀŒåŒõŒô Œ÷ŒØŒí ŒÕŒðTHŽŽ±È÷‘â‘ù‘LøŽÜ—Y@ŒïŒß	; Œþ5ŒóŒóŒú(ŒëŒ÷Œ×Œø(@"Œÿ1ŒÂŒç
+)Œõ<Œç'=#F#W<ErO+6^?Œþ5=OL4C95ŒýMW^X@JoJ[~3¡a|m–´oz]a>j@GT.hWK? C5L,Œù#^D	XMŒû[hŒþ_eF8\5^WqM%Y-#I€IŒï/#JB^`XYp9"I3>[{EE|8sM49N_*b=BR:i]–)W][H•jR!$T2?8^[z4JxXZ
+A>3/?@XRL RJ9)+`/934P-(D2d?K:8AWq7D†?J‰{]’‚¥Yva+R\[[R;'6"9:"a!V/I2@c#G„Q2FŒþ;‹FTFJEŒú38e |<OO:<!*0Zo6pŒæBI6_"!_?B;"`T%Œ¸Œû-G9z0=&/Œý8 Œì3 &.a;Œ÷ŒªŒØ.=$Œò8Œ¿jRAŒÃ-xŒì ŒâŒúŒäŒùŒùŒÀŒëŒúŒØŒØŒÃ
+ŒüŒ»"Œ÷ŒßŒÜCŒÐŒßŒéŒð‹4…Ï…´…¬…±…¥…¬…¬…¢‡Œ“ŒÑŒñŒÈŒäŒèŒÉŒåŒÎŒàŒ¤ŒÐ,ŒøŒ×ŒäŒðŒùŒ×Œæ$jŒò(ŒûŒÿŒýDŒâŒð_Œõ!$dŽŽ¨ñ‘ø”D”è”Å”b“³¬ŽjhUEŒù/Œ÷ŒÆŒú8ŒÚŒæ7ŒìŒôŒé1.,ŒêŒô.Œ×ŒËQ4ŒÐ:e(0T'F"Œê-)<8Œä"c:+]]=UŒé.<?18 ŒÝH
+#J!*-I<<RoZub;'®‘tjÅ¤Ü\›‘aŒ­j&C.n[ZlX>;X6+%;-*0BrOV]08.I,‰aX5L?QHf4bl€„-(2}aL@:KŒûM!yPH|yV[ 
+Z;.T[aŒÿy4:p2¡l UU8E†?Œþ„]P`<KQ9)™/(¨G04=`"D.I<u‰*TD&:q-N*iV"ŒýkhB=lqCHv}9¨¸×ŽëÇ…AŽj*C'*2AY=5,oAlG8!^KZ8;$C22%R90Y1(c+7%-)&%;P#DD-Nf,DŒé92BŒý6+@ŒÙR]B:<,Œî<M$*$#ŒõŒü4ŒïIB.Œú)DŒÜ>,ŒÌ%ŒÒ7ŒæŒ»ŒùŒüŒúŒò,ŒÈŒðŒäŒÈŒäŒÁŒØŒü Œ»Œ£	ŒûŒßŒçŒýŒþŒó	,‹b…Æ…¬…ª…«…©…«…®…§‡Œ²ŒÐŒùŒÔŒìŒÅŒÔŒ®ŒëŒŒº#ŒØŒÆ-ŒëŒëŒê1ŒÕŒäŒà ŒãŒ÷'	Œ®Œö8ŒõŒþxWºŽ­«‘Å“–•Í–•ø–â–;’cJ÷
+Œô/Œ÷PATŒó"ŒüŒüŒþŒÙ&3ŒûŒüŒäŒ÷,ŒþŒÇŒù"Œñ;(+ŒçŒæ:ŒøD!ŒÌ/64)FUŒú$8C)UhŠ‡:@)	Œøet*
+#s*]6TD"^%&Nk*irkB>[žìîñÄð™¿÷ò¿Y$JB<ƒ_BVk7N!=8/1))&ŒßG3K5/hEJ*!eO]4\XO#/7DTM"T6DP0!)-gQ(o_8\;,A1CDZWM]?VŒör%OZR^'FBGV	aŒï UL<yK9.mEGxUBb:`[C
+=I<nC#+PRŒèŒæI.B[s$<A6I:A@„[E;Z1mew„kžßŽNŽëddŽÖŽtè¢TLžc[)+ 0L>@=E07:+JJ L`_b(9s'[KZ!8P\]}0ŒþC7E
+-o9ZC]8HVP9sHO*E3ŒÜ+\%9?10Œõ)@Œô!>T,64#RŒð-G5.Y.
+Œå=3( ŒÞŒÎŒßŒÿŒìŒá!Œ÷ŒØŒË)ŒòŒîŒÚA3ŒùŒâŒ×ŒÀŒâŒÿ*Œ¡ ŒöŒâŒû$ŒøŒÈ‹P…Ä…´…®…©…´…­…¬…«‡ Œ{ŒóŒÍŒàŒÐŒÛŒëŒÞŒÍŒ÷ŒÛŒÞŒÃŒÞŒéŒÌŒô$ŒßŒéŒÛŒæŒû!ŒåŒåŒ÷&)ŒåŒÐŒú):#Afêb‘—“”·•Ç–(–ê—?—5“ºõôŠc+Œè)(+ŒÅ?ŒÂ+,ŒþŒ÷ŒùŒü;ŒÛŒñ	:Œô +7ŒêŒáŒäUŒóZBfP1C.ŒûVZ–9^\_Œñ.$,@;%5!Œó9"wS4T[Co€€ŸŽŽûŽ
+ŽHŽÇŽYŽŽNŽ
+Î‰•fRgL+T`6?‰>3qV?)W5%bIJ"!"J3iI-ZY1Bx>Œ¾…:90Da*8?B?C\=Œþ6J_L]ACM.;EP9@96}Ab0TVc/VM\)2{zjb\Œýjl?6†/ºC]‰aŒÿlQCK =%=]RpQ\_"HOBM\E<8jF+A5#A5$%¥O5_Tµ·ŽGŽo‘’E‘Õ‘ZrŽ¡Ž"_v6S\Bq0V39C
+b]h K=^T=Œì9USŒåD@*M8$<2GpW1,$4!W('
+X;/pJ*ŒõP++gŒþA&7>/Pa>4>!\NX[WB8ŒõZ$7AŒÊ4BŒü'(3Œ÷/+ŒëŒø
+ ŒøŒù*Œî?ŒÑ"ŒûŒ¾ŒïŒÙŒÚŒÿ"ŒÎ	ŒéŒØŒÙŒÙ!<ŒÖŒÝŒùŒ÷ŒåŒçŒŒóŒÙŒåŒø‹…Á…¯…¬…®…¬…§…®…®†ùŒ–ŒÝŒ®Œ«ŒÒŒ¢ŒÒ)ŒõŒõŒÍŒìŒíŒÖ2ŒòŒºŒûŒèŒçŒþ ŒÍŒ¹
+*#)=seä#‘‚”2”Ý–
+–s—A—&–ì“gŽWO ŒþŒäŒùŒØŒùŒÜŒãŒé"XŒù!ŒçŒúŒüŒû4AŒÙŒåŒÆŒý<7=+Œó)B60<5VraP€u]0?caQB5ŒÜ*>71P DZ`I3T}aYal­…ÐôŽŽ]ŽÐ…-ë|ŽÌŽnê´Ye,^8Œÿg7Œø+_Œþ*H3O%5cOc@aŒðLJ14+XŒøGx?NIC)ŒÕN&]U."vL0p,4eYG_9+Jf2N<k;/%9QJ>	QAŒñ,>L><`„w4UPQp_"ˆ,*„3Rr0wF$[>asO`Œìg[	.AK/[B3aHA=*W@=
+Q4DRE %7}ÇüŽôï‘é”;”r””9“ö¨ŽDü™mtB`5:"
+73?R7B6<JŒÿ0Œò@d<!;SF+,wJJG}N0 8 $/T"!YR#4@9EZ6O,W
+IiK0l`
+Œåc`K40E<UkŒÿW5$ŒõŒè`/ LAŒÀW1'%Œø2;ŒüŒý>ŒýŒÜŒôŒìŒí1ŒõŒÇŒÚŒ¼ŒÈŒíŒñŒáŒÛ
+EŒÜŒÒ
+Œ¬Œ¾Œ²‹.…È…¥…±…«…ª…¢…¨…­†øŒÄŒûŒøŒ³ŒôŒÃŒÙŒÚŒïŒø	Œÿ&ŒÏŒîŒõŒùŒéŒµ"ŒÅŒÓŒöŒÜŒÇŒå%ŒÀŒÖŒùŒßŒåŒú=ŒÛŒýŒøOŒÐN^µë„’J“ß”ê––:–~•-’U]ŽVMŒúŒé+ŒÝŒÓŒúŒìŒô#ŒÇPŒí3,6Œñ2ŒËŒÖŒìŒÀ\-7ŒÀŒâG6`Œä'rŒå^KA~%;?HŒñ2 =wG&IcG<%QŒìD3q™e›–áëŽŽ»oe‘ë”•R”A’ ðƒŽÖ¿Ôr@YL8z^ZŒþ!/8T#n0N+%*:m-"LE<HŒl#LŒü=Œöv6"N@<x8'l+ZD7po›.M')+@d q40€@wB)6D|ZEES4a9O18•xI)5lM1#…T`M(l`,=/)9&UKgzDJ?:4-
+TdH( =W{M@::W]‰™×ÈŽÖI’1”·–S•c”Î•”ò‘±ŽÞÒ²0Z†?4;/N[S;lA)eK$J"3Y.]-ŒÑ–ŒúTS6Y.O?KB4L,.U"P(f)0Œã@OH5B4*Y#$'*?5.7ŒÎ%HJyjSZ=&3Œÿ25Œô"*ŒÀKL;*
+#ŒŸ&+.Œä
+'Œß:	ŒÆ'ŒÞŒôŒñŒñŒõŒ .Œì"ŒèŒû	ŒÉ'!ŒðŒó	ŒûŒº‹h…È…®…­…´…®…§…±…¨†ëŒ¼ŒôŒ½ŒÑŒûŒëŒßŒÀŒÝŒñŒÛŒýŒ÷ŒãŒÏŒºŒõŒÑŒó6Œè-ŒøŒñŒæŒíŒéŒÿŒëŒõŒý*ŒÕŒôŒûŒß=Œò#XµŽŽ·‘¿“=”–•À•“ ’>hŽÊ–%61$ŒêŒÆA#Œë#
+
+ŒµŒÛ?ŒÉRŒåŒÞŒÿŒÌ3"Œ¨$! ŒÒ=NŒ÷Œç*?Œï
+IPt6sT6ŒÕ'?Œü0GA% 8L!4 y1d.xLM®fë×ô&’F•˜ôžˆŸ«ž›–
+‘LŽ$¹‚^dXf];m',ŒôVŒûk7"%#	M+M@=	8Y-B<[o4L|><‹P\tf!=ŒøŒô+4t>c8kQYQY<+f7	6+=œ+=ŒõdJ{\G:#<XCQ*?FŒô07HTBYq'QmRh@a(^>61WKH1 %`fP;G',4fDE`UKT%HP#O>kC[$KK˜Ž<¨’””–G–3•ª•"•A”/’e¨Ž:}wD<b`JS-f1TŒÝAD>7[?%+7Œ¸WAGjg3F#;$I8f&C.9Q][YQC0$Œö7$N€)(C. 3 >VQŒý6QKO?a>t+N*“~¡°r…\FMPŒÙ&>Œ½ %AŒÉ0&2$ ŒýŒûY*ŒîNK(ŒõŒçŒêŒý
+ŒÀŒíŒØŒ´ŒÎŒùŒ÷ŒŸŒýŒÁŒûŒñŒÑŒÄŒõAŒõŒêŒºŒüŒ¾‹…Î…°…°…®…­…ª…«…§†øŒœŒÏŒøŒÎŒÄŒàŒò-ŒãŒõŒçŒì,,ŒÔŒø.ŒÑŒ¼ŒØŒÝŒñŒïŒû"!ŒÿŒ·ŒªŒî0ŒòŒÿ?,(­ŽCµ·’Œ“§”`“‘¡1@¨B-#"ŒõŒþ1Œ¯V?Œ÷	#ŒûŒïŒéGŒòŒÛ$	ŒõUŒé!PŒÔK.ŒÿIŒñ8ŒíQŒü#k@R7$RD7nAŒØ#.B?)R	DCB
+&'F LR0	
+sM…N² —êŽÄ’ù—âž §­ì¯¾®¬
+¡È•¥WŽ¯Ž€ƒPY>B,B7Po!Z97CM]*mŒþ+|ŒóiŒ÷%Œóo4XŒþrAnI4swf'4>B86a#EM3%X:CŒÿ-TDhIql$,mf*UJo#3Z#xhvPg59IrŒýC90;&<Ei@UO0fKn7VG~†nPSc0E`'<l""(%Œþ,c!?H?€BA‡@$>N=:UWtP~Ëø’Ë•i–h–û–•ƒ•“â’$£Ž@åf491BRc/DL,$=LJ97
+IŒð7K%I*>r0+VUŒÿW(L}Œþ1TŒòh!VŒã*2j#†HJ%;/9 Œ÷#DŒþ-;;9Œäf0M1*5 ŒøF›“ôŽá÷n{2Œüq	vŒÙ2ŒùAJBŒþ	+6??;Œ÷ŒãŒõŒñŒêYŒï
+ŒÐŒä Œ¿ŒÁŒ÷ŒÐŒéŒ× 2Œì!ŒþŒæŒàŒÖŒÆŒüŒ×‹O…Ã…¨…ª…µ…¬…¨…®…ª‡ŒŒðŒîŒõ ŒþŒå
+ŒéŒ×ŒÛŒîŒÔŒòŒ¹Œ²ŒõŒ¹ŒÖŒöŒ÷ŒùŒÛŒÖŒøŒÊ
+Œë	?R4Ül¢‘v‘¢‘. ŽëŽ-:!H.ŒÏŒÅŒÔVŒýZ1Œþ&+ŒÐ,,)ŒîŒðŒ÷/6R	BEŒöŒÄ6ŒàŒñ2M)0e&4~1aRVŒípR#LŒá=/Ra(ŒÚ %2@l9Ho!I°ç¥Žyc‘q–Œž¢«ž¸N¿j¸ö·»¹®¸›K’;LŽ`”¸Xam9P„8?Nm$* ?]!:TN9X"-1".)EY3QAVicfxZ$9YT\NJNAB:+‚QZudE<8E,jŒô3I@U`B2$6#MxK+d5'BN492 :K'#$*YOG,TlO(/;?B.^.6K!uHAh‰Y]=v_EŒú9!—T7h/F-/K^Y%q›ÒŽn0‘¶”	•n•ú•t•"”^“‘V¦ò¯IN8N5| JŒê3-Zq+N'A"/qCK9\kA$J%+p\Œõ35c=CE<:74-UK*.O'j%!ŒÑO[I\.2•ÉŽ'ŽˆŽMŽŽ1ŽÀQ2i	\Œê%%!ŒüŒÙŒÔOŒñ?FTŒÿŒÉŒÄc"ŒÛŒó6ŒôŒìŒÿŒî 5ŒÿŒä%ŒÙŒé;ŒïŒøŒâŒçŒÉŒâŒøŒÅ‹0…Ä…ª…©…­…ª…¤…¨…ª†ùŒÕŒîŒÞŒÞŒÌŒìŒßŒîŒ»ŒîŒÖŒùŒ¹Œ¢ŒâŒçŒôŒÓ"ŒïŒþŒ»@Œþ&ŒÿŒü=g57pvÏŽ—ŽÉHŽ÷ŽTŽ8­yAŒû&ŒÃ%!eŒö/ -ŒçŒ·ŒóŒìD+Œþ	ŒâŒà.	(MŒì+0%Fl) K2\>,Œ÷ŒùP6!\4/	5Œê0m,Œû;H_=0%Ypfwm¶›ÐŽYƒ’úšì§?´Š¾dÂ9½s½9½Þ´’ ˜”[Žgyœ;…3R<-:%44E9"ŒýN8\*-)Q*Mdb?PgORnLŠ`MTCx];,dPavQŒãTY[„#cXf<5E’HP{::Z6(LMeU<WrV=¬JJb/)>=M7AiSwkNe[8[=Uj?V-IiDY%Y^Œü<6.rzd2NZ*LD`=+0C]K„D<?|UÁŽV9Á’º”'•]•%“k’c‘mèŽžŽ¨C[€[cV 
+F ^6HHHZPoY$Œî6F;;F>ŒýfI(ƒŒÿE>gbe&<%fW_A dj31^<!ŒñŒòJK!	&Œ÷Z_:Au<'OO8*ŒòŒé<E{#^âŽŽ1Ž|ŽŽŽTŽ%/_ *"Œû1ŒÍŒøXK7 ŒÐŒòŒÚ*ŒÞŒöŒäŒðŒëŒðŒËŒéŒÖ1=ŒëŒåŒöŒÒ%
+ŒöŒðŒÈŒäŒãŒá-ŒáŒâŒÌŒßŒÊŒõ7ŒÒ‹…Ã…³…®…¯…©…«…­…­‡Œ¤ŒÜŒ´Œ¸ŒÝ ŒÕŒ½ŒÍŒÍŒÕŒÊŒÿŒóŒÔŒóŒîŒìŒÐ ŒâŒôŒýŒæ,/ŒìŒêŒÎŒÙŒöŒð,CŒ¯ ŒÒ/iL Â¿Ž ûËó‰€D&'Œí9ŒøŒÀŒÑ$ŒöŒóŒÈŒ¾bŒö-ŒÄŒÜ!=	ŒÈŒ°(&ŒãŒæŒ÷I4Œá'	IŒö+œP,~)OFC3 "Œé#cYV'(8*&ŒèL?FA#l8^kŒÍóŽ—²“¶œƒ«·ß¿ÿÄnÂ2ÁÂ¼³-¤•>:Žl¯Ê”6/T=<(JBHZ6FSuX;W#5vbVi3.8])C1:Jx'H:'`];Ql?@@AjE^6/i`7»Œ÷:6
+NrCepBq	sV|-7ˆ$s<tF+%L<%wQ*Œó9J1E,B}KI9w:NÅQO3ŒÿL40IH]4\3q18Ib^
+h#2dŒó2@>&^l´ŽŽë’*“Æ”‹“í’(½ÎŽÌŽ»¯U—o||`bŒý
+-9XOd8!J-+.Q$!<:/4WŒõ,2ƒAŒÿh?ŒéŒâ!2ZHlR;Y1:51IR-109=Œý@ŒóCIŒÏB2p·ŽsŽ†ŽpŽLŽŽSŽ"ïÈ­.Œÿ#$B&,S'? N(Œ÷Œ·2Œø8Œæ)ŒÛŒòRYŒøŒõŒùŒÃ)==Œ÷
+Œ÷Œ÷ŒÍŒÈŒÿŒìŒãŒûŒÿV
+ŒÑT‹C…Ç…¹…«…­…®…¬…¯…¬‡ŒŒÜŒÀŒíŒ×ŒæŒôŒáŒûŒÔŒó"Œù,ŒèŒîŒíŒ°Œ¾ŒâŒÜŒïŒç&
+?ŒâŒôŒøŒö*ŒéŒ [Œø	%rhˆ„m‘p[‚KTŒÝŒÚŒñ DŒõ.ŒùŒíŒõŒô
+.Œ'ŒÿŒº)Œ­Œ÷ŒéŒþ0ŒâZ;ŒËŒ±ŒüŒàŒùM<FŒÑDŒö&GX`)\C6I; 
+{e#)F;Q))W(Mh+;f&ŒïŒùc__^w²ªŽŽ¦ü“k›¤·¯ì¹~ÁcÀb¿¹Ÿ­»¡t•³,ŽKý‡œWe34_S e[FU=Œí‡7"J1N+g\m:Lqh8:žŒ<41]\uƒ2H/(KN~dO?y:QJŒõG}ANBCl_o9`\LTN7Œí^950@d2e 3g+@+U<`(Z$KFMUaSNDVvEm5Fn“KA)I-c*gY"N0Us1S:%RŒñ\6X:cZn†C5ktÂŽ~e¨‘Ò’`‘Š¥ÝŽÊŽ1Ö‹u;[Yy3*#5IYh
+]7<Z&@$UTŒõ,-?{ŒþU-H65]4O&9Q!B]"N/#D1Œþ<)0ŒïhH:T%J'g*%*%-Q=fâúŽ•ŽRŽ˜Ž·ŽŽNŽš¡) %3 Œü2IŒò'ŒÐL.%&$Œò"Œä_-ŒßŒý ŒðŒ¹Œè,Œô!ŒâŒðŒÛ@ŒñŒòŒý#ŒöŒÏŒäŒùŒýŒñŒñ‹
+…Ç…¬…°…°…©…ª…²…¨‡	Œ¼ŒöŒŽŒÎŒï&$ŒÜŒåŒ»ŒÅŒØŒøŒàŒñŒÐŒåŒîŒÉŒ¿ŒÑŒþŒèŒýŒ¿ŒÍŒþŒâŒûŒÊŒ¸ŒùŒÝŒµ)ŒÜŒëŒõ$?D8G8Œø"Œç)-TŒÿ"ŒéŒõ<Œû	Œ× )ŒîŒõŒñŒìŒþ
+ V1 Œ÷ŒÕPG%ŒÚ0&ŒÖŒêŒóŒòGd#'P=Œã I%W;0CdIvŒÙmA%%E>BQRC98H4Œî/,ce¤æÄŽ5Ž™7’º˜~ ªüµ¾P»?³L¬¢¥(›C“nŽ]åˆSbhkŽd?N%$dI<&\BX:yE ^3"J#2x!YIo:I,zM4>Y‰©XMŒøXseP<b/-m74@*=44C[‰gKuVAwM{Fzh‘WcbMoF:AŠRR4ZN`NT{\D+>RS}erB0t c%AeYGGE0]TF"7]3W");g47g6vr]…5#@nPh²±ÓŽ¡'0¯l8ŽªŽ/±¡|G\--Œð -30P:8M"8g#ŒúŒÜ:>OGU#[6ŒÐ;MŒö)1"ŒíEO-\!ŒösMY89R?rIqW+#1HlBO8@3aN.2"+!(`+I	rBDÔŽŽžŽQüŽŽÉÓr@c(,5$9&IXŒÿŒö%(,ŒþFŒóŒÛ ŒóŒëŒÿ46ŒÎŒäŒÛŒøŒŸŒÜŒü4Œ÷ŒÒ	ŒÒ?QŒíŒñ5‹s…¾…±…©…ª…²…ª…°…®†ðŒ»ŒÌŒÄŒàŒÚ;ŒõŒÑŒàŒ×ŒôŒ÷ŒÊŒºŒìŒýŒó-ŒöŒéŒõŒíŒöŒèŒùŒïŒëŒêŒüŒöŒØŒó2Œý%ŒªŒâ?3! ,'(Œþ"ŒúŒñŒí=ŒèŒéŒÍCŒçŒý-ŒñŒê@Œô\Œü0F7)XA>6.DjŒÝŒÍ/hŒý!\<Q-/]d{'4&P>9Œù„|]C*p5‹›ÆŽ2Žxu‘s–ƒŸ-§ì²G¸yµ«¥¢kš”s‚ŽjŒzn:W;+B :/P*€MH:[.;xJ[6TBGALZN\0aQRYdZ@`@JrKIT-^19qFN+D/(lLx
+WkeB-pF9'\”gaE1¦$-:9NX4i* '?W8A†Q+s&I:z9N"B9A
+EV6=P\'A\U\%`?*Œò:Um7@Œ÷1=Œü/!PIOK^7e*kkP¥šëŽŽGŽFŽfŽJŽ-õjG.vMP>hX<C1I)0CN%J;-RŒò50:4Lm+$8IABg15&)%3.Vu&j"s 	XH>*!C6>	PŒôaŒÆ+98uRG„ûŽ5ŽAŽ0þ¬ÇŠ¢E`%*FM3ŒâUŒæ-9QK>
+'$"ŒÀŒð)ŒöŒøŒÌ0	ŒòŒ·ŒüŒîŒîŒíŒÏ5	2Œî	ŒîŒÈŒØŒÙ7
+Œå‹…Ç…³…§…¦…¬…®…­…¯‡ŒšŒñŒ÷ŒôŒâŒÿŒáŒçŒ¿ŒÚŒ¥ŒìŒúŒ¾ŒÔŒíŒåŒÄŒçŒ³ŒõŒûŒÏ0)(Œ˜$$Œ:ŒÝŒÚŒð Œ÷ŒôŒãŒì6ŒÍ
+*[ŒïŒÀ<Œò%Œ÷ŒõŒìŒüŒû5ŒÛ
+1Œõ*:IŒçŒÌŒé ŒñŒÎŒÇ
+ŒòŒòŒèŒÿŒô dJQ?Œü-'xQAŒíŒç253Œö"2+XŒøqŒ÷Wk3N9fT":sQZ`p‘èœŽqŽîÅ”H™© ±¦úª ¨¼£‡œÙ•~‘a+Ž7ŽµCon-€JtAjŒí44FjŒþ("T2H(Œ÷H^A]#|EGsŒï/ŒùR9%o2ƒvT@qw80R>/\V&TaMJTC;BO"?-NVV_9\=29Q"sI!=OTXEoOaŠ}: _\CŠe,$…A[,C]2ƒW3be3Œþ4$9-:` `;N66NV59<PFHD7FS†T€~¥—„¿Ë°•Ej—‰KJ2J9A!-P.]SgŒöW9SZ0€!GUC•*Zc0?U)Œýc5X$-.Œþ)V8< 90yŒú.C-C6:>>	PXMc'R,'Œû#;$UµüŽðŽšªN9K4!?Œë-J,ES*+HRŒàŒò1ŒÿŒ» &ŒËŒÌŒÓŒÑŒêŒÜŒìŒò$<ŒùŒêŒøŒçŒýBŒÿ&ŒçŒø‹F…Â…«…µ…¯…³…¦…ª…¥‡Œ“ŒæŒóŒãŒäŒ¢ŒÏŒøŒÔŒÉŒÙŒ¼5ŒÂŒ¦ŒýŒ¹Œ×ŒÆŒ²Œù ŒóŒúŒðŒÒŒæ	DŒÝ*ŒûŒ»57Œï/!-F,Œñ0''O(ŒðŒï-ŒÏŒøŒöŒðŒô4= ŒèŒïŒâŒÿ-ŒÒ5Œ×MŒçŒÅŒüŒä(Œî>ŒÞ4ŒÝ,J#Œ÷3ŒÿOG7,G(.@O!Œö]Œù/3<_hi ŒõZXCŒô!ŒÏb?21R_mw½ØŽŽ^¦‘ ”ß—¯šHœ›¨™ –z’PŽžŽ1¼§mx O+Q=h?Ep)Q	L<oŒÿA&<R}Œù/D.2_-ŒÙ3O&]2(a*4&0IiG+IŒƒJ4=-kcQ7Kw90QI=a6=?_¤PU+\I3=f6T?^P\e?ŒòSj€;Œõ{B=*H^Q#;L;0WIWN]QwV0c.zM:3D9[]lv)kP[3.3 :C<Iqv'H‰–“@po§xB)iOWc‰XA&U@7a@U@O-;>+3)c0<.##3ŒõVˆ3#Œå,";E;&*[Dœ];<:)!C8-
+7#G1Vƒ>
+Nh\G‰º¹huV *%7ŒöŒûŒî/$ !œXKwp+RŒñ)ŒÛ	Œÿ&Œü3YŒñŒ×ŒõŒÃŒâ ŒæŒü<ŒûŒõŒêŒÿŒõ	Œã+&ŒõŒßŒåŒÌ‹)…Ä…µ…ª…®…¯…£…°…°†ûŒ´ŒýŒîEŒàŒ×Œ÷ŒýŒáŒÙŒ¯ŒÑŒæŒ¾Œ¸ŒÏŒ÷ŒàŒÝŒìkŒß
+1+<ŒùŒú"ŒóŒþ5ŒöŒßŒá)/ŒæŒáŒ°:3ŒêŒñŒÌ ŒÇŒï2 ŒéŒöŒýŒ÷
+ŒäPŒøQŒÎ,Œâ 8*Œý7ŒÝ#.E	Zf4Œö:2g	?/ŒæŒà~5 3ŒéC*G)<QF}Y~jy@*™‡úðøŽ×ð‘>’m“>“Ñ”
+’å‘»s.Žz½¬‹Zz<*WYVGCš"F!^AJA9Vw-(YEF71"0mR'3:UI‡m#t
+N-C >=iWSJ.Z+ˆ_7S‚9f†.(-k]gYZNR)mq,K<a1Š\KU;1!EM-ŒïZ^Ok`@S)F7;A_)*7",>.:6AhN›[Rh~ET	"-ˆna[h9ŒýDwVH>Ie»[ŸEwYoU@S+K&67J. 8AE-?^?yMV*6"*Œ÷H%Œñ+F*,b
+Œ÷+M@B%PUŒàg)%'KN;UJ) Z@XXnQ,-=_BHypY‰ƒ‹Q PŒï1$D5/OdO\d[Èj9 ŒÆŒÈOS$Œõ-2Œã	"ŒùŒæ#Œô;ŒäŒþŒòŒû@ŒýŒ¤ ŒùŒ¹'ŒöŒ©Œ®ŒíŒéŒë&ŒÖŒÔ‹…À…¬…¬…®…®…©…©…¬†ê ŒÃŒðŒÛŒèŒðŒèŒÍŒ¯ŒùŒýŒÑŒìŒÀ&ŒóŒüŒµŒÇŒÐŒ½ŒúŒïŒÓŒéŒéŒèŒþ	 Œé Œñ,"!	Œë$Œî9;EŒï/ŒòŒÄŒÜ7Œ÷Œþ(Œü.ŒÿŒõ5
+
+ ŒÑŒíŒÃ ŒöŒï,ŒîŒìGlŒÿ/*I	M)ŒïŒø,t#@1M$5G6=c1 J,{.]!02$VXŒøMM„<Y™l&’}”îŽuŽÛ–9àâzŽ¤Ž]æÆ˜fM'79%n7hkl+#)N-XEzŒþ^G?R+u0-/)_+;8-QAbR:XE@4L%?ba 12+"UEk¨-2E(7IQ…#[:ˆWz'*$]npUc-T?/U:/MGRej8—L‰MQJ	xKTŒÿUnT:el-:cf"Yh1Z[]c)';8SŒé.pj>/N6iD+EIB+v\5E?;ER6/K9O,?ŒðyIm*q)—fRc%
+Œå+Y%bd=L.@1>J1a:4$z2*-ŒýPgR"R**DQDAŒó"5_f@*JŒþ7	XOA0W
+Œò:CFo1[W5ŽLƒK`MyXGŒäCŒþŒû"-4
+ŒÇŒœŒÖ6ŒüŒÝ .3ŒØŒíŒéŒåŒÍ9 Œä"ŒóŒðŒàŒÌŒß*Šÿ…Ç…«…²…¬…²…¥…ª…¨†õŒ¥ŒäŒÄŒÛŒêŒÝŒÅŒÚŒ¹ŒãŒÀ;ŒîŒóŒÇŒ´ŒÇŒÜŒüŒÅŒÞŒêHŒëŒ÷ŒÓŒÐ!ŒöŒõŒûŒâŒÞŒáŒù8	ŒàŒü8ŒÈ ŒçŒïŒ÷P)!ŒÂ"	*ŒõKŒõ	'ŒþŒæŒÜŒúŒéŒÃ'Œ·Œô8'*iRŒò$1Œþ)"ŒÛ(C>&8G4Q'!&ŒÿI>V9[9NJB0NA^7^D&/PA7
+c£PÊ¿ŽŽnŽÌŽ‹ŽéŽ¨Ž…ŽaŽNÓéviKNUUGml:9$3'Œùb<f@FfT0gA5qr8C()we}UatRŒól;F„T-J6HI7g[;5A.;ZP‚;W†HuY~9)1LFJ`QC GX$=p2+7>4?t10"-;
+ePdI*ccpK@VB86=>G=[GD4d+L…U
+‚_Y-V7S€jD0vŒSEuO_€VH5e‡xATLSJ<	&7aWf<3TEV	€O@dBD?H„ŒöŠ€X8%,IKŒôm.A:$16_<S5G!ŒêC?$J=>EI4.G c(N'?JB qi2>o<OZGŒñPpAŒá#.=;œµ§wn„Qo?;ŒþCŒõŒô,)ŒþŒïŒÖŒÜŒè4ŒåŒþŒíŒÿ
+ Œá =	ŒÄŒÆ#ŒÇŒÒ‹I…½…³…¯…¬…§…®…±…ª‡ŒQŒÔŒóŒìŒñŒÚŒßŒïŒÀŒŒÿI-Œõ ŒÿŒî$(ŒîŒìŒÌIŒã:P)&7	ŒÿŒøŒÿ1Œú3	!	2ŒÍB $GŒ÷Œï.ŒøŒáŒþ!EŒÝŒôeEŒØ*6+;Œ¹ŒßHŒó@ŒùŒîCŒõ6-Œ÷ŒùŒôŒþ<4Œô,pŒÐQ
+Œ÷kpH (mt%-!Œï#dUsZRx·ÛàäŽŽ6Ž.Ž÷ÞØÞæqƒ‚˜Uy>-H+Rƒ>7TDZd]<G&ŒûŽ$.M/†">J;PB 72^?{`-;N@0%(0&=)ytwƒe^';b?Š0>>C7dS€C@k`$u#XC-*n=^#i0l~&V21MKT.H%"MD<WUf,W]sI_V"q1<9qhK>Œû.!Œø-)>S)f1Œ÷L+El! /MnV(WjK@E#KO.M€?M12e]>ILr>fck>MZ`ŒñW7.Jd_ %3$BA=]@XXŒõO>JŒ÷ŒöT.#Œ÷-_)j4,H5e\RO\'SYIQl5`Œêh$&V@`
+P=ŒñŒA¾¥¢f0‘:g)"V&!DŒúŒù(<,9\-Œ¶Œ÷%ŒÌ	ŒØŒùŒÿŒé3ŒôŒÛŒòŒíŒíŒô‹G…À…¬…µ…­…£…«…®…§†ýŒ…(ŒÄŒïAŒêŒÏ6Œ¹#ŒïŒòŒø7ŒÚŒùŒ´ŒýŒÒŒÃŒíŒéŒÙ%Œá	6ŒïŒê:ŒúŒÔ(Œê/2/ŒïŒÿ1#ŒÂ&Œ×B&ŒÞŒÄŒÿŒþ&Œá<\+ŒãŒÞ"6EŒõ):Œä	!ŒñŒÐ<Œø9ŒèŒì%+Œã3MŒø,Œø%Œù<bŒþF9 .Œô6#Œå5KZzE1'OÂ1`TeYq”[¹¨ò‘½õ±×bœ¶‚†c<A9P5y)Œê_*LEL/?+1:E@
+@/DUn*rOhRW1Y.Mv\9X!^*>%I†X6\XC?S27‹^?P3O}+g19H?O91Zhf*DPN,"U'¢R16>>;cdC-4(L!ZTJŒïL"Q‚[S F;Œû%o&/;9NH	*N6>xW#:P qA$fwKI9l,Sf65?;w'M<'\€"M2HŒì-W>":328"ub?>#W-cGUŒîD0ŒùŒüŒù>6o#7>>1B+'	C€E_&U<9[OŒí)Œõ.ŒõŒë>5&Œþ&ˆ`m}mzYFW3ŒþŒúŒúq(ŒÒ)'$*!ŒË"ŒëŒôHŒë)0DŒÜŒôŒòŒö8Œ÷ŒýŒ§
+ ŒæŒ¯Œû*ŒîŒû‹]…Ï…®…¯…¯…±…«…­…ª†ýŒïŒÇŒðŒáŒÖŒÛŒ¿ŒîŒÛŒÞŒþŒñŒçŒÚŒ¸ŒôŒßŒüŒìŒêŒñ?ŒãŒôŒëŒÍŒ¿ŒòŒíŒòŒØŒ¼ŒýŒþŒóŒçŒú.ŒñŒüŒìd)92ŒãŒëB6ŒüE ŒëŒ£]Œá>ŒáŒîADŒÛŒï!#2!+:ŒþŒÿbŒÿ9ŒöC(:Œî5ŒÏ&H)R)+$;V:w'Hb$FTv)Y"F]w^ŒI€FbØ¼U|zœe¥onV;A@KrŒó)W>hŒôYCBCdenŒú:Œù3rr	9P\UFJIBŒòbT\qDA@QW8l;F7c50]\ˆA;4Y0jNŒú7eAaZ!"d^GBBN.5M/nGH^dR,:MP{o?Œów=9FnLQ	7*K,-KŒý‚C
+*ZL(,#C9-C?P?Lf—VE-@:?6IMM!Œÿ]m@M*9_]w=<?$;`Aq9d:CAsS2i’I}J2€%:"d‚77+7[BO7ŒþŒ÷$Œ÷?34M?ŒûŒöŒÿ6 DPDU."Œå&GQiP/Œä=8'b+O5TŒü}N[­’I4«=Œó
+H?6?ŒéŒü)*Œý0Œò8%Œò$!UŒôŒÏŒûŒòŒï	ŒÜ#Œ÷)$ŒðŒø,‹8…Ê…°…«…°…®…«…¯…¥‡Œ›ŒáŒïŒáŒÔŒðŒÄŒ¿ŒÉŒíŒîŒúŒÚŒìŒíŒÖŒäŒø
+ŒòŒñ%ŒØ'ŒîŒìŒÝŒûŒÑŒãŒæŒìŒàŒý ŒäŒò.Œë'ŒñŒ÷ŒóŒàŒßŒß	ŒîFŒáEŒÕ
+ŒßŒë"ŒùŒûŒþŒþ@ŒüŒï@ŒùŒü&;Œð ;ŒéD1$  -^+
+QX/=:vD
+6Œä8E4D
+?D_4Q@$S\<lI¦t‰†¿aua€’‡‘jtŸ80lH—ZuaGQ'nY7R+ B]'5UV#S/XBZ5)MJ]TE:	)!<;M=‘pOyŒ÷5:z_CZD$D!Wk@;j.Q]QŒô`N!B=I7NXf8bW&a,tUjlGžnJI)"J]WY!9'=…s).2.?a3$DCJ‡AD/ŒÖ*28',t%7rL:@nTO¦/?HE>1SoJ*Td4DD,'ŒýEZ=S2&0Ga?UF8Œâ=RJ7#R,P3CNiV]GŒò.Œû'3S.$d9;j>O).&&%G"k>3.>X\4 $*FQJ
+*ŒúF) 	T67mqbˆF?/Œë6Œý)ŒÒŒæ+ŒñŒäŒÄ4-3ŒõŒÐ!ŒòŒù!ŒðŒç-3>ŒåŒá
+ŒêW‹&…Å…°…°…°…¨…­…¦…©‡ŒãŒºŒÝŒÜŒÈŒúŒÁŒ¯ŒïŒçŒîŒ°Œ©#Œ¾ŒØŒ¾ "ŒäŒø@ŒþŒØŒðŒÑŒäŒë	@ŒÍ	ŒÙ ŒÀŒ÷Œæ$ŒíŒÜ7 &ŒÇŒÊ	 ŒôE*ŒøŒà(%LŒâŒäŒîŒõŒÞ19"U&-ŒúŒ¿Œód6ŒçŒÿŒú'K^;,Œý@;	ŒØGŒù#Œö :7_E Œø.@ Y)Sj\Œá:.NJ32j3^-Y/PDTq•A1XHDf…‡8“ar,RŒöiS?:|.3;FBWTŒúhm lC;'T@82C<7WTF2*	HNJ).IMi <R60Ibh^>g4<Jx(I^XL\"`hI;|3UlŒò_B02|‚rK?0*n42#+AO.&si`@ C![LF\#gSŒÜ`f<BpoVwf%2?qW,9xZ.•j‰'EŒþ#7[P=Pb7/$GXj_
+SEA<Y./#:E),(?H7)K+UŒå4H\`$Œü.2\O) ŒëJt'.)=Œú6ŒïcŒ×HŒó2'0$w2&~!'YVŒü2‡?6UŒöŒðJŒí/>^Œï#?Œÿ4BŒþŒ¼ŒìŒÛŒº50ŒæŒë)$Œõ[/ŒÖ7Œø=ŒõŒ½)Œø,Œ¼Œõ	ŒÖŒõ1ŒçŒòŒùHŒó7ŒÕŒÒ‹U…À…¬…®…°…°…¦…¬…©‡ŒúŒîŒûŒºŒÎŒõŒ×ŒýŒ£ŒÕŒß
+ŒøŒòŒÉŒèŒÝŒÆ
+ŒõŒÏŒÊŒíŒùŒÒŒôŒ³ ŒÎŒôŒó
+%Œ÷ŒíŒ¶!)Œî"ŒøŒýŒñŒÚŒôŒÖ#@
+ŒÂŒùŒè'&ŒâŒðŒï	ŒäfŒù9*3ŒæE-Œð*!]C96qY5F8nŒôQ:-ŒÑM]<G>3<Œü+@ARDt	-ŒãŒô0!Œü53ublUŒõŒù8dZJiCN‡K_>$H2}@\O+OgOzV0M] =;fvhaGR,/+'bA&@5Œÿ23I7€Y7)<LF84o o'@…Yd=*qy&—?$GˆN42>K%GrPL`l/ RF#X4BLI??6Sr>J9Jc!%ŒÕ0@@<?KŒA2I>;HX]
+IHˆZŒäB+:5!sU JI=
+ŽEI9 !32L|=nV.UT&8J3Va2>&-1<XVWKd{S9+>&AK+V[5ES
+=SdFGHEXŒü@#)7N[;Q!6O(R$,#&kS?,C=Œÿ.LŒô0D*ŒþŒõA	(.ŒÑ.E4LŒé>Œø"ŒÃDŒýŒÚ!Œ¼ŒíŒùŒÿŒÎŒîŒû-ŒîŒþŒÀŒïŒéŒí*ŒÜŒýŒá0ŒÍG"‹…É…­…°…¬…ª…¥…³…§†òŒwŒÞŒùŒôŒøŒêŒïŒý0ŒçŒÃŒþŒàŒÿŒåŒ›ŒŸŒÚŒüŒÍŒ·ŒòŒÈŒ“JŒ®5Œù:ŒýŒä)ŒÀŒóŒÒŒô#(ŒÐ*E&8>ŒøŒßŒòŒøŒþŒñŒ¾5ŒÜŒö+5ŒÚŒ÷ŒÐ'> NŒÓ Œã$ŒúŒÞŒÈŒúŒãŒíŒÔY)Œå	%ŒäŒýŒþ=K*&+Œ÷ Œú7<qŒþ…?xaR.ŒüD!1?6%-'* 4W8@9GHYŒü_]_0^3†YZslFEb,V5Zq…kKO.	ITK&*ŒÞ*X+-B•+_3UUj‘G)OO8C5XQUVK'=em9MvŸ¤gx9F?3qˆLK?J6JXP8tIUh0ruI\thWP!GL0OP4(sjO4?%&BQm RKL[YYpW/EQJ2U€/Be=e)HP7W*>%U-#Nvn6Ufl"7FW^ŒdROI3ŒøV;bP3HF]1MNV1D?()Œí?7,aW@@Œú.Aw*bB4d)87ŒþŒýŒêCzuŒöam+`67u$/-$:AŒØ)IŒê*E> ŒÿCg!ŒóEX+KG;TŒÉMD,h2:ŒäŒý>ŒíŒûŒü*Œô8Œè4+ŒéŒïŒèŒÓ'ŒÑ)ŒêŒòŒþŒö0ŒåŒÚ'Œï BŒüŒí‹…É…­…¬…±…©…¦…°…­‡ŒËŒ³ŒñAŒãŒå	 ŒòŒíŒõŒîŒíŒêŒÈŒ¼ŒþŒÛŒÞŒå+Œ½	ŒÛŒõŒ•	ŒÃŒôŒóŒìŒÐŒéŒÝ0ŒÊŒîŒÚ%ŒúŒñŒ³ŒÈŒüŒõ0xŒìŒå,ŒìŒóŒìŒí)ŒæŒÆ]Œý ŒëŒÎUŒÒ6"Œõ"BŒé[#ŒÙyKŒõŒ÷3ŒñQŒïCŒýŒÏ ŒøVI4w x">5n=R.4)'E.(<+>*/02ŒêEH-O$b855S5VƒD2b9.^Q<:F?%•K31roaRPŒÿ4z#$[wEEMO,kŒöXZ2DPN:c>0%if(nrgUPOv'{hZK[.$-I	cG:4:vcSK’Y hc43M
+Q4N9Œú[yY›@fc"J[9N17XDK#Œø%%;,@R(g6f<b7E]7GCM&S p|M]a"SVG:6^`C)Ž</	O&–PEI5Q+PŒøBŒö#pŒá$,j:< Ge*+ŒùŒîfŒö'K'%H7*H,f>5W$64eDdŒøS_'P
+;&HgD@C=QHFŒûŒý100Y$%@M'DQŒÀW7ŒÿPGLLŒýŒýŒú2Œþ
+AŒËŒëŒý ŒÉŒçŒõ1
+Œê]ŒïŒòŒûL‹N…Ã…³…©…±…­…«…¬…¨†ÿŒ¤ŒíŒÙŒï#ŒîŒõ$ŒÚŒÚŒÙŒîŒòŒéŒòŒËŒûŒÂŒÌŒ¸ŒÐ-ŒÐŒÐŒøŒÁ*ŒÖŒÉŒ÷ŒíŒ×ŒìŒÙŒ¾ŒøŒùŒÝŒúŒòŒõ#ŒþŒÝ!/.ŒôŒÒŒõŒìŒñŒüŒã12ŒëŒÃŒðŒàŒä 	Œç'ŒêŒÊC@7bŒý=3+ŒïŒý$.CŒó'Œç+Q
+8(*\23ŠOw/L%)Œå/&< †$#(5v^`?=$qbF•[L8b @h.6"1r+87‚!CS%45M7$t@1'ŒýDjŒÿ™PHZ^f8!5( ;Pv$f-&hP*&;.>b—YYrT64SQZ6#2h6Ta9X1YE…4ŒûU[?&FgRR9l<(A94m9]ABE!d:XŒþ R>Jkd+#+"3F"}GUŒ½9L?Œû='//A8(^E71L/X/@Q6O/".2EFGIG>1U6XDL-/	9ŒüZŒû.m]A(!,/Œô;%L=LLH3%R>1+.+X0ŒýŒþƒ-Œò%1#07FE3('$:(5Œï))=dƒ@ŒÞŒø
+	LŒå7ŒþŒìK1 #TŒýEŒú.
+2-ŒþŒ¿Œø$Œä#Œþ!ŒøDŒæŒÚ!4 $ŒâŠØ…Á…¬…°…±…¦…­…¬…©†ûŒ¬ŒàŒäŒÍŒÈŒìŒ²ŒçŒáŒÉ3ŒÅŒÓŒŒÝŒæŒá,ŒáŒðŒóŒðŒè$ŒíŒü 1ŒçŒâ(ŒòŒ@Œ¸-Œå*ŒïŒØŒâ'ŒË ŒìŒÿŒÄ<Œô3ŒèŒá>)	ŒþK
+Œó@8
+Œõ^%))%UŒÂŒìŒÕA$w#?eu&X@ŒùFJQ3€7Œë61Œù-D5!)$A%{DH=?U€12v%J4L,/Œý:I9@NNQ\7F/.[y4=PIv_O&D8IT^YDKgbPg05?:RIM4@ WPŒþC&Ad}3/iEt*E[eVsND4‡oj7‹B]aFW=?gk+&^]‡m;!D)2%58$25Hfdu]?c1@QJ9R2%&Xg1ljI+DT+N!;HŒô82?<bb$,3?KUY(/yvL"PJx60L2+CWt2Œôb^U5AuOl&NM/9K6SŒû%A=1"B.ŒøŒöŒúŒô)_9HNW57:F9
+$"U#k8$N$.tŒù=BŒÞ'FZŒ¹Œú Œý'"&+R?'Œæ!ŒõŒÈŒô5Œâ"Œà;>	lŒú [?
+ŒùŒõ(ŒÎ573ŒýŒõŒÑŒÔ#ŒîŒþ3ŒÖŒð	(ŒÃŒêŒòŒÛ,ŒóŒ°Œ÷	Œà5Œ¼Œø‹g…À…µ…µ…¯…­…¤…¥…ª‡ŒºŒêŒÉŒùŒ³ŒóŒÈŒ÷
+*ŒõŒÈŒãŒß'$ŒáŒðŒ¿ŒæŒÉŒÌŒÜŒûŒ¼2ŒëŒïŒ¸ŒËBŒÉŒôŒÊŒòŒŒõ&
+Œ÷8ŒõŒ÷ŒùS'-ŒýŒÐŒâŒûŒòŒÑ;ŒÅŒõŒàŒôŒå
+ŒïŒÓŒò	 Œÿ.9ŒþŒ÷
+Œú$(:ŒÙGG7A+40!Œì&($
+!r" C 2ZC&ŒêŒþŒø<b rOWŒûZŒæ
+mB0fŒò#37`T =CO*ASB>?D
+SWdUTG Œú@UH//1YES?4C*.(-:$…N$~Bn[-U'EmSUWAWG&;`J\B=ip9N“M4?n@s`a¦f+&A^F<HCQ-Y@Jt\W1mX$NHZ@{FŒ÷IcSj.‹</ŒñSC,ƒ!sŒÿ1/27l$#GŒüCŒøK;Q@587 >Œò~
+;5NŒ÷N!SIŒûME"l0\2]Ng,<^jC]zY4`H`HT(ŒæR1*"GP!2,LL6Œö49*'hŒüXDŒ¿1~"2N865Œú"A7X ŒüQPZ	>"i!/Œø	%ŒàŒìEŒ÷ŒåŒõk5HŒ÷(Œß)8Œï?/F$T!ŒÚŒç ŒéŒêŒëŒãŒòŒêŒïŒÎŒòŒÔŒßŒÝŒÒ3ŒñŒèŒþŒüŒÙŒàŒì%ŒìŒÇŒÐŒÐŒõŒò‹…Å…ª…°…³…®…±…­…©†øŒÔŒÄ	ŒÓŒôŒõŒ»ŒÚŒê +ŒòŒ÷ŒçŒòŒÈŒñ	ŒÈ ŒõŒ·ŒêŒÆ+8Œà,A,0Œ÷Œô%4)ŒßŒù
+Œý	ŒõŒø.Œå3ŒøŒýŒà
+ŒÑŒñŒû/oŒß	E)ŒýŒë$&RŒòŒñ3#92DŒþU5Œó#%;Œî86K$GŒþ%/+TfzB8N	; S*98 254fDR{*?G‚iSX<0Y=`ZC_;K>e)Œÿ
+I.6a@JGgGt<9*QŒà6ŒïZ<*(1H8gF0ƒNG<M):12:Œü,RIbI?œpIŒ÷H'<4\K„_U‡T1'c1IHJ/*gA?O|M¦xA"$S3f]\KŒ÷8+Gt6,G ;ŒöBLMV˜pfx4
+&,=W$!GJF!ŒáQiQ>}>3'f6-šLNv{BŽM6=!\'*JWD`-ZH<FvFiG/g2L?/?NM^:***/GV)PA;C4Œò93:Œÿ9?@,ŒñXr41Œî*Œî%FŒõŒâ4Œí:{
+SaX@"5:Œí- $ 7Œ÷3(B?Œý/36#35.Œò+>Œ³&ŒÕŒñŒÿ:	IŒÿŒð/ŒÛŒçŒòŒþŒóŒÝŒÜŒéŒè8:
+)	/ŒÔŒûŒá‹2…¿…®…¯…­…¬…§…¯…ª‡Œ†ŒÎŒ¿ŒðŒçŒÙŒÂŒ°ŒœŒ°ŒÐŒÖŒôŒÝŒçŒº3ŒÓŒÀŒõ0ŒœŒâŒðŒý+ŒöŒçŒúŒö	ŒöŒ÷!,ŒïŒÙŒýŒÿKŒ×)ŒìŒó!FŒüŒÙŒøŒÙŒâ1&ŒóŒç<4Œþ
+ŒøŒùŒÖ7ŒûŒôŒò.	<!7##Œä8G?,,8V5ŒÿS<AaŒçŒðKŒÿS:#2hŒç6%W3Y)D<<%**Œþ_9\1H\
+1J 82.66o@<c-‚`&=}VHŒò€I]]1z-#<E\R22LYG]p&=78/{Ljjg[l18LEn=@DpB6]Qz3gPd23K3VG"gH$G/{E[D7Œö>YU-D@fHK&GC[Œæ/ZŒû?[F?8H)\W\pL`MQ8 $PhŒþ:MAA1?9J-C=#+_ŒôVO—B:a:32Zkn\1+!.HNŒô+c36).*]FuEB!CnD"K@$Œê517ŒóVv3o,O1t0&7 6!O_#iŒÞ8.Y#	0IG,O+ŒîKŒùF3N[eW< = q>Œð3'Œ³6Œï*&!4$‡ŒÿfIQŒä
++ŒñŒùŒ×Œþ>Œß'/8!ŒðŒºŒýŒöŒðŒøŒçŒÙŒç6'ŒóŒÞŒ»‹…Â…±…±…®…­…©…ª…¥†ðŒÕŒÖŒãŒÙŒÿŒÝŒÖŒñŒõŒÕŒâŒöŒÛŒÌŒ·ŒäŒ³ŒÆŒøŒõŒì(ŒôŒëŒÒŒùK%ŒÐŒ÷ŒæŒëŒâŒÕŒäŒÛŒì9$ŒêŒü'ŒÜ Œú*ŒÍŒð	[%ŒàŒ×ŒïyŒµŒø5Œ÷Œü0Œå^%3Œþ ,ŒüŒÉ8ZŒð+Œ÷B)ŒòJŒêŒÉŒô9QG(V˜Œè)5F :Œô* Œã(N
+,+#Œý'f6Œü+EU9OwJ%>T6<35	G0I' j:O"/b-W+U*40ZSZ(†5FŒà'E+
+NMlJ /=A@=)kNW"9YŒùNSX9!X/@AŒþ/A6zŒý„Vx32-9Q²MLGŠ7„ST‚];^/hFVJM1qa<ŒõYey4A1)ChZil4<N7,ŒõrM5G93-ZBYoD3Oi^KbARL98PP>#)d3JfAS(Ry K,4CT=AL20 B$5NIMQ@|6?CŒü[SEŒý-P!PY"$=MA<Y=|TŒãF%2*Œé
+=ŒôŒüUXE<,S 3?&ŒôŒñŒî@]'R<, bH+	
+Œð+J(Œö;Œÿ32$-8-'4Œõ/
+ŒùŒøŒ×>/ŒÎŒïŒø ŒãŒð /.ŒéŒåŒôŒÐŒÓ	‹M…Á…¯…¯…´…§…­…±…¦‡Œ¿ŒÈŒçŒïŒÔŒñŒÇŒôŒÏŒÝŒçŒëŒØŒÖŒå"ŒíŒûŒìŒ¯$Œ÷ŒÍŒ÷ŒûŒúŒŽŒ½ŒØ3Œæ'IKŒÖŒÿ5Œÿ7"Œ×ŒñŒ×Œÿ: Œê$ ŒÙŒÚŒöŒèŒûŒß,
+ŒÿŒôS"'Œð
+Œì4Œî=5Œð&ŒáŒô
+Œÿ<z	ŒÄQD*ŒéM],TN UNŒóAN$GMFŒÚ2CCŒåOF<+7HQX1AVŒù-]eX(d<GDWBH]obT2k,t'c,F`&N)*,e &
+N*4nQ-19+Uo-$11_Œÿ4Œ÷-%hg4[QŽN‘q?V\to—^60E/ž3Cod[O`U<%E hz4tMh^6BY'$>€CZg,EB\e6SVaANfd)8F<eL=;4",0+YC"„A4Al<'?<3$Q3XSQAS!6NS";3N.)LF.?2++FEHX)O6 E(8P3eGYŒý8^/?Hb8:-NhŒü.Ah) @S)ŒàŒü{ŒñARŒô+Œñ5Œñ/@"V8BŒã$*,!ŒñA "ŒþŒü#@+86'6Œä0;
++>D	ŒÙŒèŒõ
+ ŒìŒþŒìŒÐŒüŒâŒëŒø38-/ŒÖŒéŒäŒàŒÍŒÞŒìŒí,‹-…Ç…¯…©…­…ª…§…§…°‡ŒqŒèŒµŒúŒòŒþ&ŒžŒÆŒöŒÐŒéŒìŒê$ŒÛŒûŒÕŒñŒÄŒòŒôŒÚŒõŒìŒûŒõŒØŒÒŒìŒ°.%ŒÜŒÅ
+%ŒÞŒËŒ˜ŒÇ
+6ŒÍŒöŒÞ/ŒÓŒíŒÛ
+%ŒÄ-ŒòŒõŒß#	!9Œü+ŒóFŒõŒ÷VFŒ÷Œô$!Œâ.3Z#@ŒýŒþ^$SŒé*-ŒÛŒåjUJŒç&p?H?f13)#6*)D3$JF;G'UŒòŒùR.F1;<^99rŒúFwŒú6fŒðZ!;o3K*7<>K-aR	E=AeO;K1HQ*-j. <9l&#JPO#J=&B9=87LD:S{Y Œú† (PPS14„%8K4:_WEA"8X,$N>RlQQMƒ¬:JCL@X;6ŒÿJA:NAC9"(wŒê'ŒûŒôOQ9E`%>R_M>$Y.ƒ4L]8*O*:G2Qu9& 1_V9ŒönH[‹{G:5<Œô0<AQ6ŒýH_¯ŒüP‰@ŒãCwJ@;;'';+	[?oNbd!17VŒÝ'JŒúf5#98;[9FO-K%Œù&XJM`)&3Œæ+-IB2ŒíŒâSŒÕN8b_ŒÈŒú3Œß,Œï=ŒóŒÏŒùŒãŒ×$ŒéŒñP	ŒÌŒÞŒñŒôŒâŒÊŒñŒâŒÿŒÇŒè<*ŒÓŒþŒÅ‹;…Â…­…±…¯…§…¥…ª…¨‡ŒqŒ¾ŒÍŒúŒýŒÎŒÍŒŒŒÎŒÞŒö+$ŒæŒòŒÝŒýŒèŒÚŒãŒíŒçŒûŒ ŒèŒøŒÉŒå)MŒÈŒéŒíŒÿŒøŒûŒÏŒÖŒîŒüŒ÷ŒàŒé8ŒÔŒþŒøŒãŒäŒú&B).3 ŒË&R5ŒýŒü#MŒ÷&0ŒãŒüŒåŒü?-/Œî?'Œö<2_ B<4#F&`OFa))HD<5A65g+7=ŒÏrB/;t~$HBY0ƒw§¨©Ž‚g575SH4 XxK2JY]Jˆ,‡+a)S$WgŽ7(D T;*KŒó?\†6Œð9<IWVn+$f?HX93L\1\hHtUbB<Uf`aR¨B+c4wmjO§.%ODb"&YmŒõj1-{ŠF(Z<InGII‡2IU7L+$5FŒû/c_.M9SL?c>'K\</{Œí5@+r"<gBv#dG?@20+*HUb3eV/H8FqLŒûJ$!< *H"D$*GGVM.0&I%d$-/;=/J=:ZŒïFŒã+9HBUBŒ÷);8**XŒÖ4A9aA%Q`=$Œø?DŒðŒò*$ŒáŒÝŒÑ^#ŒÅŒï;*
+=ŒãŒÕŒÂ4ŒåŒèŒò/Œ¡-ŒØŒÖ‹6…Â…±…¬…¯…ª…¥…ª…©†ðŒÅŒÕŒüŒêŒýŒßŒÕŒ» Œÿ Œ™Œ¾Œ©%ŒÝŒý	Œ¿ŒÿŒŠŒêŒÛŒ»ŒæŒòŒ¿ŒâŒöŒö!
+"$%/ŒÛŒ÷ŒþŒìŒ½ŒðŒäŒÞŒº%ŒÞŒÂŒ¾ŒÈŒúYŒðŒäŒÏŒÐŒï5ŒüXŒÿ	(1ŒÙ 'ŒýŒýŒ×ŒùŒýŒýŒø25ŒÓ3^-ŒòŒôŒã.ZŒù6ŒèŒöŒùŒò,Œ÷J;"1WAG	?.)+A`!+ŒÿŒ@†2)Z2`:30uX'8"JPEX1?e~Sež“¡«ƒ’‚8?[f^"?PŒí,E?~1i;gMT@)B7RwGk?ŒõŒçJeaKJdueH=5F>o`kE:"Rf8do"&Q_ˆ+XeOM—ZY@@_uC~@[=W.tAg†_GA/CCYBf?#SQ39a7=PGSZŒü,PoD2)^?;R'(0\QŒêS<.J+WP*iHJmHA)f2(@QDhŒÞŒôW>J|<@(71'5(2foL;/ "’36d<ŒëS‘#G'xeŒà32Œí:01&?WfM.ŒßŒýŒþ	<2G4+BŒÄX-=GR4!ŒäŒÑ#'R,"9	(	'7&ŒúŒó,Œý+Œñ#ŒúŒñ*Œø-Œï'*23'ŒÙŒûŒïŒ¿‹ …Ä…¯…¯…©…¬…¬…«…¬†óŒÕŒæŒíŒÊŒÑŒæŒÞŒÜŒìŒ¯("ŒÛ ŒõŒ‘ŒÿŒßŒ©ŒéŒàBŒãŒÿŒÒŒÞ?ŒâŒáŒúŒýŒñŒô"rŒàŒÜŒúŒûŒßLŒåŒòP	7;ŒÛŒéGŒØ	Œí$ŒíŒÎŒÏ(ŒØ'G:
+ Œû )ŒüU(3.
+Œë-?S#:0GR5!R-B5J?T,;>;7Œþ(8"M ''7 ŒóE/ @w8IJI1;µœ†°ëZ‰e3E?L&j@<Œë\7@ŒìgH<@&(!2"Œó-FGE&0N)U>J2gM55-&+CDSIe6b/e]ŽlWrUFˆ`Hag8V*vbnM1[jAsS@OBwŠ)riiPE[5Vh5(<6[mHL+—!E6-)BY+pr=;*Z6LsKqGKK:Œù$E!HsŒúNg7a/0C<:K‹IsRl%Xtb#T93*5:$!6+@”Q,ŒþD,%4vAA*J&"i8[	BB%=@[J1Q):i-bŒü<(M&ŒñqdA),dw"ŒýI&17ŒÝ0,/IT RB4!9/$i6<71(Œ÷EBB(?ŒêŒé-%2Œê>gdŒâŒñ8$Œ÷Œï.Œª1"ŒýŒôŒöŒæŒðŒï)ŒÏŒòŒæDŒùŒöŒáŒïŒþŒñŒôŒ³‹R…½…³…«…³                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
