@@ -1,11 +1,11 @@
-import os
-
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
-
 import yaml
+import os
 
+current_file = Path(__file__).parent
+os.chdir(current_file)
 from AstrolabAnalysis.TASTE.Modules.AperturePhotometry import AperturePhotometry
 from AstrolabAnalysis.TASTE.Modules.Bias import Bias
 from AstrolabAnalysis.TASTE.Modules.Centroid import FirstCentroidPosition
@@ -15,13 +15,13 @@ from AstrolabAnalysis.TASTE.Modules.Science import Science
 # ############
 if __name__ == '__main__':
     # Path descriptions
-    current_file = Path(__file__).parent
-    with open(str(Path(current_file, "constants.yaml"))) as in_f:
+    with open(str(Path(current_file, "AstrolabAnalysis/TASTE/constants.yaml"))) as in_f:
         yaml_file = yaml.load(in_f, Loader=yaml.FullLoader)
     yaml_file_main = yaml_file["main"]
     #
     target = yaml_file_main["target"]
-    base_folder = str(Path(current_file.parent.parent, target))
+    base_folder = str(Path(current_file, target))
+    print(base_folder)
     result_folder = str(Path(base_folder, "results"))
     os.makedirs(result_folder, exist_ok=True)
     os.makedirs(str(Path(result_folder, "1_bias")), exist_ok=True)

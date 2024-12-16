@@ -207,7 +207,7 @@ class Flat:
     def save_pkl(self):
         list_names = ["median_normalized_flat", "stack_normalized", "normalization_factors", "stack_flat",
                       "median_normalized_flat_errors"]
-        with open(str(Path(self.flat_folder, "flat_info.pkl")), "wb") as fo:
+        with open(str(Path(self.result_folder, "2_flat", "flat_info.pkl")), "wb") as fo:
             pickle.dump(list_names, fo)
             pickle.dump(self.median_normalized_flat, fo)
             pickle.dump(self.stack_normalized_flat, fo)
