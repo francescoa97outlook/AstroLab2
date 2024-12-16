@@ -68,6 +68,7 @@ if __name__ == '__main__':
     ax.set_xlabel("Science image")
     ax.set_ylabel("Sky background count")
     ax.legend()
+    plt.savefig(str(Path(result_folder, "sky_background.png")))
     plt.show()
     # CENTROID first good IMAGE
     avoid_input = int(yaml_file_main["avoid_input"])
