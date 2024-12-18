@@ -5,7 +5,23 @@ from AstrolabAnalysis.TASTE.Modules.general_functions import make_circle_around_
 
 
 class Star:
+    """
+        Represents a star in an image and provides methods for photometric analysis.
+    """
+
     def __init__(self, X_mesh, Y_mesh, ref_axis, x, y, radius, vmax, name, multipler_inner_radius):
+        """
+         Args:
+            X_mesh (np.ndarray): Mesh grid of X-coordinates.
+            Y_mesh (np.ndarray): Mesh grid of Y-coordinates.
+            ref_axis (np.ndarray): Reference axis for cumulative distributions.
+            x (float): Initial X-coordinate of the star's center.
+            y (float): Initial Y-coordinate of the star's center.
+            radius (float): Radius for analysis.
+            vmax (float): Maximum value for visualization purposes.
+            name (str): Name of the star.
+            multipler_inner_radius (float): Multiplier for determining the inner radius from the main radius.
+        """
         self.percent_variance_y = None
         self.percent_variance_x = None
         self.name = name
@@ -29,6 +45,12 @@ class Star:
         self.sky_background_arr = None
 
     def assign_dimension_array(self, size_arr):
+        """
+        Initializes arrays to store star-related data for a given size.
+
+        Args:
+           size_arr (int): Size of the arrays to initialize.
+        """
         self.x_arr = np.zeros(size_arr)
         self.y_arr = np.zeros(size_arr)
         self.sky_background_arr = np.zeros(size_arr)
@@ -37,6 +59,13 @@ class Star:
         self.fwhm_y = np.zeros(size_arr)
 
     def example_bad_good_inner_radius(self, science_corrected, vmin):
+        """
+        Plots an example of good and bad inner radius selection for the star.
+
+        Args:
+            science_corrected (np.ndarray): Corrected science image.
+            vmin (float): Minimum value for normalization in visualization.
+        """
         vmax = self.vmax
         print('vmin:  {0:.1f}    vmax: {1:.1f}'.format(vmin, vmax))
         fig, ax = plt.subplots(1, 1, figsize=(10, 8), dpi=300)
@@ -69,6 +98,12 @@ class Star:
         plt.close(fig)
 
     def find_first_refined_center(self, science_corrected):
+        """
+        Refines the star's center coordinates using weighted averages within the inner radius.
+
+        Args:
+            science_corrected (np.ndarray): Corrected science image.
+        """
         temp_x = self.x_refined
         temp_y = self.y_refined
         # 2D array with the distance of each pixel from the target star
@@ -91,6 +126,13 @@ class Star:
         self.percent_variance_y = (self.x_refined - temp_y) / temp_y * 100.
     
     def calc_refined_center(self, maximum_number_of_iterations, science_corrected):
+        """
+        Iteratively refines the star's center until convergence.
+
+        Args:
+            maximum_number_of_iterations (int): Maximum number of iterations allowed.
+            science_corrected (np.ndarray): Corrected science image.
+        """
         for i_iter in range(0, maximum_number_of_iterations):
             self.find_first_refined_center(science_corrected)
             # exit condition: both percent variance are smaller than 0.1%
@@ -98,6 +140,16 @@ class Star:
                 break
 
     def determine_FWHM_axis(self, science_corrected, index=-1):
+        """
+        Determines the Full Width at Half Maximum (FWHM) of the star along the X and Y axes.
+
+        Args:
+            science_corrected (np.ndarray): Corrected science image.
+            index (int, optional): Index in arrays to store the computed FWHM values. Defaults to -1.
+
+        Returns:
+            tuple: FWHM along the X-axis, FWHM along the Y-axis, cumulative distribution along X, cumulative distribution along Y.
+        """
         annulus_sel = (self.target_distance < self.inner_radius)
         # We compute the sum of the total flux within the inner radius.
         total_flux = np.nansum(science_corrected * annulus_sel)
@@ -136,19 +188,44 @@ class Star:
             self.fwhm_y[index] = FWHM[1]
         return FWHM[0], FWHM[1], cumulative_sum_x, cumulative_sum_y
 
-    def sky_background(self, science_corrected):
+    def sky_background(self, science_corrected, science_corrected_error):
+        """
+        Calculates the average and median sky flux in the annular region around the star.
+
+        Args:
+            science_corrected (np.ndarray): Corrected science image.
+            science_corrected_error (np.ndarray): Corrected science image errors.
+
+        Returns:
+            tuple: Average sky flux, median sky flux, and the annulus selection mask.
+        """
         annulus_selection = (
                 (self.target_distance > self.inner_radius) &
                 (self.target_distance <= self.outer_radius)
         )
         sky_flux_average = np.sum(science_corrected[annulus_selection]) / np.sum(annulus_selection)
         sky_flux_median = np.median(science_corrected[annulus_selection])
+        sky_flux_median_error = np.sqrt(np.sum(science_corrected_error[annulus_selection]**2) / np.sum(annulus_selection))
         #
+
         return sky_flux_average, sky_flux_median, annulus_selection
 
-    def aperture_photometry(self, science_corrected, aperture_radius, index=0):
+    def aperture_photometry(self, science_corrected, aperture_radius, science_corrected_error, index=0):
+        """
+        Performs aperture photometry for the star.
+
+        Args:
+            science_corrected (np.ndarray): Corrected science image.
+            aperture_radius (float): Radius of the aperture for photometry.
+            science_corrected_error (np.ndarray): Corrected science image error.
+            index (int, optional): Index in arrays to store computed photometry data. Defaults to 0.
+
+        Returns:
+            tuple: Integrated flux within the aperture, corrected science image, annulus selection mask,
+                    average sky flux, and median sky flux.
+        """
         #
-        sky_flux_average, sky_flux_median, annulus_selection = self.sky_background(science_corrected)
+        sky_flux_average, sky_flux_median, annulus_selection = self.sky_background(science_corrected, science_corrected_error)
         #
         science_sky_corrected = science_corrected - sky_flux_median  # sky_flux_average
         # Ricalcolo il centroide solo per avere la posizione precisa dopo sky background remove

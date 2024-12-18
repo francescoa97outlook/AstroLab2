@@ -14,6 +14,35 @@ from AstrolabAnalysis.TASTE.Modules.Science import Science
 
 # ############
 if __name__ == '__main__':
+    """
+    Args:
+    
+    Workflow:
+        1. Setup Paths and Configuration:
+            Load paths and parameters from `constants.yaml`.
+            Set up base and result folders.
+        2. Bias Analysis:
+            Load bias frame file paths.
+            Calculate median bias and pixel error using the `Bias` module.
+        3. Flat Analysis:
+            Load flat frame file paths.
+            Normalize and analyze flats using the `Flat` module.
+        4. Science Analysis:
+            Load science frame file paths.
+            Correct science frames for bias and flat field.
+            Stack science images and extract metadata such as airmass and BJD dates using the `Science` module.
+        5. Centroid Calculation:
+            Use the first science image to determine initial centroid positions for the target and reference stars.
+            Calculate and plot sky background statistics for all science images.
+        6. Interactive Input:
+            Optionally allow the user to specify the number of initial science images to skip.
+        7. Aperture Photometry:
+            Perform photometry on the remaining science frames starting from the selected image using the `AperturePhotometry` module.
+        8. Results Visualization:
+            Generate and save plots, such as sky background statistics, for further analysis.
+    
+    Return:
+    """
     # Path descriptions
     with open(str(Path(current_file, "AstrolabAnalysis/TASTE/constants.yaml"))) as in_f:
         yaml_file = yaml.load(in_f, Loader=yaml.FullLoader)
@@ -48,7 +77,7 @@ if __name__ == '__main__':
     science_folder = str(Path(base_folder, "science"))
     science_list_str = np.genfromtxt(str(Path(science_folder, "list_science.txt")), dtype=str)
     number_of_SCIENCE = len(science_list_str)
-    science_corrected_stack, bjd_julian_date, array_airmass = Science(
+    science_corrected_stack, bjd_julian_date, array_airmass, science_corrected_stack_error = Science(
         result_folder, science_folder, science_list_str, number_of_SCIENCE, median_pixel_error_bias, median_bias,
         median_normalized_flat, median_normalized_flat_errors, number_of_SCIENCE, yaml_file["science"]
     ).execute_science()
@@ -61,7 +90,7 @@ if __name__ == '__main__':
     sky_background_medians = np.zeros(number_of_SCIENCE)
     sky_background_average = np.zeros(number_of_SCIENCE)
     for i, science in enumerate(science_corrected_stack):
-        sky_background_average[i], sky_background_medians[i], _ = tar_star.sky_background(science)
+        sky_background_average[i], sky_background_medians[i], _ = tar_star.sky_background(science, science_corrected_stack_error[i])
     fig, ax = plt.subplots(1, 1, figsize=(8, 6))
     ax.plot(range(number_of_SCIENCE), sky_background_medians, label="Median")
     ax.plot(range(number_of_SCIENCE), sky_background_average, label="Average")
@@ -85,5 +114,6 @@ if __name__ == '__main__':
     # APERTURE ANALYSIS
     AperturePhotometry(
         science_corrected_stack[skip_to_image:, :, :], bjd_julian_date[skip_to_image:], array_airmass[skip_to_image:],
-        skip_overscan, tar_star, ref_star1, ref_star2, vmin, avoid_input, result_folder, yaml_file["aperture"]
+        skip_overscan, tar_star, ref_star1, ref_star2, vmin, avoid_input, result_folder, yaml_file["aperture"],
+        science_corrected_stack_error[skip_to_image:, :, :]
     ).execute_aperture()

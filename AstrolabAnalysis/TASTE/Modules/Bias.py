@@ -8,11 +8,16 @@ from AstrolabAnalysis.TASTE.Modules.general_functions import read_fits, get_head
 
 class Bias:
     """
-        Class to analyze bias
+    Class to analyze bias
     """
     def __init__(self, result_folder, bias_folder, bias_list, number_of_bias, yaml_bias):
         """
-
+        Args:
+            result_folder (str): Path to the folder where analysis results will be saved.
+            bias_folder (str): Path to the folder containing bias frames.
+            bias_list (list): List of file paths for bias frames.
+            number_of_bias (int): Number of bias frames to process.
+            yaml_bias (dict): Configuration parameters related to bias analysis from the YAML file.
         """
         print("----------------------- BIAS -----------------------")
         self.result_folder = result_folder
@@ -39,7 +44,10 @@ class Bias:
 
     def get_first_bias(self):
         """
-
+        Workflow:
+            1. Reads the FITS file of the first bias frame using its path.
+            2. Extracts the header, header comments, and data from the FITS file.
+            3. Processes the header information to obtain key details related to the first bias frame.
         """
         # Get first_bias_information
         (
@@ -68,7 +76,13 @@ class Bias:
 
     def stack_bias_function(self):
         """
-
+        Workflow:
+            1. Initializes an empty array to hold stacked bias frames with dimensions based on the number of bias frames and CCD dimensions.
+            2. Iterates through the list of bias files:
+                a. Reads the FITS file for each bias frame.
+                b. Extracts header information, including the gain value.
+                c. Multiplies the bias frame data by the gain value to scale it appropriately.
+            3. Stores the scaled bias frames in the initialized array.
         """
         self.stack_bias = np.empty([self.number_of_bias, self.ccd_y_axis, self.ccd_x_axis])
         for i, bias in enumerate(self.bias_list):
@@ -83,6 +97,15 @@ class Bias:
             self.stack_bias[i, :, :] = current_bias_data * gain_current
 
     def median_bias_function(self):
+        """
+        Workflow:
+            1. Computes the median bias frame across all stacked bias frames.
+            2. Calculates the average along the columns of the median bias frame.
+            3. Visualizes and compares the first bias frame (scaled by gain) with the median bias frame.
+            4. Analyzes noise characteristics by comparing expected and measured noise in selected columns.
+            5. Computes the pixel-based error and visualizes the distribution of errors.
+            6. Saves median bias data, error values, and related metadata to files.
+        """
         # Calculate the median along all the biases
         self.median_bias = np.median(self.stack_bias, axis=0)
         # Average along a column
@@ -90,6 +113,7 @@ class Bias:
         # PLOT the comparison between the first bias multiplied by the gain
         # and the median along all the biases multiplied by the gain (made before)
         fig, ax = plt.subplots(3, 1, sharex=True, figsize=(10, 8), dpi=300)
+        fig.suptitle("Biases analysis")
         im1 = ax[0].imshow(
             self.stack_bias[0], vmin=np.min(self.median_bias),
             vmax=np.max(self.median_bias), origin='lower', cmap="inferno"
@@ -105,8 +129,11 @@ class Bias:
         ax[2].plot(median_column)
         #
         ax[0].set_ylabel('Y [pixels]')
+        ax[0].set_title("First bias multiplied by gain")
         ax[1].set_ylabel('Y [pixels]')
+        ax[1].set_title("Median along all the biases multiplied by the gain")
         ax[2].set_ylabel('Average counts [e]')
+        ax[2].set_title("Average counts for each colum")
         ax[2].set_xlabel('X [pixels]')
         plt.savefig(str(Path(self.result_folder, "1_bias", "median_bias.png")))
         plt.show()
@@ -166,6 +193,14 @@ class Bias:
             pickle.dump(self.GAIN_first_BIAS, fo)
     
     def execute_bias(self):
+        """
+        Workflow:
+            1. Executes the bias analysis pipeline in the following order:
+                a. Retrieves and processes the first bias frame.
+                b. Stacks all bias frames and scales them by their respective gains.
+                c. Computes the median bias frame and performs error analysis.
+            2. Returns the median pixel error and the computed median bias frame.
+        """
         self.get_first_bias()
         self.stack_bias_function()
         self.median_bias_function()

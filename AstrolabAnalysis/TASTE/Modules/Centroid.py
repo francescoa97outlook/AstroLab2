@@ -13,11 +13,22 @@ from AstrolabAnalysis.TASTE.Modules.general_functions import make_circle_around_
 
 
 class FirstCentroidPosition:
-    
+    """
+    Class for identifying and refining the positions of stars in a corrected science image.
+    """
     def __init__(
             self, science_corrected, skip_border, multipler_inner_radius, science_list_str_f,
             result_folder, yaml_centroids
     ):
+        """
+        Args:
+            science_corrected (np.ndarray): Corrected science image.
+            skip_border (int): Number of border pixels to skip for analysis.
+            multipler_inner_radius (float): Multiplier for determining the inner radius.
+            science_list_str_f (str): Path to the first science image in the list.
+            result_folder (str): Path to the folder where results will be saved.
+            yaml_centroids (dict): YAML configuration file for centroid analysis.
+        """
         print("----------------------- CENTROID -----------------------")
         self.size_arr = len(science_corrected[int(yaml_centroids["img_number"]):, 0, 0])
         science_corrected = science_corrected[int(yaml_centroids["img_number"]), :, :]
@@ -41,8 +52,16 @@ class FirstCentroidPosition:
         self.x_mesh = None
         self.ydim = None
         self.xdim = None
-        
+
     def plot_first_scientific(self):
+        """
+        Plots the first corrected science image without overscan and saves the figure.
+
+        Workflow:
+            1. Visualizes the science frame using a heatmap.
+            2. Displays the shape of the science frame and generates axis arrays.
+            3. Saves the plot to the result folder.
+        """
         fig, ax = plt.subplots(1, 1, figsize=(10, 8), dpi=300)
         im1 = ax.imshow(self.science_corrected, cmap=plt.colormaps['inferno'], origin='lower')
         plt.colorbar(im1, ax=ax, fraction=0.046, pad=0.04)
@@ -59,6 +78,17 @@ class FirstCentroidPosition:
         self.x_mesh, self.y_mesh = np.meshgrid(self.x_axis, self.y_axis)
 
     def normalize_and_binarize(self):
+        """
+        Normalizes, binarizes, and identifies regions of interest in the corrected science image.
+
+        Workflow:
+            1. Normalizes the science image to a range of 0-255.
+            2. Divides the image into sections and applies thresholding to each section.
+            3. Identifies blobs within the thresholded sections.
+            4. Filters regions based on area and extracts their properties.
+            5. Visualizes the binary and labeled regions and saves the plots.
+            6. Assigns target and reference stars based on user input or configuration.
+        """
         labels = [
             "Star0", "Star1", "Star2", "Star3", "Star4", "Star5", "Star6", "Star7", "Star8",
             "Star9", "Star10", "Star11", "Star12", "Star13", "Star14"
@@ -138,6 +168,18 @@ class FirstCentroidPosition:
         )
     
     def plot_3d(self, title, vmin=None):
+        """
+        Generates a 3D plot of the science image within a limited radius.
+
+        Args:
+            title (str): Title of the plot.
+            vmin (float, optional): Minimum value for normalization. Defaults to None.
+
+        Workflow:
+            1. Extracts a region of interest around the target star.
+            2. Creates a 3D surface plot with optional normalization.
+            3. Saves the plot to the result folder.
+        """
         vmax = None
         radius_plot = self.yaml_centroids["radius_plot_3d"]
         if vmin is not None:
@@ -174,6 +216,15 @@ class FirstCentroidPosition:
         plt.close(fig)
 
     def photocenter_star(self):
+        """
+        Generates 3D plots and visualizations of the photocenter for the target star.
+
+        Workflow:
+            1. Creates a 3D plot of the science image without normalization limits.
+            2. Creates a 3D plot of the science image with specified normalization limits.
+            3. Saves the plots to the result folder.
+        """
+
         fig, ax = plt.subplots(subplot_kw={"projection": "3d"}, figsize=(10, 8), dpi=300)
         # Plot the surface.
         surf = ax.plot_surface(
@@ -194,6 +245,15 @@ class FirstCentroidPosition:
         self.plot_3d(f"Plot limitated between {vmin} and {self.tar_star.vmax}", vmin=vmin)
 
     def stars_operations(self):
+        """
+        Performs various operations on the target and reference stars.
+
+        Workflow:
+            1. Refines the positions of the target and reference stars.
+            2. Computes the minimum value in the corrected science image.
+            3. Visualizes good and bad inner radius examples for the stars.
+            4. Iteratively refines the star centers until convergence.
+        """
         self.tar_star.find_first_refined_center(self.science_corrected)
         self.ref_star1.find_first_refined_center(self.science_corrected)
         self.ref_star2.find_first_refined_center(self.science_corrected)
@@ -209,6 +269,14 @@ class FirstCentroidPosition:
         self.ref_star2.calc_refined_center(maximum_number_of_iterations, self.science_corrected)
 
     def plot_target_refined(self):
+        """
+        Plots the refined position of the target star along with the initial position.
+
+        Workflow:
+            1. Displays the refined target coordinates.
+            2. Visualizes the target region with inner radius and labeled points.
+            3. Saves the plot to the result folder.
+        """
         print('Refined target coordinates  x: {0:5.2f}   y: {1:5.2f}'.format(
             self.tar_star.x_refined, self.tar_star.y_refined
         ))
@@ -235,6 +303,15 @@ class FirstCentroidPosition:
         #
 
     def plot_fwhm_target(self):
+        """
+        Computes and visualizes the Full Width at Half Maximum (FWHM) for the target star.
+
+        Workflow:
+            1. Computes FWHM along X and Y axes for the target star.
+            2. Visualizes the normalized cumulative distribution (NCD) along the axes.
+            3. Computes the seeing conditions using FWHM and FITS header data.
+            4. Saves the plots to the result folder.
+        """
         fwhm_x, fwhm_y, cumulative_sum_x, cumulative_sum_y = self.tar_star.determine_FWHM_axis(
             self.science_corrected, int(self.yaml_centroids["img_number"])
         )
@@ -268,6 +345,20 @@ class FirstCentroidPosition:
             fwhm_y * (BINX + BINY) / 2 * CCDSCALE))
 
     def execute_centroid(self):
+        """
+        Executes the entire centroid identification and refinement workflow.
+
+        Workflow:
+            1. Plots the first corrected science image.
+            2. Normalizes, binarizes, and identifies stars in the image.
+            3. Refines the photocenter for the target star.
+            4. Performs operations on the target and reference stars.
+            5. Visualizes the refined position and computes FWHM for the target star.
+            6. Assigns arrays for target and reference stars.
+
+        Returns:
+            tuple: Target star object, first reference star object, second reference star object, and the minimum value in the science image.
+        """
         self.plot_first_scientific()
         self.normalize_and_binarize()
         self.photocenter_star()

@@ -11,13 +11,31 @@ from AstrolabAnalysis.TASTE.Modules.general_functions import make_circle_around_
 
 
 class AperturePhotometry:
-    
+    """
+    Class for performing aperture photometry analysis on a stack of corrected science images.
+    """
     def __init__(
         self, full_science_stack, julian_date, airmass, skip_border, tar_star, ref_star1, ref_star2,
-        vmin, avoid_input, result_folder, yaml_aperture
+        vmin, avoid_input, result_folder, yaml_aperture, full_science_stack_error
     ):
+        """
+        Args:
+            full_science_stack (np.ndarray): 3D array of corrected science frames.
+            julian_date (np.ndarray): Julian dates for each science frame.
+            airmass (np.ndarray): Airmass values for each science frame.
+            skip_border (int): Number of border pixels to skip in the images.
+            tar_star (Star): Target star object.
+            ref_star1 (Star): First reference star object.
+            ref_star2 (Star): Second reference star object.
+            vmin (float): Minimum value for image normalization.
+            avoid_input (bool): If True, skips user input and uses YAML configuration.
+            result_folder (str): Directory to save results.
+            yaml_aperture (dict): YAML configuration for aperture photometry analysis.
+            full_science_stack_error (np.ndarray): Error array corresponding to the science stack.
+        """
         print("----------------------- APERTURE PHOTOMETRY -----------------------")
         self.full_science_stack = full_science_stack
+        self.full_science_stack_error = full_science_stack_error
         self.julian_date = julian_date
         self.airmass = airmass
         self.skip_border = skip_border
@@ -35,12 +53,22 @@ class AperturePhotometry:
         self.aperture = None
 
     def assignment_plus_first_analysis(self):
+        """
+        Performs an initial analysis on the first frame of the science stack.
+
+        Workflow:
+            1. Masks the border regions of the science stack.
+            2. Computes the fractional flux as a function of aperture radius for the target star.
+            3. Visualizes the target star with inner and outer radii marked.
+            4. Generates and saves plots showing the fractional flux.
+            5. Compares the observed flux with Gaussian models of different covariances.
+        """
         self.full_science_stack[:, :, :self.skip_border] = 0
         self.full_science_stack[:, :, -self.skip_border:] = 0
         # Show for first
         (_, science_sky_corrected, annulus_selection, sky_flux_average,
          sky_flux_median) = self.tar_star.aperture_photometry(
-            self.full_science_stack[0, :, :], self.tar_star.radius
+            self.full_science_stack[0, :, :], self.tar_star.radius, self.full_science_stack_error[0, :, :]
         )
         inner_selection = (self.tar_star.target_distance < self.tar_star.inner_radius)
         total_flux = np.sum(science_sky_corrected[inner_selection])
@@ -122,6 +150,18 @@ class AperturePhotometry:
         plt.close(fig)
 
     def aperture_photometry(self):
+        """
+        Performs aperture photometry on all frames in the science stack.
+
+        Workflow:
+            1. Allows user input for aperture radius (or uses YAML configuration).
+            2. Computes flux for the target and reference stars using three aperture radii:
+               a. Aperture - 1
+               b. Aperture + 1
+               c. Specified aperture.
+            3. Saves and visualizes the photometric results for each aperture.
+            4. Restricts the plot range based on YAML configuration and saves results.
+        """
         if self.avoid_input:
             self.aperture = self.yaml_aperture["aperture"]
         else:
@@ -134,15 +174,18 @@ class AperturePhotometry:
             self.aperture_tar = np.empty(len(self.full_science_stack[:, 0, 0]))
             for ii_science, science_img in enumerate(self.full_science_stack[:, 0, 0]):
                 self.aperture_tar[ii_science], _, _, _, _ = self.tar_star.aperture_photometry(
-                    self.full_science_stack[ii_science, :, :], aperture_rad, ii_science
+                    self.full_science_stack[ii_science, :, :], aperture_rad,
+                    self.full_science_stack_error[ii_science, :, :],  ii_science
                 )
                 #
                 self.aperture_ref1[ii_science], _, _, _, _ = self.ref_star1.aperture_photometry(
-                    self.full_science_stack[ii_science, :, :], aperture_rad, ii_science
+                    self.full_science_stack[ii_science, :, :], aperture_rad,
+                    self.full_science_stack_error[ii_science, :, :], ii_science
                 )
                 #
                 self.aperture_ref2[ii_science], _, _, _, _ = self.ref_star2.aperture_photometry(
-                    self.full_science_stack[ii_science, :, :], aperture_rad, ii_science
+                    self.full_science_stack[ii_science, :, :], aperture_rad,
+                    self.full_science_stack_error[ii_science, :, :], ii_science
                 )
             #
             fig, ax = plt.subplots(1, 1, figsize=(10, 8), dpi=300)
@@ -163,6 +206,15 @@ class AperturePhotometry:
             plt.close(fig)
             
     def weather_info(self):
+        """
+        Analyzes and visualizes weather and instrumental conditions over time.
+
+        Workflow:
+            1. Visualizes the aperture photometry setup, including inner and outer radii.
+            2. Computes normalized flux, sky background, telescope drift, and FWHM over time.
+            3. Generates plots for each metric and saves them to the result folder.
+            4. Computes and plots normalized flux for the target and reference stars.
+        """
         fig, ax = plt.subplots(1, 1, figsize=(10, 8), dpi=300)
         im1 = ax.imshow(
             self.full_science_stack[0, :, :], cmap=plt.colormaps['inferno'],
@@ -207,9 +259,9 @@ class AperturePhotometry:
                        label='Ref #2')
         #
         for i, science in enumerate(self.full_science_stack):
-            self.tar_star.sky_background(science)
-            self.tar_star.sky_background(science)
-            self.tar_star.sky_background(science)
+            self.tar_star.sky_background(science, self.full_science_stack_error[i])
+            self.tar_star.sky_background(science, self.full_science_stack_error[i])
+            self.tar_star.sky_background(science, self.full_science_stack_error[i])
         # axs[0].set_yticks(np.arange(0.90, 1.1, 0.025))
         # axs[0].set_ylim(0.88, 1.052)
         axs[0].set_ylabel('Normalized flux')
@@ -241,6 +293,20 @@ class AperturePhotometry:
         plt.close(fig)
         
     def differential_photometry(self):
+        """
+        Performs differential photometry and normalizes results.
+
+        Workflow:
+            1. Computes differential photometry for the target star against:
+               a. Reference 1
+               b. Reference 2
+               c. Combined references.
+            2. Computes photometric errors using error propagation.
+            3. Fits out-of-transit data with a polynomial for normalization.
+            4. Visualizes and saves differential photometry results.
+            5. Computes and reports the standard deviation of the normalized differential flux.
+            6. Saves photometric data and results to a pickle file.
+        """
         fig, ax = plt.subplots(1, 1, figsize=(10, 8), dpi=300)
         ax.scatter(self.julian_date - self.time_offset, self.aperture_tar / self.aperture_ref1, s=2, c='C0', label='Ref #1')
         ax.set_xlabel('BJD-TDB - {0:.1f} [days]'.format(self.time_offset))
@@ -372,6 +438,15 @@ class AperturePhotometry:
             pickle.dump(differential_allref_error, f)
 
     def execute_aperture(self):
+        """
+            Executes the complete aperture photometry workflow.
+
+            Workflow:
+                1. Performs initial analysis on the science stack.
+                2. Conducts aperture photometry for all frames.
+                3. Analyzes weather and instrumental conditions.
+                4. Computes and visualizes differential photometry.
+        """
         self.assignment_plus_first_analysis()
         self.aperture_photometry()
         self.weather_info()

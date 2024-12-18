@@ -18,7 +18,17 @@ class Science:
         number_test=30, yaml_science=""
     ):
         """
-
+        Args:
+            result_folder (str): Path to the folder where results will be stored.
+            science_folder (str): Path to the folder containing science frames.
+            science_list (list): List of file paths for science frames.
+            number_of_science (int): Total number of science frames.
+            median_pixel_error (float): Median pixel error from bias analysis.
+            median_bias (np.ndarray): Median bias frame used for calibration.
+            median_normalized_flat (np.ndarray): Median flat frame used for calibration.
+            median_normalized_flat_errors (np.ndarray): Errors associated with the median flat frame.
+            number_test (int, optional): Number of test science frames to process. Defaults to 30.
+            yaml_science (dict, optional): YAML configuration data for science processing. Defaults to an empty string.
         """
         print("----------------------- SCIENCE -----------------------")
         self.result_folder = result_folder
@@ -56,7 +66,10 @@ class Science:
         
     def get_first_science(self):
         """
-
+        Workflow:
+            1. Reads the FITS file of the first science frame using its path.
+            2. Extracts the header, header comments, and data from the FITS file.
+            3. Processes the header information to obtain key details related to the first science frame.
         """
         # Get first_science_information
         (
@@ -84,6 +97,16 @@ class Science:
         )
         
     def science_stack_function(self):
+        """
+        Workflow:
+            1. Checks if a pre-saved pickle file exists for the corrected science stack.
+                a. If yes, loads the corrected science stack, errors, and metadata.
+                b. If no, processes the science frames to create corrected stacks.
+            2. Reads and processes each science frame:
+                a. Applies bias and flat field corrections.
+                b. Computes associated errors for the corrected science frames.
+            3. Saves the corrected stacks and metadata to a pickle file.
+        """
         if int(self.yaml_science["read_pkl"]):
             pkl_file = str(Path(self.result_folder, "3_science", "stack_corr.pkl"))
             with open(pkl_file, 'rb') as f:
@@ -129,6 +152,13 @@ class Science:
                 pickle.dump(self.array_airmass, fo)
 
     def plot_bjd_tdb(self):
+        """
+        Workflow:
+            1. Computes the light travel time correction for a target over a year.
+            2. Converts Julian Date (JD) to Barycentric Julian Date in Barycentric Dynamical Time (BJD_TDB).
+            3. Visualizes the light travel time correction over the JD range.
+            4. Computes the average light travel time and difference between JD_UTC and BJD_TDB.
+        """
         target = coord.SkyCoord(
             self.OBJCTRA_first_science, self.OBJCTDEC_first_science, unit=(u.hourangle, u.deg), frame='icrs'
         )
@@ -172,7 +202,17 @@ class Science:
         ))
 
     def execute_science(self):
+        """
+        Workflow:
+            1. Executes the complete science frame analysis workflow:
+                a. Reads the first science frame.
+                b. Processes the stack of science frames.
+                c. Computes and visualizes BJD_TDB corrections.
+            2. Returns the corrected science stack, BJD_TDB values, and airmass array.
+        Returns:
+            Corrected science stack, BJD_TDB values, airmass array, .stack_img_error
+        """
         self.get_first_science()
         self.science_stack_function()
         self.plot_bjd_tdb()
-        return self.science_corrected_stack, self.bjd_tdb.to_value('jd'), self.array_airmass
+        return self.science_corrected_stack, self.bjd_tdb.to_value('jd'), self.array_airmass, self.science_corrected_errors_stack

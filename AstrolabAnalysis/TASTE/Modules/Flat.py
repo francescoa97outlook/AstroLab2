@@ -7,11 +7,18 @@ from AstrolabAnalysis.TASTE.Modules.general_functions import *
 
 class Flat:
     """
-
+    Class to analyze flat
     """
     def __init__(self, result_folder, flat_folder, flat_list, number_of_flat, median_bias, median_pixel_error, yaml_flat):
-        """
-
+        """"
+        Args:
+            result_folder (str): Path to the folder where results will be stored.
+            flat_folder (str): Path to the folder containing flat frames.
+            flat_list (list): List of file paths for flat frames.
+            number_of_flat (int): Total number of flat frames.
+            median_bias (np.ndarray): Median bias frame used for calibration.
+            median_pixel_error (float): Median pixel error from bias analysis.
+            yaml_flat (dict): YAML configuration data for flat analysis.
         """
         print("----------------------- FLAT -----------------------")
         self.result_folder = result_folder
@@ -45,7 +52,11 @@ class Flat:
         
     def get_first_flat(self):
         """
-
+        Workflow:
+            1. Reads the FITS file of the first flat frame using its path.
+            2. Extracts the header, header comments, and data from the FITS file.
+            3. Processes the header information to obtain key details related to the first flat frame.
+            4. Visualizes the first flat frame with and without overscan inclusion.
         """
         # Get first_flat_information
         (
@@ -87,6 +98,14 @@ class Flat:
         plt.close(fig)
         
     def define_overscan(self):
+        """
+        Workflow:
+            1. Calculates the mean along the columns of the first flat data.
+            2. Identifies overscan columns by finding those with significantly lower mean values.
+            3. Sets the number of overscan columns to exclude on either side.
+            4. Computes the data range (vmin and vmax) after overscan exclusion.
+            5. Visualizes the flat data with overscan excluded.
+        """
         mean_columns = np.mean(self.first_flat_data, axis=0)
         # Define the overscan columns by looking for the columns that have
         index_overscan = mean_columns < np.max(mean_columns) / 2
@@ -118,6 +137,15 @@ class Flat:
         plt.close(fig)
         
     def stack_flat_func(self):
+        """
+        Workflow:
+           1. Initializes an empty array for stacking flat frames and their readout noise values.
+           2. Iterates through the list of flat frames:
+               a. Reads the FITS file for each flat frame.
+               b. Extracts header information, including the gain and readout noise values.
+               c. Subtracts the median bias and scales the flat frame data by the gain.
+           3. Stores the processed flat frames in the stack array.
+        """
         # Computing the normalization factors
         self.stack_flat = np.empty([self.number_of_flat, self.ccd_y_axis, self.ccd_x_axis])
         self.rdnoise_stack = np.empty(self.number_of_flat)
@@ -130,6 +158,13 @@ class Flat:
             self.stack_flat[i, :, :] = current_flat_data * current_GAIN - self.median_bias
         
     def normalization_factor(self, ):
+        """
+        Workflow:
+            1. Defines a central box within the flat frame using a window size.
+            2. Computes normalization factors by taking the median of the pixel values within the box for each frame.
+            3. Calculates the standard deviation of the normalization factors for error estimation.
+            4. Visualizes the normalization factors and their standard deviations across all frames.
+        """
         windows_size = int(self.yaml_flat["windows_size"])
         # x0, x1, y0, y1 represents the coordinates of the four corners
         x0 = np.int16(self.ccd_x_axis / 2 - windows_size / 2)
@@ -152,11 +187,17 @@ class Flat:
         ax.errorbar(x_frame, self.normalization_factors, normalization_factors_std, fmt='o', ms=2)
         ax.set_xlabel('Frame number')
         ax.set_ylabel('Average counts [e]')
+        ax.set_title("Normalization factors for each frame")
         plt.savefig(str(Path(self.result_folder, "2_flat", "normalization_factors.png")))
         plt.show()
         plt.close(fig)
         
-    def stack_flat_nomralized_func(self):
+    def stack_flat_normalized_func(self):
+        """
+        Workflow:
+            1. Normalizes each flat frame in the stack by dividing it by its corresponding normalization factor.
+            2. Validates normalization by comparing iterative and vectorized results for consistency.
+        """
         #
         stack_normalized_iter = np.zeros_like(self.stack_flat)  # initialization of the output array
         for i_flat in range(self.number_of_flat):
@@ -171,6 +212,14 @@ class Flat:
         )
         
     def median_flat(self):
+        """
+        Workflow:
+           1. Computes the median flat by taking the median of all normalized flat frames along the stack axis.
+           2. Identifies the data range (nmin and nmax) for visualization purposes.
+           3. Visualizes the median flat and its median column values.
+           4. Calculates photon noise and total error per pixel.
+           5. Stores the median normalized flat errors.
+        """
         # Median flat
         self.median_normalized_flat = np.median(self.stack_normalized_flat, axis=0)
         #
@@ -190,8 +239,10 @@ class Flat:
         cbar.set_label("e")
         ax[0].set_xlabel('X [pixels]')
         ax[0].set_ylabel('Y [pixels]')
+        ax[0].set_title("Median flat")
         ax[1].set_xlabel('X [pixels]')
         ax[1].set_ylabel('Average value [normalized]')
+        ax[1].set_title("Median column of the median flat")
         plt.savefig(str(Path(self.result_folder, "2_flat", "median_flat.png")))
         plt.show()
         plt.close(fig)
@@ -205,6 +256,11 @@ class Flat:
         print("Shape of the Median normalized error array: ", np.shape(self.median_normalized_flat_errors))
         
     def save_pkl(self):
+        """
+        Workflow:
+            1. Creates a list of names corresponding to key data and metadata.
+            2. Saves median normalized flat, normalization factors, and errors to a pickle file.
+        """
         list_names = ["median_normalized_flat", "stack_normalized", "normalization_factors", "stack_flat",
                       "median_normalized_flat_errors"]
         with open(str(Path(self.result_folder, "2_flat", "flat_info.pkl")), "wb") as fo:
@@ -216,6 +272,11 @@ class Flat:
             pickle.dump(self.median_normalized_flat_errors, fo)
 
     def some_statistic_flat(self):
+        """
+        Workflow:
+            1. Computes and visualizes histograms of pixel values before and after normalization.
+            2. Generates a probability density plot for normalization factors.
+        """
         mean_normalization = np.mean(self.normalization_factors)
         fig, ax = plt.subplots(1, 1, figsize=(10, 8), dpi=300)
         limit_x_1 = int(self.yaml_flat["limit_x_1"])
@@ -251,11 +312,22 @@ class Flat:
         plt.close(fig)
 
     def execute_flat(self):
+        """
+        Workflow:
+            1. Processes the first flat frame to extract metadata and visualize it.
+            2. Defines overscan regions and excludes them from analysis.
+            3. Stacks all flat frames and normalizes them.
+            4. Computes the median flat frame and associated error maps.
+            5. Saves the processed data and generates statistical visualizations.
+
+        Returns:
+            tuple: median normalized flat, its errors, and the skip overscan value.
+        """
         self.get_first_flat()
         self.define_overscan()
         self.stack_flat_func()
         self.normalization_factor()
-        self.stack_flat_nomralized_func()
+        self.stack_flat_normalized_func()
         self.median_flat()
         self.save_pkl()
         self.some_statistic_flat()
