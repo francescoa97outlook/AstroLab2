@@ -220,8 +220,8 @@ class AperturePhotometry:
             self.full_science_stack[0, :, :], cmap=plt.colormaps['inferno'],
             norm=colors.LogNorm(vmin=self.vmin, vmax=self.tar_star.vmax), origin='lower'
         )
-        plt.colorbar(im1, ax=ax, fraction=0.046, pad=0.04)
-        make_circle_around_star2(self.tar_star.x_refined, self.tar_star.y_refined, self.aperture, color="blue",
+        plt.colorbar(im1, ax=ax, fraction=0.046, pad=0.04, shrink=0.5)
+        make_circle_around_star2(self.tar_star.x_refined, self.tar_star.y_refined, self.aperture, color="pink",
                                  label='Aperture', axf=ax)
         make_annulus_around_star(
             self.tar_star.x_refined, self.tar_star.y_refined, self.tar_star.inner_radius, self.tar_star.outer_radius,
@@ -313,7 +313,7 @@ class AperturePhotometry:
         ax.set_ylabel('Differential photometry')
         ax.set_ylim(float(self.yaml_aperture["ylim1_aperture_ref1"]), float(self.yaml_aperture["ylim2_aperture_ref1"]))
         ax.legend()
-        ax.set_title("Reference 1")
+        ax.set_title(f"Aperture {self.aperture}: reference star 1")
         plt.savefig(str(Path(self.result_folder, "5_aperture", "ref1_star_ap.png")))
         plt.show()
         plt.close(fig)
@@ -324,7 +324,7 @@ class AperturePhotometry:
         ax.set_ylabel('Differential photometry')
         ax.set_ylim(float(self.yaml_aperture["ylim1_aperture_ref2"]), float(self.yaml_aperture["ylim2_aperture_ref2"]))
         ax.legend()
-        ax.set_title("Reference 2")
+        ax.set_title(f"Aperture {self.aperture}: reference star 2")
         plt.savefig(str(Path(self.result_folder, "5_aperture", "ref2_star_ap.png")))
         plt.show()
         plt.close(fig)
@@ -336,7 +336,7 @@ class AperturePhotometry:
         ax.set_ylabel('Differential photometry')
         ax.set_ylim(float(self.yaml_aperture["ylim1_aperture_sum"]), float(self.yaml_aperture["ylim2_aperture_sum"]))
         ax.legend()
-        ax.set_title("Reference 1 + 2")
+        ax.set_title(f"Aperture {self.aperture}: reference stars 1 + 2")
         plt.savefig(str(Path(self.result_folder, "5_aperture", "sum_star_ap.png")))
         plt.show()
         plt.close(fig)
@@ -365,17 +365,52 @@ class AperturePhotometry:
         #
         limit_transit_inf = self.yaml_aperture["xlim1_aperture_zoom"]
         limit_transit_sup = self.yaml_aperture["xlim2_aperture_zoom"]
+        #
         fig, ax = plt.subplots(1, 1, figsize=(10, 8), dpi=300)
-        ax.scatter(self.julian_date - self.time_offset, differential_allref, s=2, label='All refs')
-        ax.errorbar(self.julian_date - self.time_offset, differential_allref,
-                     fmt=' ', c='k', alpha=0.25, zorder=-1, yerr=differential_allref_error)
+        ax.scatter(self.julian_date - self.time_offset, differential_ref01, s=2, label='Ref #1')
+        ax.errorbar(self.julian_date - self.time_offset, differential_ref01,
+                    fmt=' ', c='k', alpha=0.25, zorder=-1, yerr=differential_ref01_error)
         ax.legend()
+        ax.set_title(f'Differential photometry at aperture {self.aperture}')
+        ax.set_ylim(float(self.yaml_aperture["ylim1_aperture_ref1"]), float(self.yaml_aperture["ylim2_aperture_ref1"]))
         ax.axvline(limit_transit_inf - self.time_offset, c='C3')
         ax.axvline(limit_transit_sup - self.time_offset, c='C3')
         ax.set_xlabel('BJD-TDB - {0:.1f} [days]'.format(self.time_offset))
         ax.set_ylabel('Differential photometry')
         # ax.ylim(0.240, 0.250)
-        plt.savefig(str(Path(self.result_folder, "5_aperture", "differential_photometry.png")))
+        plt.savefig(str(Path(self.result_folder, "5_aperture", "differential_photometry_1.png")))
+        plt.show()
+        plt.close(fig)
+        #
+        fig, ax = plt.subplots(1, 1, figsize=(10, 8), dpi=300)
+        ax.scatter(self.julian_date - self.time_offset, differential_ref02, s=2, label='Ref #2')
+        ax.errorbar(self.julian_date - self.time_offset, differential_ref02,
+                    fmt=' ', c='k', alpha=0.25, zorder=-1, yerr=differential_ref02_error)
+        ax.legend()
+        ax.set_title(f'Differential photometry at aperture {self.aperture}')
+        ax.set_ylim(float(self.yaml_aperture["ylim1_aperture_ref2"]), float(self.yaml_aperture["ylim2_aperture_ref2"]))
+        ax.axvline(limit_transit_inf - self.time_offset, c='C3')
+        ax.axvline(limit_transit_sup - self.time_offset, c='C3')
+        ax.set_xlabel('BJD-TDB - {0:.1f} [days]'.format(self.time_offset))
+        ax.set_ylabel('Differential photometry')
+        # ax.ylim(0.240, 0.250)
+        plt.savefig(str(Path(self.result_folder, "5_aperture", "differential_photometry_2.png")))
+        plt.show()
+        plt.close(fig)
+        #
+        fig, ax = plt.subplots(1, 1, figsize=(10, 8), dpi=300)
+        ax.scatter(self.julian_date - self.time_offset, differential_allref, s=2, label='Ref #1 + #2')
+        ax.errorbar(self.julian_date - self.time_offset, differential_allref,
+                     fmt=' ', c='k', alpha=0.25, zorder=-1, yerr=differential_allref_error)
+        ax.legend()
+        ax.set_title(f'Differential photometry at aperture {self.aperture}')
+        ax.set_ylim(float(self.yaml_aperture["ylim1_aperture_sum"]), float(self.yaml_aperture["ylim2_aperture_sum"]))
+        ax.axvline(limit_transit_inf - self.time_offset, c='C3')
+        ax.axvline(limit_transit_sup - self.time_offset, c='C3')
+        ax.set_xlabel('BJD-TDB - {0:.1f} [days]'.format(self.time_offset))
+        ax.set_ylabel('Differential photometry')
+        # ax.ylim(0.240, 0.250)
+        plt.savefig(str(Path(self.result_folder, "5_aperture", "differential_photometry_sum.png")))
         plt.show()
         plt.close(fig)
         #
@@ -404,22 +439,41 @@ class AperturePhotometry:
         differential_ref02_normalized_error = np.std(differential_ref02_normalized[out_transit_selection])
         differential_allref_normalized_error = np.std(differential_allref_normalized[out_transit_selection])
         fig, ax = plt.subplots(1, 1, figsize=(10, 8), dpi=300)
-        ax.scatter(self.julian_date - self.time_offset, differential_ref01_normalized, s=2)
-        ax.scatter(self.julian_date - self.time_offset, differential_ref02_normalized, s=2)
-        ax.scatter(self.julian_date - self.time_offset, differential_allref_normalized, s=2)
+        ax.scatter(
+            self.julian_date - self.time_offset,
+            differential_ref01_normalized,
+            s=2, label='Ref #1, σ=' + '{0:.7f}'.format(
+                np.std(differential_ref01_normalized[out_transit_selection])
+            )
+        )
+        ax.scatter(
+            self.julian_date - self.time_offset, differential_ref02_normalized, s=2,
+            label='Ref #2, σ=' + '{0:.7f}'.format(
+                np.std(differential_ref02_normalized[out_transit_selection])
+            )
+        )
+        ax.scatter(
+            self.julian_date - self.time_offset, differential_allref_normalized, s=2,
+            label='Ref #1 + #2, σ=' + '{0:.7f}'.format(
+                np.std(differential_allref_normalized[out_transit_selection])
+            )
+        )
         ax.axvline(limit_transit_inf - self.time_offset, c='C3')
         ax.axvline(limit_transit_sup - self.time_offset, c='C3')
         # ax.ylim(0.975, 1.025)
         ax.set_xlabel('BJD-TDB - {0:.1f} [days]'.format(self.time_offset))
         ax.set_ylabel('Normalized differential photometry')
+        ax.set_title(f'Normalized differential photometry at aperture {self.aperture}')
+        ax.set_ylim(float(self.yaml_aperture["ylim1_norm_aperture_sum"]), float(self.yaml_aperture["ylim2_norm_aperture_sum"]))
+        ax.legend()
         plt.savefig(str(Path(self.result_folder, "5_aperture", "normalized_differential_photometry.png")))
         plt.show()
         plt.close(fig)
-        print('Standard deviation aperture 08 reference #1:    {0:.7f}'.format(
+        print('Standard deviation aperture reference #1:    {0:.7f}'.format(
             np.std(differential_ref01_normalized[out_transit_selection])))
-        print('Standard deviation aperture 08 reference #2:    {0:.7f}'.format(
+        print('Standard deviation aperture reference #2:    {0:.7f}'.format(
             np.std(differential_ref02_normalized[out_transit_selection])))
-        print('Standard deviation aperture 08 all references : {0:.7f}'.format(
+        print('Standard deviation aperture all references : {0:.7f}'.format(
             np.std(differential_allref_normalized[out_transit_selection])))
         #
         with open(str(Path(self.result_folder, "5_aperture", "aperture_final.pkl")), "wb") as f:
