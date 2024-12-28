@@ -164,3 +164,7 @@ cython_debug/
 *.pkl
 /GJ3470_20220328/results/
 !/GJ3470_20220328/results/.gitkeep
+
+# TESS
+Data/
+Results/

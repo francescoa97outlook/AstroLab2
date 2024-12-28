@@ -1,0 +1,8 @@
+lc_name : "GJ3470_tess_s0044_lc.fits"
+
+preprocess : {
+  low_lim : 2459500.6,
+  high_lim : null,
+  xlim : [2459500.15, 2459500.80],
+  ylim : [10100, 10300]
+}
