@@ -77,6 +77,12 @@ class LightCurvePreprocess:
             final_selection = self.conservative_selection & (self.time_array < self.yaml_preprocess["high_lim"])
         else:
             final_selection = self.conservative_selection
+            # Apply the final selection on the data
+            self.time_array = self.time_array[final_selection]
+            self.sap_flux = self.sap_flux[final_selection]
+            self.sap_flux_error = self.sap_flux_error[final_selection]
+            self.pdcsap_flux = self.pdcsap_flux[final_selection]
+            self.pdcsap_flux_error = self.pdcsap_flux_error[final_selection]
             return
         # Plot a zoom of the manually excluded data
         plt.figure(figsize=(12.8, 7.2))
@@ -103,6 +109,12 @@ class LightCurvePreprocess:
         plt.legend()
         plt.savefig(str(Path(self.results_folder,"sector{0:d}_sap-pscsap_final-selection_zoom.png".format(self.sector_number))))
         plt.show()
+        # Apply the final selection on the data
+        self.time_array = self.time_array[final_selection]
+        self.sap_flux = self.sap_flux[final_selection]
+        self.sap_flux_error = self.sap_flux_error[final_selection]
+        self.pdcsap_flux = self.pdcsap_flux[final_selection]
+        self.pdcsap_flux_error = self.pdcsap_flux_error[final_selection]
 
     def execute_preprocess(self):
         """
