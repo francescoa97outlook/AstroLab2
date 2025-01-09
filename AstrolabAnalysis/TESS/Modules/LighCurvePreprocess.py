@@ -109,6 +109,7 @@ class LightCurvePreprocess:
         plt.legend()
         plt.savefig(str(Path(self.results_folder,"sector{0:d}_sap-pscsap_final-selection_zoom.png".format(self.sector_number))))
         plt.show()
+        plt.close()
         # Apply the final selection on the data
         self.time_array = self.time_array[final_selection]
         self.sap_flux = self.sap_flux[final_selection]
@@ -122,4 +123,4 @@ class LightCurvePreprocess:
         """
         self.read_and_conservative_selection()
         self.final_data_selection()
-        return self.time_array, self.sap_flux, self.sap_flux_error, self.pdcsap_flux, self.pdcsap_flux_error
+        return self.time_array, self.sap_flux, self.sap_flux_error, self.pdcsap_flux, self.pdcsap_flux_error, self.sector_number

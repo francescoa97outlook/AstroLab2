@@ -6,3 +6,24 @@ preprocess : {
   xlim : [2459500.15, 2459500.80],
   ylim : [10100, 10300]
 }
+
+testing_filter_window : 1.0
+
+filter_list : {
+  filter1 : {
+    model : "biweight",
+    window : 1.0,
+  },
+  filter2 : {
+    model : "biweight",
+    window : 1.5,
+  },
+  filter3 : {
+    model : "hspline",
+    window : 1.0,
+  },
+  filter4 : {
+    model : "hspline",
+    window : 1.5,
+  },
+}

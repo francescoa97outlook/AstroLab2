@@ -4,3 +4,24 @@ preprocess : {
   low_lim : null,
   high_lim : null
 }
+
+testing_filter_window : 1.2
+
+filter_list : {
+  filter1 : {
+    model : 'biweight',
+    window : 1.0,
+  },
+  filter2 : {
+    model : 'biweight',
+    window : 1.5,
+  },
+  filter3 : {
+    model : 'hspline',
+    window : 1.2,
+  },
+  filter4 : {
+    model : 'hspline',
+    window : 1.5,
+  },
+}
