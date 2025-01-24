@@ -168,3 +168,6 @@ cython_debug/
 # TESS
 Data/
 Results/
+
+# Final analysis
+AstrolabAnalysis/ANALYSIS/emcee_sampler.p
