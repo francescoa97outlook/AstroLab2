@@ -1,6 +1,7 @@
-from pathlib import Path
 import yaml
 import os
+import pickle
+from pathlib import Path
 
 from AstrolabAnalysis.TESS.Modules.LighCurvePreprocess import LightCurvePreprocess
 from AstrolabAnalysis.TESS.Modules.LightCurveFiltering import LightCurveFiltering
@@ -39,3 +40,10 @@ if __name__ == '__main__':
                 time_array, sap_flux, sap_flux_error, pdcsap_flux, pdcsap_flux_error,
                 orbital_params, yaml_sector, sector_number, results_folder
                 ).execute_flatten()
+        sector_dictionary = {
+            'time' : time_array,
+            'selected_flux' : selected_flux,
+            'selected_flux_error' : selected_flux_error,
+        }
+        pickle.dump(sector_dictionary, open(str(Path(
+            results_folder, "GJ3470_TESS_sector{0:d}_selected.p".format(sector_number))), "wb"))

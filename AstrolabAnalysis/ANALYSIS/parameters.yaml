@@ -1,0 +1,21 @@
+planet_parameters : {
+  # From ExoFOP website (TOIs TESS Project)
+  epoch : 2459500.53574,
+  period : 3.3366510632883,
+  # From Kokori et al. 2023 (Exoplanetary archive)
+  rp : 0.0764,
+  # From ExoFOP website (Confirmed Planets Exoplanet Archive)
+  a : 13.98,
+  inc : 89.13,
+  # Fixed
+  ecc : 0.,
+  w : 90.,
+}
+
+stellar_parameters : {
+  # From ExoFOP website (TOIs Stellar Parameters)
+  teff : [3552, 157],
+  # From Kosiarek et al. 2019 (Exoplanetary archive)
+  logg : [4.658, 0.035],
+  z : [0.2, 0.1],
+}
