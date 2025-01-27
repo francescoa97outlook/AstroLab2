@@ -89,10 +89,12 @@ if __name__ == '__main__':
     # CHECK BACKGROUND FOR SELECT SKIP IMAGE
     sky_background_medians = np.zeros(number_of_SCIENCE)
     sky_background_average = np.zeros(number_of_SCIENCE)
+    error_sky_background = np.zeros(number_of_SCIENCE)
     for i, science in enumerate(science_corrected_stack):
-        sky_background_average[i], sky_background_medians[i], _ = tar_star.sky_background(science, science_corrected_stack_error[i])
+        sky_background_average[i], sky_background_medians[i], _, error_sky_background[i] = tar_star.sky_background(science, science_corrected_stack_error[i])
     fig, ax = plt.subplots(1, 1, figsize=(8, 6))
-    ax.plot(range(number_of_SCIENCE), sky_background_medians, label="Median")
+    ax.errorbar(range(number_of_SCIENCE), sky_background_medians, yerr=error_sky_background, label="Median")
+    # ax.plot(range(number_of_SCIENCE), sky_background_medians, label="Median")
     ax.plot(range(number_of_SCIENCE), sky_background_average, label="Average")
     ax.set_xlabel("Science image")
     ax.set_ylabel("Sky background count")

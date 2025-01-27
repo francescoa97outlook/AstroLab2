@@ -43,6 +43,7 @@ class Star:
         self.y_arr = None
         self.target_distance = None
         self.sky_background_arr = None
+        self.aperture_star_error = None
 
     def assign_dimension_array(self, size_arr):
         """
@@ -57,6 +58,7 @@ class Star:
         self.aperture_star = np.zeros(size_arr)
         self.fwhm_x = np.zeros(size_arr)
         self.fwhm_y = np.zeros(size_arr)
+        self.aperture_star_error = np.zeros(size_arr)
 
     def example_bad_good_inner_radius(self, science_corrected, vmin):
         """
@@ -208,7 +210,7 @@ class Star:
         sky_flux_median_error = np.sqrt(np.sum(science_corrected_error[annulus_selection]**2) / np.sum(annulus_selection))
         #
 
-        return sky_flux_average, sky_flux_median, annulus_selection
+        return sky_flux_average, sky_flux_median, annulus_selection, sky_flux_median_error
 
     def aperture_photometry(self, science_corrected, aperture_radius, science_corrected_error, index=0):
         """
@@ -225,9 +227,10 @@ class Star:
                     average sky flux, and median sky flux.
         """
         #
-        sky_flux_average, sky_flux_median, annulus_selection = self.sky_background(science_corrected, science_corrected_error)
+        sky_flux_average, sky_flux_median, annulus_selection, sky_median_error = self.sky_background(science_corrected, science_corrected_error)
         #
         science_sky_corrected = science_corrected - sky_flux_median  # sky_flux_average
+        science_sky_corrected_error = np.sqrt(science_corrected_error**2 + sky_median_error**2)
         # Ricalcolo il centroide solo per avere la posizione precisa dopo sky background remove
         self.calc_refined_center(
             30, science_sky_corrected,
@@ -235,8 +238,10 @@ class Star:
         self.determine_FWHM_axis(science_corrected, index)
         aperture_selection = (self.target_distance < aperture_radius)
         self.aperture_star[index] = np.sum(science_sky_corrected[aperture_selection])
+        self.aperture_star_error[index] = np.sqrt(
+            np.sum(science_sky_corrected_error[aperture_selection]**2) / np.sum(aperture_selection)
+        )
         self.x_arr[index] = self.x_refined
         self.y_arr[index] = self.y_refined
         self.sky_background_arr[index] = sky_flux_median
-        return (np.sum(science_sky_corrected[aperture_selection]),
-                science_sky_corrected, annulus_selection, sky_flux_average, sky_flux_median)
+        return science_sky_corrected, annulus_selection, sky_flux_average, sky_flux_median

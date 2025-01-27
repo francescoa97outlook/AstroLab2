@@ -47,9 +47,6 @@ class AperturePhotometry:
         self.result_folder = result_folder
         self.yaml_aperture = yaml_aperture
         self.time_offset = None
-        self.aperture_ref2 = None
-        self.aperture_ref1 = None
-        self.aperture_tar = None
         self.aperture = None
 
     def assignment_plus_first_analysis(self):
@@ -66,7 +63,7 @@ class AperturePhotometry:
         self.full_science_stack[:, :, :self.skip_border] = 0
         self.full_science_stack[:, :, -self.skip_border:] = 0
         # Show for first
-        (_, science_sky_corrected, annulus_selection, sky_flux_average,
+        (science_sky_corrected, annulus_selection, sky_flux_average,
          sky_flux_median) = self.tar_star.aperture_photometry(
             self.full_science_stack[0, :, :], self.tar_star.radius, self.full_science_stack_error[0, :, :]
         )
@@ -169,27 +166,24 @@ class AperturePhotometry:
             self.aperture = int(input())
         #
         for aperture_rad in [self.aperture - 1, self.aperture + 1, self.aperture]:
-            self.aperture_ref2 = np.empty(len(self.full_science_stack[:, 0, 0]))
-            self.aperture_ref1 = np.empty(len(self.full_science_stack[:, 0, 0]))
-            self.aperture_tar = np.empty(len(self.full_science_stack[:, 0, 0]))
             for ii_science, science_img in enumerate(self.full_science_stack[:, 0, 0]):
-                self.aperture_tar[ii_science], _, _, _, _ = self.tar_star.aperture_photometry(
+                self.tar_star.aperture_photometry(
                     self.full_science_stack[ii_science, :, :], aperture_rad,
                     self.full_science_stack_error[ii_science, :, :],  ii_science
                 )
                 #
-                self.aperture_ref1[ii_science], _, _, _, _ = self.ref_star1.aperture_photometry(
+                self.ref_star1.aperture_photometry(
                     self.full_science_stack[ii_science, :, :], aperture_rad,
                     self.full_science_stack_error[ii_science, :, :], ii_science
                 )
                 #
-                self.aperture_ref2[ii_science], _, _, _, _ = self.ref_star2.aperture_photometry(
+                self.ref_star2.aperture_photometry(
                     self.full_science_stack[ii_science, :, :], aperture_rad,
                     self.full_science_stack_error[ii_science, :, :], ii_science
                 )
             #
             fig, ax = plt.subplots(1, 1, figsize=(10, 8), dpi=300)
-            ax.scatter(self.julian_date, self.aperture_tar / self.aperture_ref1, s=2)
+            ax.scatter(self.julian_date, self.tar_star.aperture_star / self.ref_star1.aperture_star, s=2)
             ax.set_ylim(float(self.yaml_aperture["ylim1_aperture_ref1"]), float(self.yaml_aperture["ylim2_aperture_ref1"]))
             ax.set_title(f"Aperture " + str(aperture_rad))
             plt.savefig(str(Path(self.result_folder, "5_aperture", "aperture" + str(aperture_rad) + ".png")))
@@ -197,7 +191,7 @@ class AperturePhotometry:
             plt.close(fig)
             #
             fig, ax = plt.subplots(1, 1, figsize=(10, 8), dpi=300)
-            ax.scatter(self.julian_date, self.aperture_tar / self.aperture_ref1, s=2)
+            ax.scatter(self.julian_date, self.tar_star.aperture_star / self.ref_star1.aperture_star, s=2)
             ax.set_ylim(float(self.yaml_aperture["ylim1_aperture_ref1"]), float(self.yaml_aperture["ylim2_aperture_ref1"]))
             ax.set_xlim(float(self.yaml_aperture["xlim1_aperture_zoom"]), float(self.yaml_aperture["xlim2_aperture_zoom"]))
             ax.set_title(f"Aperture " + str(aperture_rad))
@@ -249,13 +243,13 @@ class AperturePhotometry:
         fig, axs = plt.subplots(5, 1, figsize=(8, 10), dpi=300)
         # Reduce vertical space between axes
         fig.subplots_adjust(hspace=0.05)
-        axs[0].scatter(self.julian_date - self.time_offset, self.aperture_tar / self.aperture_tar[normalization_index],
+        axs[0].scatter(self.julian_date - self.time_offset, self.tar_star.aperture_star / self.tar_star.aperture_star[normalization_index],
                        s=2, zorder=3, c='C0', label='Target')
         axs[0].scatter(self.julian_date - self.time_offset,
-                       self.aperture_ref1 / self.aperture_ref1[normalization_index], s=2, zorder=2, c='C1',
+                       self.ref_star1.aperture_star / self.ref_star1.aperture_star[normalization_index], s=2, zorder=2, c='C1',
                        label='Ref #1')
         axs[0].scatter(self.julian_date - self.time_offset,
-                       self.aperture_ref2 / self.aperture_ref2[normalization_index], s=2, zorder=1, c='C2',
+                       self.ref_star2.aperture_star / self.ref_star2.aperture_star[normalization_index], s=2, zorder=1, c='C2',
                        label='Ref #2')
         #
         for i, science in enumerate(self.full_science_stack):
@@ -308,7 +302,7 @@ class AperturePhotometry:
             6. Saves photometric data and results to a pickle file.
         """
         fig, ax = plt.subplots(1, 1, figsize=(10, 8), dpi=300)
-        ax.scatter(self.julian_date - self.time_offset, self.aperture_tar / self.aperture_ref1, s=2, c='C0', label='Ref #1')
+        ax.scatter(self.julian_date - self.time_offset, self.tar_star.aperture_star / self.ref_star1.aperture_star, s=2, c='C0', label='Ref #1')
         ax.set_xlabel('BJD-TDB - {0:.1f} [days]'.format(self.time_offset))
         ax.set_ylabel('Differential photometry')
         ax.set_ylim(float(self.yaml_aperture["ylim1_aperture_ref1"]), float(self.yaml_aperture["ylim2_aperture_ref1"]))
@@ -319,7 +313,7 @@ class AperturePhotometry:
         plt.close(fig)
         #
         fig, ax = plt.subplots(1, 1, figsize=(10, 8), dpi=300)
-        ax.scatter(self.julian_date - self.time_offset, self.aperture_tar / self.aperture_ref2, s=2, c='C1', label='Ref #2')
+        ax.scatter(self.julian_date - self.time_offset, self.tar_star.aperture_star / self.ref_star2.aperture_star, s=2, c='C1', label='Ref #2')
         ax.set_xlabel('BJD-TDB - {0:.1f} [days]'.format(self.time_offset))
         ax.set_ylabel('Differential photometry')
         ax.set_ylim(float(self.yaml_aperture["ylim1_aperture_ref2"]), float(self.yaml_aperture["ylim2_aperture_ref2"]))
@@ -330,7 +324,7 @@ class AperturePhotometry:
         plt.close(fig)
         #
         fig, ax = plt.subplots(1, 1, figsize=(10, 8), dpi=300)
-        ax.scatter(self.julian_date - self.time_offset, self.aperture_tar / (self.aperture_ref1 + self.aperture_ref2), s=2,
+        ax.scatter(self.julian_date - self.time_offset, self.tar_star.aperture_star / (self.ref_star1.aperture_star + self.ref_star2.aperture_star), s=2,
                     c='C3', label='Sum of refs')
         ax.set_xlabel('BJD-TDB - {0:.1f} [days]'.format(self.time_offset))
         ax.set_ylabel('Differential photometry')
@@ -341,26 +335,38 @@ class AperturePhotometry:
         plt.show()
         plt.close(fig)
         #
-        differential_ref01 = self.aperture_tar / self.aperture_ref1
-        differential_ref02 = self.aperture_tar / self.aperture_ref2
-        differential_allref = self.aperture_tar / (self.aperture_ref1 + self.aperture_ref2)
+        differential_ref01 = self.tar_star.aperture_star / self.ref_star1.aperture_star
+        differential_ref02 = self.tar_star.aperture_star / self.ref_star2.aperture_star
+        differential_allref = self.tar_star.aperture_star / (self.ref_star1.aperture_star + self.ref_star2.aperture_star)
         #
-        target_aperture_error = np.sqrt(self.aperture_tar)
-        reference01_aperture_error = np.sqrt(self.aperture_ref1)
-        reference02_aperture_error = np.sqrt(self.aperture_ref2)
         # Error propagation
-        differential_ref01_error = differential_ref01 * np.sqrt(
-            (target_aperture_error / self.aperture_tar) ** 2 +
-            (reference01_aperture_error / self.aperture_ref1) ** 2
+        differential_ref01_error = np.sqrt(
+            (self.tar_star.aperture_star_error / self.ref_star1.aperture_star)**2 +
+            (
+                    self.tar_star.aperture_star * self.ref_star1.aperture_star_error /
+                    self.ref_star1.aperture_star**2
+            )**2
         )
-        differential_ref02_error = differential_ref02 * np.sqrt(
-            (target_aperture_error / self.aperture_tar) ** 2 +
-            (reference02_aperture_error / self.aperture_ref2) ** 2
+        differential_ref02_error = np.sqrt(
+            (self.tar_star.aperture_star_error / self.ref_star2.aperture_star) ** 2 +
+            (
+                    self.tar_star.aperture_star * self.ref_star2.aperture_star_error /
+                    self.ref_star2.aperture_star ** 2
+            ) ** 2
         )
-        differential_allref_error = differential_allref * np.sqrt(
-            (target_aperture_error / self.aperture_tar) ** 2 +
-            (reference01_aperture_error / (self.aperture_ref1 + self.aperture_ref2)) ** 2 +
-            (reference02_aperture_error / (self.aperture_ref1 + self.aperture_ref2)) ** 2
+        differential_allref_error = np.sqrt(
+            (
+                self.tar_star.aperture_star_error /
+                (self.ref_star1.aperture_star + self.ref_star2.aperture_star)
+            )**2 +
+            (
+                self.tar_star.aperture_star * self.ref_star1.aperture_star_error /
+                self.ref_star1.aperture_star**2
+            )**2 +
+            (
+                self.tar_star.aperture_star * self.ref_star2.aperture_star_error /
+                self.ref_star2.aperture_star**2
+            )**2
         )
         #
         limit_transit_inf = self.yaml_aperture["xlim1_aperture_zoom"]
