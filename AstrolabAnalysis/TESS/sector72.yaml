@@ -8,20 +8,148 @@ preprocess : {
 testing_filter_window : 1.1
 
 filter_list : {
-  filter1 : {
-    model : 'biweight',
-    window : 1.0,
+  filter3: {
+    model: "biweight",
+    window: 1.7,
   },
-  filter2 : {
-    model : 'biweight',
+  filter4: {
+    model: "biweight",
+    window: 1.8,
+  },
+  filter5: {
+    model: "biweight",
+    window: 1.9,
+  },
+  filter6: {
+    model: "biweight",
+    window: 1.0,
+  },
+  filter7: {
+    model: "biweight",
+    window: 1.1,
+  },
+  filter8: {
+    model: "biweight",
+    window: 1.2,
+  },
+  filter9: {
+    model: "biweight",
+    window: 1.3,
+  },
+  filter10: {
+    model: "biweight",
+    window: 1.4,
+  },
+  filter11 : {
+    model : "biweight",
     window : 1.5,
   },
-  filter3 : {
-    model : 'hspline',
-    window : 1.1,
+  filter14: {
+    model: "hspline",
+    window: 1.7,
   },
-  filter4 : {
-    model : 'hspline',
-    window : 1.5,
+  filter15: {
+    model: "hspline",
+    window: 1.8,
+  },
+  filter16: {
+    model: "hspline",
+    window: 1.9,
+  },
+  filter17: {
+    model: "hspline",
+    window: 1.0,
+  },
+  filter18: {
+    model: "hspline",
+    window: 1.1,
+  },
+  filter19: {
+    model: "hspline",
+    window: 1.2,
+  },
+  filter20: {
+    model: "hspline",
+    window: 1.3,
+  },
+  filter21: {
+    model: "hspline",
+    window: 1.4,
+  },
+  filter22: {
+    model: "hspline",
+    window: 1.5,
+  },
+  filter25: {
+    model: "median",
+    window: 1.7,
+  },
+  filter26: {
+    model: "median",
+    window: 1.8,
+  },
+  filter27: {
+    model: "median",
+    window: 1.9,
+  },
+  filter28: {
+    model: "median",
+    window: 1.0,
+  },
+  filter29: {
+    model: "median",
+    window: 1.1,
+  },
+  filter30: {
+    model: "median",
+    window: 1.2,
+  },
+  filter31: {
+    model: "median",
+    window: 1.3,
+  },
+  filter32: {
+    model: "median",
+    window: 1.4,
+  },
+  filter33: {
+    model: "median",
+    window: 1.5,
+  },
+  filter36: {
+    model: "lowess",
+    window: 1.7,
+  },
+  filter37: {
+    model: "lowess",
+    window: 1.8,
+  },
+  filter38: {
+    model: "lowess",
+    window: 1.9,
+  },
+  filter39: {
+    model: "lowess",
+    window: 1.0,
+  },
+  filter40: {
+    model: "lowess",
+    window: 1.1,
+  },
+  filter41: {
+    model: "lowess",
+    window: 1.2,
+  },
+  filter42: {
+    model: "lowess",
+    window: 1.3,
+  },
+  filter43: {
+    model: "lowess",
+    window: 1.4,
+  },
+  filter44: {
+    model: "lowess",
+    window: 1.5,
   },
 }

@@ -426,24 +426,27 @@ class AperturePhotometry:
         bjd_median = np.median(self.julian_date)
         poly_ref01_deg01_pfit = Polynomial.fit(
             self.julian_date[out_transit_selection] - bjd_median,
-            differential_ref01[out_transit_selection], deg=1
+            differential_ref01[out_transit_selection], deg=2
         )
+        print("poly_ref01_deg01_pfit", poly_ref01_deg01_pfit.coef)
         poly_ref02_deg01_pfit = Polynomial.fit(
             self.julian_date[out_transit_selection] - bjd_median,
-            differential_ref02[out_transit_selection], deg=1
+            differential_ref02[out_transit_selection], deg=2
         )
+        print("poly_ref02_deg01_pfit", poly_ref02_deg01_pfit.coef)
         poly_allref_deg01_pfit = Polynomial.fit(
             self.julian_date[out_transit_selection] - bjd_median,
-            differential_allref[out_transit_selection], deg=1
+            differential_allref[out_transit_selection], deg=2
         )
+        print("poly_allref_deg01_pfit", poly_allref_deg01_pfit.coef)
         #
         differential_ref01_normalized = differential_ref01 / poly_ref01_deg01_pfit(self.julian_date - bjd_median)
         differential_ref02_normalized = differential_ref02 / poly_ref02_deg01_pfit(self.julian_date - bjd_median)
         differential_allref_normalized = differential_allref / poly_allref_deg01_pfit(self.julian_date - bjd_median)
         # Compute the standard deviation (normalized error)
-        differential_ref01_normalized_error = np.std(differential_ref01_normalized[out_transit_selection])
-        differential_ref02_normalized_error = np.std(differential_ref02_normalized[out_transit_selection])
-        differential_allref_normalized_error = np.std(differential_allref_normalized[out_transit_selection])
+        differential_ref01_normalized_error = differential_ref01_error / poly_ref01_deg01_pfit(self.julian_date - bjd_median)
+        differential_ref02_normalized_error = differential_ref02_error / poly_ref02_deg01_pfit(self.julian_date - bjd_median)
+        differential_allref_normalized_error = differential_allref_error / poly_allref_deg01_pfit(self.julian_date - bjd_median)
         fig, ax = plt.subplots(1, 1, figsize=(10, 8), dpi=300)
         ax.scatter(
             self.julian_date - self.time_offset,

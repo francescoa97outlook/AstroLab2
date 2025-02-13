@@ -58,7 +58,7 @@ class LightCurveFiltering:
         flatten_flux, flatten_model = flatten(
             time,
             flux,
-            method='hspline',
+            method=method,
             window_length=wl,
             break_tolerance=bt,
             return_trend=True,
@@ -127,9 +127,9 @@ class LightCurveFiltering:
         self.array_std_sap = np.empty(shape=(len(self.filter_list)))
         self.array_std_pdcsap = np.empty(shape=(len(self.filter_list)))
         for i, filter in enumerate(self.filter_list):
-            print("Flattening with method {0}, window={1:.1f}".format(
-                self.filter_list[filter]["model"], self.filter_list[filter]["window"]
-            ))
+            # print("Flattening with method {0}, window={1:.1f}".format(
+            #     self.filter_list[filter]["model"], self.filter_list[filter]["window"]
+            # ))
             self.array_flat_sap_flux[i, :], self.array_flat_sap_model[i, :] = self.filter_flux(
                     self.time, self.sap_flux, self.filter_list[filter]["model"],
                     self.filter_list[filter]["window"], self.break_tolerance,
@@ -142,15 +142,15 @@ class LightCurveFiltering:
             # light curve
             self.array_std_sap[i] = np.std(self.array_flat_sap_flux[i, ~self.mask])
             self.array_std_pdcsap[i] = np.std(self.array_flat_pdcsap_flux[i, ~self.mask])
-            print("STD SAP {0}, window={1:.1f}: {2:.6f}".format(
-                self.filter_list[filter]["model"], self.filter_list[filter]["window"], 
-                self.array_std_sap[i]
-            ))
-            print("STD PDCSAP {0}, window={1:.1f}: {2:.6f}".format(
-                self.filter_list[filter]["model"], self.filter_list[filter]["window"], 
-                self.array_std_pdcsap[i]
-            ))
-            print('-----------')
+            # print("STD SAP {0}, window={1:.1f}: {2:.6f}".format(
+            #     self.filter_list[filter]["model"], self.filter_list[filter]["window"],
+            #     self.array_std_sap[i]
+            # ))
+            # print("STD PDCSAP {0}, window={1:.1f}: {2:.6f}".format(
+            #     self.filter_list[filter]["model"], self.filter_list[filter]["window"],
+            #     self.array_std_pdcsap[i]
+            # ))
+            # print('-----------')
 
     def best_algorithm_decider(self):
         """
@@ -158,13 +158,63 @@ class LightCurveFiltering:
         consists in taking the filtered pdcsap with the smallest standard
         deviation. Also plot a comparison of the different methods.
         """
-        self.index = np.argmin(self.array_std_pdcsap)
         key_list = list(self.filter_list)
-        key = key_list[self.index]
-        print("Sector {0}, best method={1}, window={2:.1f}, filtered std={3:.6f}".format(
-            self.sector_number, self.filter_list[key]["model"],
-            self.filter_list[key]["window"], self.array_std_pdcsap[self.index]
+        len_one_filter = int(len(self.filter_list) / 4)
+        #
+        self.index_sap = np.argmin(self.array_std_sap[:len_one_filter])
+        self.index_pdcsap = np.argmin(self.array_std_pdcsap[:len_one_filter])
+        key_sap = key_list[self.index_sap]
+        key_pdcsap = key_list[self.index_pdcsap]
+        print("SAP: Sector {0}, best method={1}, window={2:.1f}, filtered std={3:.7f}".format(
+            self.sector_number, self.filter_list[key_sap]["model"],
+            self.filter_list[key_sap]["window"], self.array_std_sap[self.index_sap]
         ))
+        print("PDCSAP: Sector {0}, best method={1}, window={2:.1f}, filtered std={3:.7f}".format(
+            self.sector_number, self.filter_list[key_pdcsap]["model"],
+            self.filter_list[key_pdcsap]["window"], self.array_std_pdcsap[self.index_pdcsap]
+        ))
+        #
+        self.index_sap = np.argmin(self.array_std_sap[len_one_filter:]) + len_one_filter
+        self.index_pdcsap = np.argmin(self.array_std_pdcsap[len_one_filter:]) + len_one_filter
+        key_sap = key_list[self.index_sap]
+        key_pdcsap = key_list[self.index_pdcsap]
+        print("SAP: Sector {0}, best method={1}, window={2:.1f}, filtered std={3:.7f}".format(
+            self.sector_number, self.filter_list[key_sap]["model"],
+            self.filter_list[key_sap]["window"], self.array_std_sap[self.index_sap]
+        ))
+        print("PDCSAP: Sector {0}, best method={1}, window={2:.1f}, filtered std={3:.7f}".format(
+            self.sector_number, self.filter_list[key_pdcsap]["model"],
+            self.filter_list[key_pdcsap]["window"], self.array_std_pdcsap[self.index_pdcsap]
+        ))
+        #
+        self.index_sap = np.argmin(self.array_std_sap[2 * len_one_filter:]) + len_one_filter
+        self.index_pdcsap = np.argmin(self.array_std_pdcsap[2 * len_one_filter:]) + len_one_filter
+        key_sap = key_list[self.index_sap]
+        key_pdcsap = key_list[self.index_pdcsap]
+        print("SAP: Sector {0}, best method={1}, window={2:.1f}, filtered std={3:.7f}".format(
+            self.sector_number, self.filter_list[key_sap]["model"],
+            self.filter_list[key_sap]["window"], self.array_std_sap[self.index_sap]
+        ))
+        print("PDCSAP: Sector {0}, best method={1}, window={2:.1f}, filtered std={3:.7f}".format(
+            self.sector_number, self.filter_list[key_pdcsap]["model"],
+            self.filter_list[key_pdcsap]["window"], self.array_std_pdcsap[self.index_pdcsap]
+        ))
+        #
+        self.index_sap = np.argmin(self.array_std_sap[3 * len_one_filter:]) + len_one_filter
+        self.index_pdcsap = np.argmin(self.array_std_pdcsap[3 * len_one_filter:]) + len_one_filter
+        key_sap = key_list[self.index_sap]
+        key_pdcsap = key_list[self.index_pdcsap]
+        print("SAP: Sector {0}, best method={1}, window={2:.1f}, filtered std={3:.7f}".format(
+            self.sector_number, self.filter_list[key_sap]["model"],
+            self.filter_list[key_sap]["window"], self.array_std_sap[self.index_sap]
+        ))
+        print("PDCSAP: Sector {0}, best method={1}, window={2:.1f}, filtered std={3:.7f}".format(
+            self.sector_number, self.filter_list[key_pdcsap]["model"],
+            self.filter_list[key_pdcsap]["window"], self.array_std_pdcsap[self.index_pdcsap]
+        ))
+        #
+        self.index = np.argmin(self.array_std_pdcsap)
+        key_min = key_list[self.index]
         # TODO: average normalized error is computed using what?
         average_error = np.average(self.pdcsap_flux_error[~self.mask]/self.array_flat_pdcsap_model[self.index][~self.mask])
         print("Average normalized error wrt best method model: {0:.6f}".format(
@@ -173,33 +223,40 @@ class LightCurveFiltering:
             print("Average associated error of the observations higher than the standard deviation of the filtered light curve. Either there is overcorrection of the light curve, or the errors associated by TESS team are overestimated")
         # Comparison of the different fitering algorithm
         plt.figure(figsize=(12.8, 7.2))
-        plt.scatter(self.time, self.sap_flux, s=2)
-        plt.errorbar(self.time, self.sap_flux, yerr=self.sap_flux_error,
+        plt.scatter(self.time, self.pdcsap_flux, s=2)
+        plt.errorbar(self.time, self.pdcsap_flux, yerr=self.pdcsap_flux_error,
                      ecolor='k', fmt=' ', alpha=0.25, zorder=-1)
-        for i, model in enumerate(self.array_flat_sap_model):
+        for i, model in enumerate(self.array_flat_pdcsap_model):
             key = key_list[i]
             if i == self.index:
-                plt.plot(self.time, model, zorder=11, label="BEST: {0} w:{1:.1f}".format(
-                    self.filter_list[key]["model"], self.filter_list[key]["window"]))
+                plt.plot(self.time, model, zorder=11,
+                         label="BEST: {0} w:{1:.1f}".format(
+                             self.filter_list[key]["model"],
+                             self.filter_list[key]["window"]))
                 continue
-            plt.plot(self.time, model, zorder=10, label="{0} w:{1:.1f}".format(
-                self.filter_list[key]["model"], self.filter_list[key]["window"]))
+            plt.plot(self.time, model, zorder=10,
+                     label="{0} w:{1:.1f}".format(
+                         self.filter_list[key]["model"],
+                         self.filter_list[key]["window"]))
         plt.xlabel("BJD_TDB")
-        plt.ylabel("TESS SAP flux [e-/s]")
+        plt.ylabel("TESS PDCSAP flux [e-/s]")
         plt.title("Filtering algorithm comparison")
-        plt.legend()
+        # Place the legend outside of the plot:
+        plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', ncol=2, fontsize='small')
+        # Adjust the subplot parameters so the legend fits within the figure:
+        plt.subplots_adjust(right=0.75)
         plt.savefig(str(Path(self.results_folder, "sector{0}_filtering_algorithm-comparison.png".format(
-            self.sector_number))))
+            self.sector_number))), dpi=150)  # you can adjust dpi as needed
         plt.show()
         plt.close()
         # Best filtering algorithm result near the transit
         plt.figure(figsize=(12.8, 7.2))
-        plt.scatter(self.phase_folded_time, self.array_flat_sap_flux[self.index],
+        plt.scatter(self.phase_folded_time, self.array_flat_pdcsap_flux[self.index],
                     label="BEST: {0} w:{1:.1f}".format(
-                        self.filter_list[key]["model"], self.filter_list[key]["window"]),
+                        self.filter_list[key_min]["model"], self.filter_list[key_min]["window"]),
                     c='C0', s=3)
-        plt.errorbar(self.phase_folded_time, self.array_flat_sap_flux[self.index],
-                     yerr=self.sap_flux_error/self.array_flat_sap_model[self.index],
+        plt.errorbar(self.phase_folded_time, self.array_flat_pdcsap_flux[self.index],
+                     yerr=self.pdcsap_flux_error/self.array_flat_pdcsap_model[self.index],
                      ecolor='k', fmt=' ', alpha=0.5, zorder=-1)
         plt.axhline(1.000, c='C1', label='y=1 line', ls="--")
         plt.xlabel('Time from mid-transit [d]')
@@ -219,4 +276,4 @@ class LightCurveFiltering:
         self.plot_excluded_points()
         self.test_filter_algorithm()
         self.best_algorithm_decider()
-        return self.array_flat_pdcsap_flux[self.index], self.array_flat_pdcsap_flux[self.index]/self.array_flat_pdcsap_model[self.index]
+        return self.array_flat_pdcsap_flux[self.index], self.pdcsap_flux_error[self.index]/self.array_flat_pdcsap_model[self.index]

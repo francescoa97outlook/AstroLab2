@@ -41,13 +41,17 @@ class TASTE_reader:
 
     def read_taste_results(self, ind_list):
         with open(str(Path(self.taste_dir, "aperture_final.pkl")), "rb") as f:
-            for i in range(13):
-                if i == ind_list[0]:
-                    array1 = pickle.load(f)
-                elif i == ind_list[1]:
-                    array2 = pickle.load(f)
-                elif i == ind_list[2]:
-                    array3 = pickle.load(f)
-                else:
-                    _ = pickle.load(f)
-        return array1, array2, array3
+            julian_date = pickle.load(f)
+            differential_ref01_normalized = pickle.load(f)
+            differential_ref01_normalized_error = pickle.load(f)
+            differential_ref02_normalized = pickle.load(f)
+            differential_ref02_normalized_error = pickle.load(f)
+            differential_allref_normalized = pickle.load(f)
+            differential_allref_normalized_error = pickle.load(f)
+            differential_ref01 = pickle.load(f)
+            differential_ref01_error = pickle.load(f)
+            differential_ref02 = pickle.load(f)
+            differential_ref02_error = pickle.load(f)
+            differential_allref = pickle.load(f)
+            differential_allref_error = pickle.load(f)
+        return julian_date, differential_allref, differential_allref_error

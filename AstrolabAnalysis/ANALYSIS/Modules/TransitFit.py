@@ -1,3 +1,4 @@
+# From ExoFOP website (TOIs Stellar Parameters)
 import batman
 import pickle
 import emcee
@@ -46,20 +47,18 @@ class TransitFit(TASTE_reader):
         theta[7] = self.ld_dictionary["u1_sloan_g"][0]
         theta[8] = self.ld_dictionary["u2_sloan_g"][0]
         # Polynomial coefficients
-        # TODO: where is this value coming from?
-        theta[9] = 0.155
-        theta[10] = 0.0
-        theta[11] = 0.0
+        theta[9] = 0.15541435
+        theta[10] = 0.00022252
+        theta[11] = -0.00043059
         # Jitter parameters
-        # TODO: change these values
-        theta[12] = 0.01
-        theta[13] = 0.01
+        theta[12] = 0.0
+        theta[13] = 0.0
         return theta
 
     def populate_boundaries(self, theta):
         boundaries = np.empty([2, len(theta)])
-        boundaries[:, 0] = [theta[0] - 0.5, theta[0] + 0.5]
-        boundaries[:, 1] = [theta[1] - 0.5, theta[1] + 0.5]
+        boundaries[:, 0] = [theta[0] - 1, theta[0] + 1]
+        boundaries[:, 1] = [theta[1] - 1, theta[1] + 1]
         boundaries[:, 2] = [0.0, 0.5]
         boundaries[:, 3] = [0.0, 20.]
         boundaries[:, 4] = [0.00, 90.0]
@@ -81,8 +80,8 @@ class TransitFit(TASTE_reader):
         params.rp = theta[2]
         params.a = theta[3]
         params.inc = theta[4]
-        params.ecc = 0.
-        params.w = 90.
+        params.ecc = 0.017
+        params.w = 1.7
         #
         # TASTE model
         params.u = [theta[7], theta[8]]
@@ -140,7 +139,7 @@ class TransitFit(TASTE_reader):
             ax1.yaxis.set_label_coords(-0.1, 0.5)
         axes1[-1].set_xlabel("step number")
         fig1.savefig(str(Path(self.results_dir, "parameter_chain_1.png")))
-        #plt.show()
+        plt.show()
         plt.close()
         # Plot remaining parameters
         fig2, axes2 = plt.subplots(7, figsize=(10, 7), sharex=True)
@@ -152,7 +151,7 @@ class TransitFit(TASTE_reader):
             ax2.yaxis.set_label_coords(-0.1, 0.5)
         axes2[-1].set_xlabel("step number")
         fig2.savefig(str(Path(self.results_dir, "parameter_chain_2.png")))
-        #plt.show()
+        plt.show()
         plt.close()
 
     def plot_corner_better(self, flat_samples, names, estimates):
@@ -186,20 +185,21 @@ class TransitFit(TASTE_reader):
                        None,
                        None,
                        None)
-        #truths = (list(estimates[1, :]),
+        truths = (list(estimates[1, :]),
                   #list(estimates[0, :]),
                   #list(estimates[2, :])
-        #)
-        truthLineStyles = ('--', ':', ':')
+        )
+        truthLineStyles = (':', ':', ':')
         GTC = pygtc.plotGTC(chains=flat_samples, paramNames=names,
-                            priors=priors, figureSize=8.5,
+                            priors=priors, figureSize=10.5,
                             paramRanges=paramRanges,
                             smoothingKernel=0,
-                            #truths=truths,
-                            #truthLineStyles=truthLineStyles,
+                            truths=truths,
+                            colorsOrder=["purples"],
+                            truthLineStyles=truthLineStyles,
                             plotName=str(Path(self.results_dir, "corner_plot.pdf")))
         plt.savefig(str(Path(self.results_dir, "corner_plot.png")))
-        #plt.show()
+        plt.show()
 
     def plot_model_on_data(self, flat_sample, theta):
         params = batman.TransitParams()
@@ -208,8 +208,8 @@ class TransitFit(TASTE_reader):
         params.rp = theta[2]
         params.a = theta[3]
         params.inc = theta[4]
-        params.ecc = 0.
-        params.w = 90.
+        params.ecc = 0.017
+        params.w = 1.7
         #
         # TASTE model
         params.u = [theta[7], theta[8]]
@@ -222,15 +222,24 @@ class TransitFit(TASTE_reader):
         taste_flux = m_taste.light_curve(params) * polynomial_trend
         #
         # Plot TASTE
-        plt.figure(figsize=(6, 4))
-        plt.scatter(self.taste_bjd_tdb, self.differential_allref, s=2, label="TASTE data")
-        plt.plot(self.taste_bjd_tdb, taste_flux, lw=2, c='C1', label="final model")
-        plt.xlabel("BJD TDB")
-        plt.ylabel("Relative flux")
-        plt.legend()
-        plt.tight_layout()
+        fig, ax = plt.subplots(2,1, figsize=(8, 7), sharex=True, gridspec_kw={'height_ratios': [2, 1]})
+        fig.subplots_adjust(hspace=0)
+        ax[0].scatter(self.taste_bjd_tdb, self.differential_allref, s=2, label="TASTE data")
+        ax[0].errorbar(self.taste_bjd_tdb, self.differential_allref, yerr=self.differential_allref_error,
+                     ecolor="k", fmt=' ', alpha=0.5, zorder=-1)
+        ax[0].plot(self.taste_bjd_tdb, taste_flux, lw=2, c='C1', label="final model")
+        ax[0].set_ylabel("Relative flux")
+        ax[0].legend()
+        ax[1].scatter(self.taste_bjd_tdb, self.differential_allref-taste_flux, s=2, c="C0")
+        ax[1].errorbar(self.taste_bjd_tdb, self.differential_allref-taste_flux, yerr=self.differential_allref_error,
+                       ecolor="k", fmt=' ', alpha=0.5, zorder=-1)
+        ax[1].plot(self.taste_bjd_tdb, taste_flux*0, lw=2, c='C1', ls="--")
+        ax[1].set_ylabel("Residuals")
+        ax[1].set_xlabel("BJD TDB")
+        ax[1].set_xlim(self.taste_bjd_tdb[0], self.taste_bjd_tdb[-1])
+        #plt.tight_layout()
         plt.savefig(str(Path(self.results_dir, "taste_final_model_on_data.png")))
-        #plt.show()
+        plt.show()
         plt.close()
         #
         # TESS model
@@ -242,31 +251,43 @@ class TransitFit(TASTE_reader):
             tess_flux = m_tess.light_curve(params)
             plt.figure(figsize=(6, 4))
             plt.scatter(sector.tess_bjd_tdb, sector.tess_normalized_flux, s=2, label="TESS data, sector {0}".format(sector.sector_number))
+            plt.errorbar(sector.tess_bjd_tdb, sector.tess_normalized_flux, yerr=sector.tess_normalized_flux_error,
+                         ecolor="k", fmt=' ', alpha=0.5, zorder=-1)
             plt.plot(sector.tess_bjd_tdb, tess_flux, lw=2, c='C1', label="final model")
             plt.xlabel("BJD TDB")
             plt.ylabel("Relative flux")
             plt.legend()
             plt.tight_layout()
             plt.savefig(str(Path(self.results_dir, "tess_final_model_on_data_sector{0}.png".format(sector.sector_number))))
-            #plt.show()
+            plt.show()
             plt.close()
 
             folded_tess_time = (sector.tess_bjd_tdb - params.t0 - params.per / 2. ) % params.per - params.per / 2. 
             folded_range = np.arange(- params.per/2.,  params.per/2., 0.001)
             temp = params.t0
             params.t0 = 0.                     #time of inferior conjunction
-            m_folded_tess = batman.TransitModel(params, folded_range)    #initializes model
-            tess_folded_flux =m_folded_tess.light_curve(params)          #calculates light curv
-            plt.figure(figsize=(6, 4))
-            plt.scatter(folded_tess_time, sector.tess_normalized_flux, s=2, label="TESS data, sector {0}".format(sector.sector_number))
-            plt.plot(folded_range, tess_folded_flux, lw=2, c='C1', label="final model")
-            plt.xlim(-0.2, 0.2)
-            plt.xlabel("Time from mid-transit [days]")
-            plt.ylabel("Relative flux")
-            plt.legend()
-            plt.tight_layout()
+            m_folded_time_tess = batman.TransitModel(params, folded_tess_time)  # initializes model
+            m_folded_tess = batman.TransitModel(params, folded_range)           #initializes model
+            tess_folded_time_flux = m_folded_time_tess.light_curve(params)          #calculates light curv
+            tess_folded_flux = m_folded_tess.light_curve(params)                    #calculates light curv
+            fig, ax = plt.subplots(2, 1, figsize=(8, 7), sharex=True, gridspec_kw={'height_ratios': [2, 1]})
+            fig.subplots_adjust(hspace=0)
+            ax[0].scatter(folded_tess_time, sector.tess_normalized_flux, s=2, label="TESS data, sector {0}".format(sector.sector_number))
+            ax[0].errorbar(folded_tess_time, sector.tess_normalized_flux, yerr=sector.tess_normalized_flux_error,
+                         ecolor="k", fmt=' ', alpha=0.5, zorder=-1)
+            ax[0].plot(folded_range, tess_folded_flux, lw=2, c='C1', label="final model")
+            ax[0].set_ylabel("Relative flux")
+            ax[0].legend()
+            ax[1].scatter(folded_tess_time, sector.tess_normalized_flux-tess_folded_time_flux, s=2, c="C0")
+            ax[1].errorbar(folded_tess_time, sector.tess_normalized_flux-tess_folded_time_flux, yerr=sector.tess_normalized_flux_error,
+                           ecolor="k", fmt=' ', alpha=0.5, zorder=-1)
+            ax[1].plot(folded_tess_time, tess_folded_time_flux*0, lw=2, c='C1', ls='--')
+            ax[1].set_ylabel("Residuals")
+            ax[1].set_xlabel("Time from mid-transit [days]")
+            ax[1].set_xlim(-0.2, 0.2)
+            #plt.tight_layout()
             plt.savefig(str(Path(self.results_dir, "tess_final_model_on_folded_data_sector{0}.png".format(sector.sector_number))))
-            #plt.show()
+            plt.show()
             plt.close()
             params.t0 = temp
 
@@ -302,8 +323,8 @@ class TransitFit(TASTE_reader):
             # increasing the steps will make the total time longer
             # nwalkers = 50
             # nsteps = 20000
-            nwalkers = 50
-            nsteps = 10000
+            nwalkers = 100
+            nsteps = 25000
             ndim = len(theta)
             # We initialize the walkers in a tiny Gaussian ball around our approximate result
             starting_point = theta + np.abs(1e-5 * np.random.randn(nwalkers, ndim))
@@ -321,15 +342,15 @@ class TransitFit(TASTE_reader):
                  'Rp/Rs',
                  'a/Rs',
                  'inc',
-                 'u1 ts',
-                 'u2 ts',
-                 'u1 tt',
-                 'u2 tt',
-                 '$0^{th}$ pol',
-                 '$1^{st}$ pol',
-                 '$2^{nd}$ pol',
-                 'jit. ts',
-                 'jit. tt']
+                 r'u1$_{TESS}$',
+                 r'u2$_{TESS}$',
+                 r'u1$_{TASTE}$',
+                 r'u2$_{TASTE}$',
+                 r'$0^{th}$ pol',
+                 r'$1^{st}$ pol',
+                 r'$2^{nd}$ pol',
+                 r'jit$_{TESS}$',
+                 r'jit$_{TASTE}$']
         self.plot_parameter_chain(samples)
         self.plot_model_on_data(flat_samples, theta)
         # Print the final results
